@@ -8,10 +8,9 @@ import { twMerge } from 'tailwind-merge';
 import { AnimatePresence, motion } from "framer-motion"
 
 const navLinks = [
-    { label: 'Home', href: '#' },
-    { label: 'About', href: '#' },
-    { label: 'Contact', href: '#' },
-    { label: 'Pricing', href: '#' },
+    { label: 'Product', href: '#Features' },
+    { label: 'Price', href: '#' },
+    { label: 'FAQ', href: '#Faq' },
 ]
 
 
@@ -30,6 +29,7 @@ const Navbar = () => {
                                     src={logoImage}
                                     alt="Logo"
                                     className="h-9 md:h-12 w-auto"
+                                    
                                 />
                             </div>
 
@@ -39,7 +39,8 @@ const Navbar = () => {
                                     <a
                                         key={link.label}
                                         href={link.href}
-                                        className="whitespace-nowrap"
+                                        
+                                        className="whitespace-nowrap scroll-smooth"
                                     >
                                         {link.label}
                                     </a>

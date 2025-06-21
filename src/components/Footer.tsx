@@ -1,11 +1,10 @@
 import logoImage from '@/assets/images/webservice_logo1.png'
 import Image from 'next/image';
 const footerLinks = [
-    { href: '#', label: "Contacct" },
-    { href: '#', label: "Privacy Policy" },
-    { href: '#', label: "Terms & Condition" },
-
-]
+  { href: '#contact',        label: 'Contact' },
+  { href: '#privacy-policy', label: 'Privacy Policy' },
+  { href: '#terms',          label: 'Terms & Conditions' },
+];
 
 
 export default function Footer() {
@@ -20,10 +19,15 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <nav className='flex gap-6'>
+                        <nav className="flex gap-6">
                             {footerLinks.map(link => (
-                                <a href={link.href}
-                                    className='text-white/50 text-m'>{link.label}</a>
+                                <a
+                                    key={link.href}            
+                                    href={link.href}
+                                    className="text-white/50 text-m"
+                                >
+                                    {link.label}
+                                </a>
                             ))}
                         </nav>
                     </div>
@@ -31,4 +35,4 @@ export default function Footer() {
             </div>
         </section>
     );
-}
+}   

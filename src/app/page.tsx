@@ -7,15 +7,24 @@ import CallToAction from '@/components/CallToActions';
 import Footer from '@/components/Footer';
 
 export default function Home() {
-return (
-  <>
-  <Navbar/>
-  <Hero/>
-  <LogoTicker/>
-  <Features></Features>
-  <Faqs/>
-  <CallToAction></CallToAction>
-  <Footer></Footer>
-  </>
-);
+  return (
+    <>  
+      <div id="Home">
+        <Navbar />
+      </div>
+      <Hero />
+
+      <div id="Features">
+        <Features></Features>
+      </div>
+            <LogoTicker />
+      <div id="Faq">
+        <Faqs />
+      </div>
+      <div id="CTA">
+        <CallToAction></CallToAction>
+      </div>
+      <Footer></Footer>
+    </>
+  );
 }

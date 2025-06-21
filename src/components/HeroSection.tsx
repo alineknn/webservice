@@ -29,26 +29,36 @@ export default function Hero() {
                 </div>
                 <div className="absolute right-80 -top-4 hidden lg:block">
                     <Pointer text='Text2' color="red"></Pointer>
-                </div> */}
+                </div>
+
                 <div className="flex justify-center">
                     <div className="inline-flex py-1 px-3 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full text-neutral-950 font-semibold">
                         10 examples services provided</div>
-                </div>
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6">Impactful service, created efforlessly</h1>
-                <p className="text-center text-xl text-white/50 mt-8 max-w-2xl mx-auto">
-                    Create tools that shouldn't slow you down. Lorem Ipsum awdwadwadwa</p>
-                <form className="flex border border-white/15 rounded-full p-2 mt-8 max-w-lg mx-auto">
-                    <input className="bg-transparent px-4 md:flex-1 w-full"
-                        type='email'
-                        placeholder="Enter your email" />
+                </div> */}
+                <h1 className="text-7xl md:text-8xl lg:text-9xl font-medium text-center mt-6">The hub for all your administration</h1>
+                {/**<p className="text-center text-xl text-white/50 mt-8 max-w-2xl mx-auto">
+                    Create tools that shouldn't slow you down. Lorem Ipsum awdwadwadwa</p>*/}
+
+                <div className="py-12 flex justify-center gap-4">
+                    <Button
+                        type="submit"
+                        variant="squarePrimary"
+                        size="sm"
+                        className="h-16 px-8 text-lg"
+                    >
+                        Buy
+                    </Button>
 
                     <Button
                         type="submit"
-                        variant="primary"
-                        className="whitespace-nowrap"
-                        size="sm">
-                        Sign Up</Button>
-                </form>
+                        variant="squareSecondary"
+                        size="sm"
+                        className="h-16 px-8 text-lg"
+                    >
+                        Try Now
+                    </Button>
+                </div>
+
             </div>
         </section>
     );

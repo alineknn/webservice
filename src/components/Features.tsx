@@ -1,5 +1,10 @@
 import FeatureCard from "./FeatureCard";
-
+import {
+  ServerIcon,
+  ShieldCheckIcon,
+  EnvelopeIcon,
+  LockClosedIcon,
+} from "@heroicons/react/24/outline";
 
 const features = [
     "Feature 1",
@@ -16,48 +21,85 @@ export default function Features() {
     return (
         <section>
             <div className="px-4 md:px-8 lg:px-16">
-                <div className="flex justify-center">
-                    <h2>Features</h2>
-                </div>
-                <h2 className="text-6xl font-medium text-center mt-6 max-w-2xl mx-auto">
-                    Where power meets <span className="text-blue-400">simplicity</span></h2>
+                <h2 className="text-6xl font-medium text-center mt-6 max-w-8xl mx-auto">
+                    A <span className="text-blue-400">complete</span> solution for hosting and maintaining your sites</h2>
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-2  gap-8 ">
+                    {/* Card 1: Site Administration */}
                     <FeatureCard
-                        title="Lorem Ipsum"
-                        description="Lorem ispum lorem lorem lorem">
-                        <div className="aspect-video">
-                            <p className="text-4xl font-extrabold text-white/20 text-center">
-                            We've achieved {" "}<span className=" bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">ether</span> {" "} example title </p>
-                        </div>
-
+                        title={
+                            <>
+                                <ServerIcon className="inline-block h-6 w-6 mr-2 text-blue-400" />
+                                Site Administration
+                            </>
+                        }
+                    >
+                        <ul className="list-disc list-inside text-white/50 space-y-2">
+                            <li>Provision and configure web servers in one click</li>
+                            <li>Deploy popular CMS platforms (WordPress, Drupal, Joomla)</li>
+                            <li>Switch between PHP, Python, or Node.js runtimes</li>
+                            <li>Manage your files via an intuitive file browser</li>
+                            <li>Edit scripts directly with our built-in code editor</li>
+                        </ul>
                     </FeatureCard>
 
+                    {/* Card 2: Advanced Security */}
                     <FeatureCard
-                        title="Lorem Ipsum 2"
-                        description="Lorem ispum lorem lorem lorem">
-                        <div className="aspect-video flex items-center justify-center">
-                            <div> Image 1 </div>
-                        </div>
+                        title={
+                            <>
+                                <ShieldCheckIcon className="inline-block h-6 w-6 mr-2 text-blue-400" />
+                                Advanced Security
+                            </>
+                        }
+                    >
+                        <ul className="list-disc list-inside text-white/50 space-y-2">
+                            <li>Real-time DDoS protection at the network edge</li>
+                            <li>Built-in malware and spam filtering</li>
+                            <li>Granular role-based access controls</li>
+                            <li>Scheduled, automated backups with one-click restore</li>
+                        </ul>
                     </FeatureCard>
 
+                    {/* Card 3: Email Hosting */}
                     <FeatureCard
-                        title="Lorem Ipsum 3"
-                        description="Lorem ispum lorem lorem lorem">
+                        title={
+                            <>
+                                <EnvelopeIcon className="inline-block h-6 w-6 mr-2 text-blue-400" />
+                                Email Hosting
+                            </>
+                        }
+                    >
+                        <ul className="list-disc list-inside text-white/50 space-y-2">
+                            <li>Create custom mailboxes on your domain</li>
+                            <li>Access mail through an integrated web-client</li>
+                            <li>Set up filtering rules and auto-responders</li>
+                        </ul>
                     </FeatureCard>
 
+                    {/* Card 4: SSL Management */}
                     <FeatureCard
-                        title="Lorem Ipsum 4"
-                        description="Lorem ispum lorem lorem lorem">
+                        title={
+                            <>
+                                <LockClosedIcon className="inline-block h-6 w-6 mr-2 text-blue-400" />
+                                SSL Management
+                            </>
+                        }
+                    >
+                        <ul className="list-disc list-inside text-white/50 space-y-2">
+                            <li>Auto-issue and renew Let’s Encrypt certificates</li>
+                            <li>Install commercial SSL certs for web & mail</li>
+                            <li>Monitor and manage all certificates from one dashboard</li>
+                        </ul>
                     </FeatureCard>
+
 
 
                 </div>
 
                 <div className="mt-8 flex flex-wrap gap-3 justify-center">
                     {features.map(feature => (
-                        <div 
-                        key={feature} 
-                        className="bg-neutral-900 border border-white/10 inline-flex 
+                        <div
+                            key={feature}
+                            className="bg-neutral-900 border border-white/10 inline-flex 
                         px-3 md:px 5 py-1.5 md:py-2 rounded-2xl gap-3 items-center 
                         hover:scale-105 transition duration-500 group">
                             <span className="bg-blue-400 text-neutral-950 size-5 rounded-full 

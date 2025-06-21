@@ -1,16 +1,17 @@
 export default function FeatureCard(props: {
-    title:string;
-    description:string;
-    children?: React.ReactNode;
-}){
-    const {title,description,children} = props;
-    return (
-        <div className="bg-neutral-900 border border-white/10 p-6 rounded-3xl">
-            <div className="aspect-video">{children}</div>
-            <div>
-                <h3 className="text-3xl font-medium mt-6">{title}</h3>
-                <p className="text-white/50 mt-2">{description}</p>
-            </div>
-        </div>
-    )
-}  
+  title: string;               // your “What you’ll get:” headline
+  children: React.ReactNode;   // the bullets
+}) {
+  const { title, children } = props;
+  return (
+    <div className="bg-neutral-900 border border-white/10 p-6 rounded-3xl">
+      {/* Title at the very top */}
+      <h3 className="text-3xl font-medium">{title}</h3>
+
+      {/* Bullets styled like your old description */}
+      <div className="mt-4 text-white/50 space-y-2">
+        {children}
+      </div>
+    </div>
+  );
+}
