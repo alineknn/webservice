@@ -1,0 +1,33 @@
+{
+  "badge": "Contact",
+  "title": "Need help or a consultation?",
+  "intro": "We’re ready to answer your questions and help. Leave a request or message us:",
+
+  "emailLabel": "Email",
+  "phoneLabel": "Phone",
+  "addressLabel": "Address",
+
+  "form": {
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "message": "Message",
+    "messagePlaceholder": "Write your message...",
+    "whatsappOpt": "Contact me via WhatsApp",
+    "telegramOpt": "Contact me via Telegram",
+    "submit": "Send"
+  },
+
+  "links": {
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram"
+  },
+
+  "company": {
+    "email": "hello@webservice.kg",
+    "phone": "+996 555 000 000",
+    "address": "123 Primernaya St, Bishkek, Kyrgyzstan",
+    "whatsappUrl": "https://wa.me/996555000000",
+    "telegramUrl": "https://t.me/webservicekg"
+  }
+}

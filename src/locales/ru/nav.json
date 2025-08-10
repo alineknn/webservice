@@ -1,0 +1,15 @@
+{
+  "logoAlt": "Главная",
+  "servicesMenu": "Услуги и решения",
+  "servicesItems": [
+    { "label": "Хостинг 1С", "href": "/vps-hosting" },
+    { "label": "Bitrix Хостинг", "href": "/vps-1c-bitrix" },
+    { "label": "Поддержка 24/7", "href": "/game-hosting" },
+    { "label": "Дополнительные услуги ", "href": "/web-hosting" }
+  ],
+  "links": [
+    { "label": "Блог", "href": "/blog" },
+    { "label": "О компании", "href": "/about" }
+  ],
+  "contact": { "label": "Заказать консультацию", "href": "/contact" }
+}

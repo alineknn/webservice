@@ -4,8 +4,9 @@ import { cva } from "class-variance-authority";
 const buttonClasses = cva("border h-12 px-6 font-medium", {
   variants: {
     variant: {
-      primary: "bg-blue-400 text-neutral-950 border-blue-400 rounded-full",
-      secondary: "border-white rounded-full",
+      teal: "bg-[#74C2CD] text-white rounded-md",
+      purple: "bg-[#746FAE] rounded-md",
+      black: "bg-[#000000] text-white rounded-md",
       squarePrimary: "bg-blue-400 text-neutral-950 border-blue-400 rounded-none",
       squareSecondary: "border-white rounded-none",
     },
@@ -14,12 +15,12 @@ const buttonClasses = cva("border h-12 px-6 font-medium", {
     },
   },
   defaultVariants: {
-    variant: "primary",
+    variant: "teal",
   },
 });
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "squarePrimary" | "squareSecondary";
+  variant?: "teal" | "purple" |"black"| "squarePrimary" | "squareSecondary";
   size?: "sm";
 }
 

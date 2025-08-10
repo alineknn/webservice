@@ -1,0 +1,30 @@
+{
+  "title": "What our clients say",
+  "autoplayMs": 7000,
+  "reviews": [
+    {
+      "quote": "Migrating to WEBSERVICE infrastructure significantly improved our stability and simplified server maintenance. Great service and fast support!",
+      "name": "Alexey Ivanov",
+      "role": "Technical Director",
+      "company": "Webflow"
+    },
+    {
+      "quote": "We shipped faster than planned. Simple panel, transparent pricing, and everything runs predictably.",
+      "name": "Maria Petrova",
+      "role": "CTO",
+      "company": "Acme Corp"
+    },
+    {
+      "quote": "Reliability and speed are impressive. Support responds instantly and to the point—rare on the market.",
+      "name": "Dmitry Kim",
+      "role": "Head of Engineering",
+      "company": "Startup KG"
+    },
+    {
+      "quote": "Convenient backups, monitoring, and excellent performance. We're happy with the choice.",
+      "name": "Aizhan Sadykova",
+      "role": "Product Lead",
+      "company": "CommercePro"
+    }
+  ]
+}

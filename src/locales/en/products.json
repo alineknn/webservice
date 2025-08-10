@@ -1,0 +1,34 @@
+{
+  "badge": "Services",
+  "title": "Our Products",
+  "subtitle": "From simple site hosting to enterprise-grade infrastructure rental solutions.",
+  "usp": "No bandwidth limits, 99.9% uptime guaranteed",
+  "items": [
+    {
+      "slug": "/vps-hosting",
+      "title": "VPS Hosting",
+      "description": "Dedicated CPU/RAM/SSD or HDD, OS choice, plus easy monitoring and charts.",
+      "priceLabel": "from 500 KGS",
+      "perMonth": "per month",
+      "fitNote": "Great for startups",
+      "ctaLabel": "Learn more"
+    },
+    {
+      "slug": "/web-hosting",
+      "title": "Web Hosting",
+      "description": "Perfect for .KG sites with an easy control panel and automated backups.",
+      "priceLabel": "from 6000 KGS",
+      "perMonth": "per month",
+      "fitNote": "Great for startups",
+      "ctaLabel": "Learn more"
+    },
+    {
+      "slug": "/ssl-certificates",
+      "title": "SSL Certificates",
+      "description": "Security foundation for your project. We’ll help select, install, and configure.",
+      "priceLabel": "from 0 KGS",
+      "perMonth": "per month",
+      "ctaLabel": "Learn more"
+    }
+  ]
+}

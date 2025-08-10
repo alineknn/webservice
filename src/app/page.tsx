@@ -3,28 +3,32 @@ import Hero from '@/components/HeroSection'
 import LogoTicker from '@/components/LogoTicker';
 import Features from '@/components/Features';
 import Faqs from '@/components/Faqs';
-import CallToAction from '@/components/CallToActions';
-import Footer from '@/components/Footer';
-
+import AdvantagesSection from '@/components/Advantages';
+import ProductsSection from '@/components/Products';
+import Services from '@/components/Services';
+import HowToStart from '@/components/HowToStart';
+import Reviews from '@/components/Reviews';
+import Contact from '@/components/Contact';
+import Blog from '@/components/Blog';
+import FooterComponent from '@/components/FooterComponent';
 export default function Home() {
   return (
-    <>  
-      <div id="Home">
-        <Navbar />
-      </div>
+    <>
       <Hero />
-
+      {/**
       <div id="Features">
         <Features></Features>
       </div>
-            <LogoTicker />
-      <div id="Faq">
-        <Faqs />
+       */}
+      <div>
+        <AdvantagesSection></AdvantagesSection>
       </div>
-      <div id="CTA">
-        <CallToAction></CallToAction>
-      </div>
-      <Footer></Footer>
+      <Services></Services>
+      <ProductsSection></ProductsSection>
+      <HowToStart></HowToStart>
+      <Reviews></Reviews>
+      <Contact></Contact>
+      <Blog></Blog>
     </>
   );
 }

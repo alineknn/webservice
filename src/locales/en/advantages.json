@@ -1,0 +1,28 @@
+
+{
+  "advantages": {
+    "title": "Advantages of Our Solutions",
+    "items": [
+      "Servers located in Kyrgyzstan",
+      "100% compliance with modern data storage requirements",
+      "Maximum speed in the .KG zone",
+      "Intuitive ISPsystem control panel",
+      "Support in Russian and Kyrgyz languages",
+      "Affordable plans with unlimited traffic"
+    ]
+  },
+  "audience": {
+    "title": "Who Our Solutions Are For",
+    "items": [
+      "Organizations needing local data storage",
+      "IT teams, developers, and startups",
+      "E-commerce projects",
+      "Businesses with CRM/ERP (1C, Bitrix24, etc.)",
+      "Anyone requiring reliable data storage: surveillance, backups, databases"
+    ]
+  },
+  "blurb": {
+    "title": "Additional Capabilities",
+    "text": "For anyone needing dev environments, staging servers, API/back-end deployments, and VPN or proxy setups. We provide dedicated servers for hosting software, sites, and applications with flexible configuration, high reliability, and local data hosting. Infrastructure powered by ISPsystem.ru."
+  }
+}

@@ -1,65 +1,70 @@
+"use client";
+import Link from "next/link";
 import Button from "./Button";
-import Image from "next/image";
-import exampleImage from '@/assets/images/cavis logo.png'
-import exampleImage2 from '@/assets/images/cavis logo2.png'
-import Pointer from "./Pointer";
-
-
+import { useRouter } from "next/navigation";
+import ru from "@/locales/ru/hero.json";
+import en from "@/locales/en/hero.json";
+import Image from 'next/image';
+import heroImage from '@/assets/images/map of kg.png';
 
 export default function Hero() {
-    return (
-        <section className="py-16 px-4 md:px-8 lg:px-16 overflow-x-clip">
-            <div className="relative">
-                {/** Logo Images  
-                 * <div className="absoulte -left32 top-16 hidden lg:block">
-                    <Image
-                        src={exampleImage}
-                        alt="Example Image 1"></Image>
-                </div>
-                <div className="absolute -right-64 -top-16 hidden lg:block">
-                    <Image
-                        src={exampleImage2}
-                        alt="Example Image 2"></Image>
-                </div>
-                 */}
-                {/**  Cursor Pointers
-                 * 
-                 * <div className="absolute left-56 top-96 hidden lg:block">
-                    <Pointer text='Text'></Pointer>
-                </div>
-                <div className="absolute right-80 -top-4 hidden lg:block">
-                    <Pointer text='Text2' color="red"></Pointer>
-                </div>
+  const router = useRouter();
+  const locale = router.locale ?? "ru";
+  const t = locale === "en" ? en : ru;
 
-                <div className="flex justify-center">
-                    <div className="inline-flex py-1 px-3 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full text-neutral-950 font-semibold">
-                        10 examples services provided</div>
-                </div> */}
-                <h1 className="text-7xl md:text-8xl lg:text-9xl font-medium text-center mt-6">The hub for all your administration</h1>
-                {/**<p className="text-center text-xl text-white/50 mt-8 max-w-2xl mx-auto">
-                    Create tools that shouldn't slow you down. Lorem Ipsum awdwadwadwa</p>*/}
+  return (
+    <section
+      id="Home"
+      className="py-4 lg:py-8 px-4 md:px-8 lg:px-16"
+    >
+      <div className="max-w-7xl mx-auto text-center">
+        {/* Main headline */}
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight">
+          {Array.isArray(t.headlineParts)
+            ? t.headlineParts.map((part, idx) => (
+                <span key={idx} className={
+                  idx === 0 ? "text-[#74C2CD]" : idx === 2 ? "text-[#746FAE]" : ""
+                }>
+                  {part}
+                </span>
+              ))
+            : t.headline}
+        </h1>
 
-                <div className="py-12 flex justify-center gap-4">
-                    <Button
-                        type="submit"
-                        variant="squarePrimary"
-                        size="sm"
-                        className="h-16 px-8 text-lg"
-                    >
-                        Buy
-                    </Button>
+        {/* Subtitle */}
+        <p className="mt-4 text-lg md:text-xl text-blue/50">
+          {t.subtitle}
+        </p>
 
-                    <Button
-                        type="submit"
-                        variant="squareSecondary"
-                        size="sm"
-                        className="h-16 px-8 text-lg"
-                    >
-                        Try Now
-                    </Button>
-                </div>
-
-            </div>
-        </section>
-    );
-} 
+        {/* CTAs */}
+        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+          <Link href="/vps-hosting">
+            <Button variant="teal" size="md" className="px-8">
+              {t.cta.vps}
+            </Button>
+          </Link>
+          <Link href="/web-hosting">
+            <Button variant="purple" size="md" className="px-8">
+              {t.cta.web}
+            </Button>
+          </Link>
+          <Link href="/ssl-certificates">
+            <Button variant="black" size="md" className="px-8">
+              {t.cta.ssl}
+            </Button>
+          </Link>
+        </div>
+      </div>
+      {/* Hero illustration */}
+      <div className="mt-12 flex justify-center">
+        <Image
+          src={heroImage}
+          alt="Hero illustration"
+          width={1600}
+          height={900}
+          className="w-full max-w-[1600px] aspect-video object-cover rounded-xl"
+        />
+      </div>
+    </section>
+  );
+}

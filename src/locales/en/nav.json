@@ -1,0 +1,16 @@
+{
+  "logoAlt": "Home",
+  "servicesMenu": "Services & Solutions",
+  "servicesItems": [
+    { "label": "VPS Hosting", "href": "/vps-hosting" },
+    { "label": "VPS for 1C & Bitrix", "href": "/vps-1c-bitrix" },
+    { "label": "Game Server Hosting", "href": "/game-hosting" },
+    { "label": "Web Hosting", "href": "/web-hosting" },
+    { "label": "SSL Certificates", "href": "/ssl-certificates" }
+  ],
+  "links": [
+    { "label": "Blog", "href": "/blog" },
+    { "label": "About Us", "href": "/about" }
+  ],
+  "contact": { "label": "Contact Us", "href": "/contact" }
+}

@@ -1,0 +1,29 @@
+{
+  "badge": "News & Knowledge",
+  "title": "Latest posts from our blog",
+  "subtitle": "Explore updates about the company, products, solutions, and helpful guides.",
+  "viewAll": "View all",
+  "posts": [
+    {
+      "slug": "choose-hosting-for-your-business",
+      "tag": "Tech",
+      "title": "How to choose hosting for your business",
+      "excerpt": "Practical tips to pick reliable hosting for startups and growing teams.",
+      "image": "/assets/images/blog/cover-1.jpg"
+    },
+    {
+      "slug": "top-5-security-tips",
+      "tag": "Updates",
+      "title": "Top 5 tips to keep your data secure",
+      "excerpt": "Protect your data on the internet and avoid the most common leaks.",
+      "image": "/assets/images/blog/cover-2.jpg"
+    },
+    {
+      "slug": "benefits-of-cloud-hosting",
+      "tag": "Security",
+      "title": "Benefits of cloud hosting for business",
+      "excerpt": "Cloud hosting brings flexibility and scalability to your projects.",
+      "image": "/assets/images/blog/cover-3.jpg"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "badge": "Start",
+  "title": "How to start using WEBSERVICE?",
+  "subtitle": "No friction: launch the service you need in minutes. We made the process simple and clear.",
+  "steps": [
+    {
+      "icon": "search",
+      "title": "Choose the right product",
+      "text": "VPS, web hosting, SSL, or dedicated servers — everything your project needs.",
+      "tone": "none"
+    },
+    {
+      "icon": "pay",
+      "title": "Sign up and pay online",
+      "text": "Pay by bank card, QR, or via your account dashboard — fast and convenient.",
+      "tone": "none"
+    },
+    {
+      "icon": "access",
+      "title": "Get access and start using",
+      "text": "All credentials arrive by email right after activation. Hosting is ready instantly.",
+      "tone": "blue"
+    }
+  ]
+}

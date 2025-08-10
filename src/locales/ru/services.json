@@ -1,0 +1,44 @@
+{
+  "badge": "Услуги",
+  "title": "Кому подходят наши решения",
+  "subtitle": "Наши услуги идеальны для разных бизнес-сценариев. Мы поддерживаем команды разработчиков, стартапы и компании с 1C/ERP, обеспечивая надёжность и скорость.",
+  "items": [
+    {
+      "title": "E-commerce проекты",
+      "description": "Стабильная работа интернет-магазинов и высокие конверсии за счёт локальной инфраструктуры и быстрого отклика.",
+      "image": "/assets/images/services/ecommerce.png",
+      "variant": "plain"
+    },
+    {
+      "title": "Бизнесы с CRM/ERP системами (1C, Bitrix24 и др.)",
+      "description": "Выделенные ресурсы под ваши системы: стабильность, безопасность и предсказуемая производительность.",
+      "image": "/assets/images/services/erp.png",
+      "variant": "plain"
+    },
+    {
+      "title": "IT-команды, разработчики и стартапы",
+      "description": "Dev/stage окружения, автоматизация деплоя, API и микросервисы на локальных серверах.",
+      "image": "/assets/images/services/dev.png",
+      "variant": "plain"
+    },
+    {
+      "title": "Организации с требованиями локального хранения данных",
+      "description": "Соответствие требованиям локализации данных и безопасности в пределах КР.",
+      "image": "/assets/images/services/local-data.png",
+      "variant": "plain"
+    },
+    {
+      "eyebrow": "Всегда на связи",
+      "title": "Для хранения данных: видео, бэкапы, базы",
+      "description": "Резервное копирование, хранение массивов данных, быстрый доступ и стабильность.",
+      "image": "/assets/images/services/storage.png",
+      "variant": "teal"
+    },
+    {
+      "title": "И не только!",
+      "description": "VPN, прокси, приватные репозитории, CI/CD, API-шлюзы и много другое. ПО и панель управления — ISPsystem.",
+      "image": "/assets/images/services/and-more.png",
+      "variant": "purple"
+    }
+  ]
+}

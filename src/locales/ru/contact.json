@@ -1,0 +1,33 @@
+{
+  "badge": "Свяжитесь",
+  "title": "Нужна помощь или консультация?",
+  "intro": "Мы готовы ответить на ваши вопросы и помочь. Оставьте заявку или напишите нам:",
+
+  "emailLabel": "Email",
+  "phoneLabel": "Телефон",
+  "addressLabel": "Адрес",
+
+  "form": {
+    "name": "Имя",
+    "phone": "Телефон",
+    "email": "Email",
+    "message": "Сообщение",
+    "messagePlaceholder": "Введите ваше сообщение...",
+    "whatsappOpt": "Связаться по WhatsApp",
+    "telegramOpt": "Связаться в Telegram",
+    "submit": "Отправить"
+  },
+
+  "links": {
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram"
+  },
+
+  "company": {
+    "email": "hello@webservice.kg",
+    "phone": "+996 555 000 000",
+    "address": "ул. Примерная 123, Бишкек, Кыргызстан",
+    "whatsappUrl": "https://wa.me/996555000000",
+    "telegramUrl": "https://t.me/webservicekg"
+  }
+}

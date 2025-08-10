@@ -1,0 +1,44 @@
+{
+  "badge": "Services",
+  "title": "Who our solutions are for",
+  "subtitle": "Our platform fits many scenarios: developers, startups, and companies with 1C/ERP. We deliver reliability and speed with local infrastructure.",
+  "items": [
+    {
+      "title": "E-commerce projects",
+      "description": "Keep online stores fast and stable thanks to local servers and low latency.",
+      "image": "/assets/images/services/ecommerce.png",
+      "variant": "plain"
+    },
+    {
+      "title": "Businesses with CRM/ERP (1C, Bitrix24, etc.)",
+      "description": "Dedicated resources for your systems: stability, security, and predictable performance.",
+      "image": "/assets/images/services/erp.png",
+      "variant": "plain"
+    },
+    {
+      "title": "IT teams, developers, and startups",
+      "description": "Dev/stage environments, automated deployment, APIs and microservices on local servers.",
+      "image": "/assets/images/services/dev.png",
+      "variant": "plain"
+    },
+    {
+      "title": "Organizations requiring local data storage",
+      "description": "Meet localization and security requirements within the Kyrgyz Republic.",
+      "image": "/assets/images/services/local-data.png",
+      "variant": "plain"
+    },
+    {
+      "eyebrow": "Always on",
+      "title": "For data storage: video, backups, databases",
+      "description": "Reliable backups, large data sets and fast access on stable local infra.",
+      "image": "/assets/images/services/storage.png",
+      "variant": "teal"
+    },
+    {
+      "title": "And more",
+      "description": "VPN, proxies, private repos, CI/CD, API gateways and more. Powered by ISPsystem.",
+      "image": "/assets/images/services/and-more.png",
+      "variant": "purple"
+    }
+  ]
+}

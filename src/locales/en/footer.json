@@ -1,0 +1,50 @@
+{
+  "about": {
+    "title": "About",
+    "text": "Hosting and VPS/VDS with local servers in Kyrgyzstan. Launch quickly and rely on 24/7 support.",
+    "partnershipNote": "Official ISPsystem.ru partner in Kyrgyzstan.",
+    "datacenterNote": "Servers are hosted at the NSP.KG data center."
+  },
+  "nav": {
+    "title": "Navigation",
+    "items": [
+      { "label": "Home", "href": "/" },
+      { "label": "Blog", "href": "/blog" },
+      { "label": "About", "href": "/about" },
+      { "label": "Contact", "href": "/contact" }
+    ]
+  },
+  "services": {
+    "title": "Services & Solutions",
+    "items": [
+      { "label": "VPS Hosting", "href": "/vps-hosting" },
+      { "label": "VPS for 1C & Bitrix", "href": "/vps-1c-bitrix" },
+      { "label": "Game Server Hosting", "href": "/game-hosting" },
+      { "label": "Web Hosting", "href": "/web-hosting" },
+      { "label": "SSL Certificates", "href": "/ssl-certificates" }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "hello@webservice.kg",
+    "phone": "+996 700 997 779",
+    "address": "123 Primernaya St, Bishkek, Kyrgyzstan",
+    "telegram": "https://t.me/webservicekg",
+    "whatsapp": "https://api.whatsapp.com/send/?phone=996700997779"
+  },
+  "social": {
+    "title": "Social",
+    "items": [
+      { "label": "Telegram", "href": "https://t.me/webservicekg" },
+      { "label": "Instagram", "href": "#" },
+      { "label": "Facebook", "href": "#" }
+    ]
+  },
+  "legal": {
+    "copyrightPrefix": "©",
+    "items": [
+      { "label": "Privacy Policy", "href": "/privacy" },
+      { "label": "Terms & Conditions", "href": "/terms" }
+    ]
+  }
+}

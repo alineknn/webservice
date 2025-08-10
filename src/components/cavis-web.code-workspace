@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../alibek_prl-disp-service"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "cavis-web"
+	}
+}
