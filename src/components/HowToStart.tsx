@@ -62,14 +62,14 @@ export default function HowToStart() {
         </div>
 
         {/* Steps */}
-        <div className="mt-[80px] grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="mt-[80px] grid grid-cols-1 gap-8 md:[grid-template-columns:repeat(3,405px)] md:justify-between">
           {t.steps.map((s, i) => {  
             const bg = i === 0 ? 'bg-[#F2F2F3]' : i === 1 ? 'bg-[#FDFFFF]' : 'bg-[#EFF4F9]';
             const size = i === 1 ? 48 : 42;
             const sizeClass = i === 1 ? "w-[48px] h-[48px]" : "w-[42px] h-[42px]";
             return (
               <article
-                className={`rounded-lg border border-[rgba(0,13,13,0.15)] ${bg} h-full min-h-[280px] pl-[32px] pt-[44px] pr-[32px] pb-[32px]`}
+                className={`rounded-lg border border-[rgba(0,13,13,0.15)] ${bg} w-[405px] h-[296px] pl-[32px] pt-[44px] pr-[32px] pb-[32px]`}
                 key={`${s.title}-${i}`}
               >
                 <div className="flex flex-col items-start text-left">
@@ -81,7 +81,7 @@ export default function HowToStart() {
                     className={`${sizeClass} object-contain`}
                     priority={i === 0}
                   />
-                  <div className="mt-6 w-[342px] h-[78px]">
+                  <div className="mt-6 w-[341px] h-[78px]">
                     <h3 className="text-[28px] font-normal font-['Helvetica'] leading-snug">
                       {s.title}
                     </h3>
