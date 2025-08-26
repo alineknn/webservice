@@ -58,7 +58,7 @@ export default function Services() {
   };
 
   const imageSpec: Record<number, { w: number; h: number; left?: number; top?: number; right?: number; bottom?: number }> = {
-    0: { w: 458, h: 458, left: 120, top: 284 },
+    0: { w: 458, h: 458, left: 140, top: 284 },
     1: { w: 550, h: 550, left: 80, top: 335 },
     2: { w: 324, h: 324, left: 174, top: 290 },
     3: { w: 377, h: 377, right: 215, top: 289 },
