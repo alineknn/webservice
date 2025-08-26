@@ -1,11 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import {
-  MagnifyingGlassIcon,
-  CreditCardIcon,
-  LockClosedIcon,
-} from "@heroicons/react/24/solid";
+import Image from "next/image";
+import searchIcon from "@/assets/images/Search.png";
+import cardIcon from "@/assets/images/Card.png";
+import lockIcon from "@/assets/images/Lock.png";
 
 import en from "@/locales/en/how_to_start.json";
 import ru from "@/locales/ru/how_to_start.json";
@@ -26,10 +25,10 @@ type LocaleBlock = {
   steps: Step[];
 };
 
-const IconMap = {
-  search: MagnifyingGlassIcon,
-  pay: CreditCardIcon,
-  access: LockClosedIcon,
+const iconMap: Record<Step["icon"], any> = {
+  search: searchIcon,
+  pay: cardIcon,
+  access: lockIcon,
 };
 
 export default function HowToStart() {
@@ -37,51 +36,57 @@ export default function HowToStart() {
   const t = (locale === "en" ? en : ru) as LocaleBlock;
 
   return (
-    <section id="how-to-start" className="py-24 px-4 md:px-6 lg:px-8">
-      <div className="mx-auto max-w-screen-2xl px-0">
+    <section id="how-to-start" className="pt-[112px] pb-[80px]">
+      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 min-[1440px]:px-[80px]">
         {/* Header */}
         <div className="flex flex-col items-center">
           {t.badge ? (
-            <span className="inline-block mb-2 text-center text-base font-bold">
+            <span className="inline-block mb-2 text-center text-[16px] font-normal font-['Helvetica']">
               {t.badge}
             </span>
           ) : null}
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-center">
-            {t.title}
-          </h2>
+          <div className="w-[758px] h-[124px] mx-auto flex items-center justify-center">
+            <h2 className="text-[52px] font-normal font-['Helvetica'] leading-tight text-center">
+              {t.title}
+            </h2>
+          </div>
 
           {t.subtitle ? (
-            <p className="mt-4 text-center text-black max-w-2xl mx-auto text-lg">
-              {t.subtitle}
-            </p>
+            <div className="mt-4 w-[562px] h-[52px] mx-auto flex items-center justify-center">
+              <p className="text-[18px] font-normal font-['Avenir Next'] text-center text-black">
+                {t.subtitle}
+              </p>
+            </div>
           ) : null}
         </div>
 
         {/* Steps */}
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-          {t.steps.map((s, i) => {
-            const Icon = IconMap[s.icon];
-            let bgColor = "";
-            if (i === 0) {
-              bgColor = "bg-[#F2F2F3]";
-            } else if (i === 1) {
-              bgColor = "bg-[#FDFFFF]";
-            } else if (i === 2) {
-              bgColor = "bg-[#EFF4F9]";
-            }
-
+        <div className="mt-[80px] grid grid-cols-1 gap-8 md:grid-cols-3">
+          {t.steps.map((s, i) => {  
+            const bg = i === 0 ? 'bg-[#F2F2F3]' : i === 1 ? 'bg-[#FDFFFF]' : 'bg-[#EFF4F9]';
+            const size = i === 1 ? 48 : 42;
+            const sizeClass = i === 1 ? "w-[48px] h-[48px]" : "w-[42px] h-[42px]";
             return (
               <article
+                className={`rounded-lg border border-[rgba(0,13,13,0.15)] ${bg} h-full min-h-[280px] pl-[32px] pt-[44px] pr-[32px] pb-[32px]`}
                 key={`${s.title}-${i}`}
-                className={`rounded-xl p-10 h-full min-h-[280px] ${bgColor}`}
               >
                 <div className="flex flex-col items-start text-left">
-                  <Icon className="h-16 w-16 text-black" />
-                  <h3 className="mt-6 text-2xl leading-snug">
-                    {s.title}
-                  </h3>
-                  <p className="mt-2 text-lg line-clamp-2">{s.text}</p>
+                  <Image
+                    src={iconMap[s.icon]}
+                    alt={s.title}
+                    width={size}
+                    height={size}
+                    className={`${sizeClass} object-contain`}
+                    priority={i === 0}
+                  />
+                  <div className="mt-6 w-[342px] h-[78px]">
+                    <h3 className="text-[28px] font-normal font-['Helvetica'] leading-snug">
+                      {s.title}
+                    </h3>
+                  </div>
+                  <p className="mt-2 text-[16px] font-normal font-['Avenir Next']">{s.text}</p>
                 </div>
               </article>
             );

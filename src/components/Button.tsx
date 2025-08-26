@@ -1,12 +1,12 @@
 import { ButtonHTMLAttributes } from "react";
 import { cva } from "class-variance-authority";
 
-const buttonClasses = cva("border h-12 px-6 font-medium", {
+const buttonClasses = cva("border w-[310px] h-[64px] px-6 text-[18px]", {
   variants: {
     variant: {
-      teal: "bg-[#74C2CD] text-white rounded-md",
-      purple: "bg-[#746FAE] rounded-md",
-      black: "bg-[#000000] text-white rounded-md",
+      teal: "bg-[#74C2CD] text-white rounded-xl",
+      purple: "bg-[#746FAE] text-white rounded-xl",
+      black: "bg-[#000000] text-white rounded-xl",
       squarePrimary: "bg-blue-400 text-neutral-950 border-blue-400 rounded-none",
       squareSecondary: "border-white rounded-none",
     },

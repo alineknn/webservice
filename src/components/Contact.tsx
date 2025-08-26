@@ -7,8 +7,11 @@ import {
   PhoneIcon,
   MapPinIcon,
 } from "@heroicons/react/24/outline";
-import { ChatBubbleLeftRightIcon } from "@heroicons/react/24/solid";
 import Button from "@/components/Button";
+import Image from "next/image";
+import contactBg from "@/assets/images/contact background.jpg";
+import whatsappIcon from "@/assets/images/Whatsapp.png";
+import telegramIcon from "@/assets/images/Telegram.png";
 
 import en from "@/locales/en/contact.json";
 import ru from "@/locales/ru/contact.json";
@@ -59,32 +62,38 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 px-4 md:px-6 lg:px-8">
-      <div className="mx-auto max-w-screen-2xl">
-        {/* Header */}
-        <div className="mb-10">
-          <span className="inline-block mb-3 rounded-full px-3 py-1 text-base font-bold">
-            {t.badge}
-          </span>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl tracking-tight">
-            {t.title}
-          </h2>
-          <p className="mt-4 text-lg md:text-xl text-black/70 max-w-lg">
-            {t.intro}
-          </p>
-        </div>
-
+    <section id="contact" className="pt-[112px] pb-[80px] relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={contactBg}
+          alt="Contact background"
+          fill
+          className="object-cover opacity-25"
+          priority
+        />
+      </div>
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-4 sm:px-6 min-[1440px]:px-[80px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left column: static info */}
           <div className="space-y-6">
-            <div className="space-y-2">
+            {/* Moved header into left column */}
+            <div>
+              <span className="inline-block mb-4 text-[16px] font-bold font-['Helvetica']">{t.badge}</span>
+              <div className="max-w-[600px]">
+                <h2 className="text-[52px] font-normal font-['Helvetica'] tracking-tight leading-[1.2]">{t.title}</h2>
+              </div>
+              <div className="mt-6 max-w-[437px]">
+                <p className="text-[18px] font-normal font-['Avenir Next'] text-black">{t.intro}</p>
+              </div>
+            </div>
+
+            <div className="mt-10 space-y-4">
               <div className="flex items-start gap-3">
                 <EnvelopeIcon className="h-6 w-6 text-black/60" />
                 <div>
-                  <div className="text-sm text-black/60">{t.emailLabel}</div>
                   <Link
                     href={`mailto:${t.company.email}`}
-                    className="hover:underline"
+                    className="hover:underline font-['Avenir Next'] text-[16px]"
                   >
                     {t.company.email}
                   </Link>
@@ -94,8 +103,7 @@ export default function Contact() {
               <div className="flex items-start gap-3">
                 <PhoneIcon className="h-6 w-6 text-black/60" />
                 <div>
-                  <div className="text-sm text-black/60">{t.phoneLabel}</div>
-                  <a href={`tel:${t.company.phone}`} className="hover:underline">
+                  <a href={`tel:${t.company.phone}`} className="hover:underline font-['Avenir Next'] text-[16px]">
                     {t.company.phone}
                   </a>
                 </div>
@@ -103,31 +111,28 @@ export default function Contact() {
 
               <div className="flex items-start gap-3">
                 <MapPinIcon className="h-6 w-6 text-black/60" />
-                <div>
-                  <div className="text-sm text-black/60">{t.addressLabel}</div>
-                  <div>{t.company.address}</div>
-                </div>
+                <div className="font-['Avenir Next'] text-[16px]">{t.company.address}</div>
               </div>
             </div>
 
             {/* Messengers */}
-            <div className="space-y-3 pt-6">
+            <div className="mt-4 flex flex-col space-y-2">
               <Link
                 href={t.company.whatsappUrl}
                 target="_blank"
-                className="inline-flex items-center gap-3 rounded-lg bg-[#25D366]/10 px-3 py-2 hover:bg-[#25D366]/20 transition"
+                className="inline-flex items-center gap-3"
               >
-                <ChatBubbleLeftRightIcon className="h-6 w-6 text-[#25D366]" />
-                <span className="font-medium">{t.links.whatsapp}</span>
+                <Image src={whatsappIcon} alt="WhatsApp" width={57} height={57} className="w-[57px] h-[57px] object-contain" />
+                <span className="font-normal underline font-['Avenir Next'] text-[16px]">{t.links.whatsapp}</span>
               </Link>
 
               <Link
                 href={t.company.telegramUrl}
                 target="_blank"
-                className="inline-flex items-center gap-3 rounded-lg bg-[#24A1DE]/10 px-3 py-2 hover:bg-[#24A1DE]/20 transition"
+                className="inline-flex items-center gap-3"
               >
-                <ChatBubbleLeftRightIcon className="h-6 w-6 text-[#24A1DE]" />
-                <span className="font-medium">{t.links.telegram}</span>
+                <Image src={telegramIcon} alt="Telegram" width={57} height={57} className="w-[57px] h-[57px] object-contain" />
+                <span className="font-normal underline font-['Avenir Next'] text-[16px]">{t.links.telegram}</span>
               </Link>
             </div>
           </div>
@@ -135,9 +140,9 @@ export default function Contact() {
           {/* Right column: form */}
           <form
             onSubmit={handleSubmit}
-            className="rounded-2xl bg-white/90 ring-1 ring-black/5 shadow-sm p-6 md:p-8"
+            className="bg-transparent p-0"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6">
               <div>
                 <label className="block text-sm text-black/60 mb-1">
                   {t.form.name}
@@ -145,7 +150,7 @@ export default function Contact() {
                 <input
                   name="name"
                   required
-                  className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-[#746FAE]/40"
+                  className="w-full rounded-lg bg-transparent border-none px-0 py-0 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40"
                   placeholder="John Doe"
                 />
               </div>
@@ -156,12 +161,12 @@ export default function Contact() {
                 </label>
                 <input
                   name="phone"
-                  className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-[#746FAE]/40"
+                  className="w-full rounded-lg bg-transparent border-none px-0 py-0 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40"
                   placeholder="+996 555 000 000"
                 />
               </div>
 
-              <div className="md:col-span-2">
+              <div>
                 <label className="block text-sm text-black/60 mb-1">
                   {t.form.email}
                 </label>
@@ -169,19 +174,19 @@ export default function Contact() {
                   type="email"
                   name="email"
                   required
-                  className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-[#746FAE]/40"
+                  className="w-full rounded-lg bg-transparent border-none px-0 py-0 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40"
                   placeholder="you@example.com"
                 />
               </div>
 
-              <div className="md:col-span-2">
+              <div>
                 <label className="block text-sm text-black/60 mb-1">
                   {t.form.message}
                 </label>
                 <textarea
                   name="message"
                   rows={6}
-                  className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-[#746FAE]/40"
+                  className="w-full rounded-lg bg-transparent border-none px-0 py-0 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40"
                   placeholder={t.form.messagePlaceholder}
                 />
               </div>
@@ -199,7 +204,7 @@ export default function Contact() {
             </div>
 
             <div className="mt-8">
-              <Button variant="teal" size="sm" type="submit" className="px-6">
+              <Button type="submit" className="bg-[#74C2CD] text-white !w-[108px] !h-[36px] text-[16px] font-['Avenir Next'] inline-flex items-center justify-center">
                 {t.form.submit}
               </Button>
             </div>

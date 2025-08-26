@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "title": "Rent VPS/VDS with local data storage 🇰🇬",
+    "subtitle": "Run CRMs, websites, APIs, databases and apps on secure servers in Kyrgyzstan with 24/7 support.",
+    "ctaPrimary": "Try for free",
+    "ctaSecondary": "Choose a plan",
+    "imageAlt": "VPS illustration with Kyrgyzstan map"
+  },
+  "advantages": {
+    "heading": "Advantages",
+    "top": {
+      "big": {
+        "icon": "/icons/ssd-badge.png",
+        "title": "High‑performance SSD storage",
+        "text": "New SSD IO drives deliver high IOPS and reliability — ideal for high‑load apps up to 75,000 IOPS per disk."
+      },
+      "mid": {
+        "icon": "/icons/uptime.png",
+        "title": "UPTIME guarantee 99.9%",
+        "text": "Modern datacenter with dry cooling and a backup generator in case of power outage."
+      },
+      "right": {
+        "icon": "/icons/isp.png",
+        "title": "Flexible control by ISPsystem",
+        "text": "Scalable virtualization platform with the features you need."
+      }
+    },
+    "bottom": {
+      "left": {
+        "icon": "/icons/secure.png",
+        "title": "Secure data storage",
+        "text": "Data encrypted at rest and compliant with ISO & PCI DSS standards."
+      },
+      "mid": {
+        "icon": "/icons/scale.png",
+        "title": "Fast scaling",
+        "text": "Need more resources as you grow? Scale up easily at great prices."
+      },
+      "big": {
+        "icon": "/icons/billing.png",
+        "title": "Transparent pricing",
+        "text": "No hidden fees and no bandwidth limits. Clear billing and control panel."
+      }
+    }
+  }
+}

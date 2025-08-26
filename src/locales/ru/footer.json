@@ -1,43 +1,41 @@
 {
-  "about": {
-    "title": "О компании",
-    "text": "Хостинг и VPS/VDS с локальными серверами в Кыргызстане. Помогаем быстро запускать проекты и поддерживаем 24/7.",
-    "partnershipNote": "Официальный партнёр ISPsystem.ru в Кыргызстане.",
-    "datacenterNote": "Серверы расположены в дата-центре NSP.KG."
+  "brand": { "logoAlt": "WEBSERVICE.KG" },
+  "company": {
+    "title": "Адрес компании",
+    "addressLines": ["ул. Примерная 123", "Бишкек, Кыргызстан"],
+    "email": "hello@webservice.kg",
+    "phone": "+996 700 997 779"
   },
-  "nav": {
-    "title": "Навигация",
-    "items": [
-      { "label": "Главная", "href": "/" },
-      { "label": "Блог", "href": "/blog" },
-      { "label": "О компании", "href": "/about" },
-      { "label": "Контакты", "href": "/contact" }
-    ]
-  },
-  "services": {
-    "title": "Услуги и решения",
-    "items": [
-      { "label": "VPS-хостинг", "href": "/vps-hosting" },
-      { "label": "VPS для 1С и Битрикс", "href": "/vps-1c-bitrix" },
-      { "label": "Хостинг игровых серверов", "href": "/game-hosting" },
-      { "label": "WEB-хостинг", "href": "/web-hosting" },
-      { "label": "SSL-сертификаты", "href": "/ssl-certificates" }
-    ]
-  },
-  "contact": {
+  "contacts": {
     "title": "Контакты",
     "email": "hello@webservice.kg",
     "phone": "+996 700 997 779",
-    "address": "ул. Примерная 123, Бишкек, Кыргызстан",
-    "telegram": "https://t.me/webservicekg",
-    "whatsapp": "https://api.whatsapp.com/send/?phone=996700997779"
+    "messengers": [
+      { "label": "Telegram", "href": "https://t.me/webservicekg" },
+      { "label": "WhatsApp", "href": "https://api.whatsapp.com/send/?phone=996700997779" }
+    ]
+  },
+  "links": {
+    "title": "Ссылки",
+    "items": [
+      { "label": "Главная", "href": "/" },
+      { "label": "Блог", "href": "/blog" },
+      { "label": "Цены", "href": "/pricing" },
+      { "label": "FAQ", "href": "/faq" }
+    ]
+  },
+  "subscribe": {
+    "title": "Подписаться",
+    "text": "Подпишитесь на нашу рассылку, чтобы быть в курсе новинок.",
+    "placeholder": "Введите ваш email",
+    "buttonLabel": "Подписаться",
+    "consent": "Нажимая «Подписаться», вы соглашаетесь с Политикой конфиденциальности."
   },
   "social": {
-    "title": "Мы в соцсетях",
     "items": [
-      { "label": "Telegram", "href": "https://t.me/webservicekg" },
-      { "label": "Instagram", "href": "#" },
-      { "label": "Facebook", "href": "#" }
+      { "label": "Facebook", "href": "#" },
+      { "label": "X", "href": "#" },
+      { "label": "Instagram", "href": "#" }
     ]
   },
   "legal": {

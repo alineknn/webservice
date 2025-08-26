@@ -7,9 +7,11 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
 import Button from '@/components/Button';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import { PhoneIcon } from '@heroicons/react/24/outline';
+import callIcon from '@/assets/images/call.png';
 import ru from '@/locales/ru/nav.json';
 import en from '@/locales/en/nav.json';
-import logoImage from '@/assets/images/webservice_logo1.png';
+import logoImage from '@/assets/images/webservice logo.png';
 
 export default function Navbar() {
   const { locale } = useRouter();
@@ -18,50 +20,60 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="py-4 px-2 lg:py-8 fixed w-full top-0 z-50">
-        <div className="px-4 md:px-8 lg:px-16">
-          <div className="border border-gray/15 bg-[#f5f4f4]-950/70 backdrop-blur">
-            <div className="relative flex items-center justify-between p-2 md:p-4">
+      <header className="fixed inset-x-0 top-0 z-50">
+        <div className="mx-auto max-w-[1440px] w-full">
+          <div className="border border-white/15 rounded-[27px] md:rounded-full backdrop-blur">
+            <div className="flex items-center justify-between h-[72px] px-[64px]">
               {/* Logo */}
               <Link href="/">
                 <Image
                   src={logoImage}
                   alt={t.logoAlt}
-                  className="h-9 md:h-12 w-auto cursor-pointer"
+                  width={272}
+                  height={42}
+                  className="cursor-pointer"
                 />
               </Link>
 
               {/* Desktop Nav Links */}
-              <div className="hidden md:flex items-center gap-6">
-                {/* Service links */}
-                {t.servicesItems.map((item, idx) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="whitespace-nowrap hover:text-blue-400 flex items-center"
-                  >
-                    {item.label}
-                    {/* Down arrow on the last service */}
-                    {idx === t.servicesItems.length - 1 && (
-                      <ChevronDownIcon className="ml-1 h-4 w-4" />
-                    )}
-                  </Link>
-                ))}
-                {/* Blog & About */}
-                {t.links.map(link => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="whitespace-nowrap hover:text-blue-400"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-                {/* Contact button */}
-                <Link href={t.contact.href}>
-                  <Button variant="teal">{t.contact.label}</Button>
-                </Link>
+              <div className="hidden md:flex flex-1 items-center justify-center gap-[32px]">
+                {t.servicesItems.map((item, idx) =>
+                  idx === t.servicesItems.length - 1 ? (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="whitespace-nowrap hover:text-blue-400 flex items-center gap-1 justify-center"
+                    >
+                      {item.label}
+                      <ChevronDownIcon className="w-4 h-4" />
+                    </Link>
+                  ) : (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="whitespace-nowrap hover:text-blue-400 flex items-center"
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                )}
               </div>
+
+              {/* Right-aligned contact CTA button */}
+              <Link href={t.contact.href} className="hidden md:flex items-center">
+                <Button
+                  className="!w-[238px] !h-[44px] !rounded-[10px] !bg-[#74C2CD] !text-black !text-[16px] whitespace-nowrap flex items-center justify-center gap-[10px] p-[10px] border-none"
+                >
+                  <Image
+                    src={callIcon}
+                    alt="Call"
+                    width={24}
+                    height={24}
+                    className="w-[24px] h-[24px]"
+                  />
+                  {t.contact.label}
+                </Button>
+              </Link>
 
               {/* Mobile Burger & CTA */}
               <div className="flex items-center gap-4 md:hidden">
@@ -85,45 +97,35 @@ export default function Navbar() {
                 </button>
               </div>
             </div>
-
-            {/* Mobile Menu */}
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  initial={{ height: 0 }}
-                  animate={{ height: 'auto' }}
-                  exit={{ height: 0 }}
-                  className="overflow-hidden md:hidden"
-                >
-                  <div className="flex flex-col items-center gap-4 py-4">
-                    <Link href="/vps-hosting" className="py-2">
-                      {t.servicesItems[0].label}
-                    </Link>
-                    <Link href="/vps-1c-bitrix" className="py-2">
-                      {t.servicesItems[1].label}
-                    </Link>
-                    <Link href="/game-hosting" className="py-2">
-                      {t.servicesItems[2].label}
-                    </Link>
-                    <Link href="/web-hosting" className="py-2">
-                      {t.servicesItems[3].label}
-                    </Link>
-                    <Link href="/ssl-certificates" className="py-2">
-                      {t.servicesItems[4].label}
-                    </Link>
-                    {t.links.map(link => (
-                      <Link key={link.href} href={link.href} className="py-2">
-                        {link.label}
-                      </Link>
-                    ))}
-                    <Link href={t.contact.href} className="py-2">
-                      {t.contact.label}
-                    </Link>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
           </div>
+
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                initial={{ height: 0 }}
+                animate={{ height: 'auto' }}
+                exit={{ height: 0 }}
+                className="overflow-hidden md:hidden"
+              >
+                <div className="flex flex-col items-center gap-4 py-4">
+                  {t.servicesItems.map((item) => (
+                    <Link key={item.href} href={item.href} className="py-2">
+                      {item.label}
+                    </Link>
+                  ))}
+                  {t.links.map(link => (
+                    <Link key={link.href} href={link.href} className="py-2">
+                      {link.label}
+                    </Link>
+                  ))}
+                  <Link href={t.contact.href} className="py-2">
+                    {t.contact.label}
+                  </Link>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </header>
       {/* Spacer */}

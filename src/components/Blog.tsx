@@ -28,30 +28,28 @@ export default function Blog() {
   const t = (locale === "en" ? (en as BlogLocale) : (ru as BlogLocale));
 
   return (
-    <section id="blog" className="py-24 px-4 md:px-8 lg:px-16">
-      <div className="mx-auto max-w-[1440px]">
+    <section id="blog" className="pt-[112px] pb-[80px]">
+      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 min-[1440px]:px-[80px]">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <span className="inline-block mb-3 rounded-full px-3 py-1 text-sm font-semibold bg-black/5">
-            {t.badge}
-          </span>
-          <h2 className="text-6xl md:text-7xl tracking-tight">
-            {t.title}
-          </h2>
-          <p className="mt-4 text-xl md:text-[22px] text-black/70 max-w-3xl mx-auto">
+        <div className="text-center">
+          <span className="inline-block text-[16px] font-bold font-['Helvetica']">{t.badge}</span>
+          <div className="mt-4 mx-auto max-w-[768px]">
+            <h2 className="text-[52px] font-normal font-['Helvetica'] leading-tight">{t.title}</h2>
+          </div>
+          <p className="mt-4 text-[18px] font-normal font-['Avenir Next'] text-black/70 mx-auto max-w-[768px]">
             {t.subtitle}
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-[80px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {t.posts.slice(0, 3).map((post) => (
             <article
               key={post.slug}
-              className="group rounded-2xl ring-1 ring-black/5 bg-white/90 overflow-hidden hover:shadow-md transition"
+              className="group rounded-2xl bg-white/90 overflow-hidden hover:shadow-md transition"
             >
               <Link href={`/blog/${post.slug}`} className="block">
-                <div className="relative aspect-[4/3]">
+                <div className="relative w-full max-w-[405px] h-[270px] mx-auto">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -63,29 +61,22 @@ export default function Blog() {
                 </div>
 
                 <div className="p-6">
-                  <span className="inline-flex items-center rounded-full bg-black/5 px-2.5 py-1 text-xs font-medium">
+                  <span className="mt-6 inline-flex items-center justify-center min-w-[102px] h-[30px] px-3 whitespace-nowrap bg-[rgba(0,13,13,0.05)] border border-[rgba(0,13,13,0.15)] rounded-md text-[14px] font-semibold font-['Avenir Next']">
                     {post.tag}
                   </span>
 
-                  <h3 className="mt-3 text-2xl font-semibold leading-snug group-hover:opacity-90">
-                    {post.title}
-                  </h3>
+                  <div className="mt-4 mx-auto w-[405px] min-h-[78px]">
+                    <h3 className="text-[28px] font-normal font-['Helvetica'] leading-snug line-clamp-2">
+                      {post.title}
+                    </h3>
+                  </div>
 
-                  <p className="mt-2 text-black/60">
+                  <p className="mt-2 mx-auto w-[405px] h-[48px] text-[16px] font-normal font-['Avenir Next'] text-black/60 line-clamp-2">
                     {post.excerpt}
                   </p>
 
-                  <div className="mt-4 inline-flex items-center gap-1 text-[#746FAE] font-medium">
-                    <span className="group-hover:translate-x-0.5 transition">
-                      {locale === "en" ? "Read more" : "Читать далее"}
-                    </span>
-                    <svg
-                      className="h-4 w-4 group-hover:translate-x-0.5 transition"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
+                  <div className="mt-4 text-[16px] font-['Avenir Next'] py-4 ">
+                    {locale === "en" ? "Read more" : "Читать далее"}
                   </div>
                 </div>
               </Link>
@@ -94,10 +85,10 @@ export default function Blog() {
         </div>
 
         {/* View all */}
-        <div className="mt-10 flex justify-center">
+        <div className="mt-[116px] flex justify-center">
           <Link
             href="/blog"
-            className="rounded-full border border-black/10 px-5 py-2.5 hover:bg-black/5 transition"
+            className="border border-black/10 rounded-md px-5 py-2.5 text-[16px] font-['Avenir Next'] hover:bg-black/5 transition"
           >
             {t.viewAll}
           </Link>
