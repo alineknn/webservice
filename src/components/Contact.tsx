@@ -68,7 +68,7 @@ export default function Contact() {
           src={contactBg}
           alt="Contact background"
           fill
-          className="object-cover opacity-25"
+          className="object-cover opacity-20"
           priority
         />
       </div>
