@@ -8,6 +8,12 @@ import Image from "next/image";
 import dbImage from "@/assets/images/db-image.png";
 import mapOfKg from "@/assets/images/map of kg.png";
 import cavisLogo from "@/assets/images/cavis logo.png";
+import mapPin from "@/assets/images/map pin.png";
+import chartIcon from "@/assets/images/chart icon.png";
+import speedometer from "@/assets/images/speedometer.png";
+import gear from "@/assets/images/gear.png";
+import kgIcon from "@/assets/images/KG.png";
+import globalIcon from "@/assets/images/global.png";
 
 export default function AdvantagesAndAudience() {
   const { locale } = useRouter();
@@ -19,6 +25,7 @@ export default function AdvantagesAndAudience() {
     { name: "Map of KG", src: mapOfKg },
     { name: "Cavis Logo", src: cavisLogo },
   ];
+  const featureIcons = [mapPin, chartIcon, speedometer, gear, kgIcon, globalIcon];
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const totalImages = images.length || 1;
@@ -83,11 +90,15 @@ export default function AdvantagesAndAudience() {
             {Array.isArray(t.items) && t.items.map((item: any, idx: number) => (
               <FeatureCard
                 key={`${idx}-${item.title}`}
-                className="border-0 border-r border-gray-200"
+                className="border-0 border-l border-gray-200"
                 title={
                   <div className="flex flex-col items-start gap-3">
-                    {/* 51×51 image placeholder — replace with real icon later */}
-                    <div className="h-[51px] w-[51px] bg-gray-200 rounded" />
+                    <Image
+                      src={featureIcons[idx] || mapPin}
+                      alt={item.title || `feature-${idx + 1}`}
+                      className="object-contain"
+                      priority={idx < 3}
+                    />
                     <div className="text-left">
                       <div
                         className="text-[22px] leading-snug"

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-
+import Contact from "@/components/Contact";
 import en from "@/locales/en/vps_hosting.json";
 import ru from "@/locales/ru/vps_hosting.json";
 
@@ -120,7 +120,7 @@ export default function VPSHostingPage() {
             </article>
 
             {/* Big right */}
-            <article className="rounded-xl bg-[#746FAE] text-white min-[1280px]:h-[392px] pl-[48px] pr-[48px] pt-[48px] pb-[48px]">
+            <article className="rounded-xl bg-[#74C2CD] min-[1280px]:h-[392px] pl-[48px] pr-[48px] pt-[48px] pb-[48px]">
               <Image src={t.advantages.bottom.big.icon} alt="Pricing" width={100} height={70} className="w-[100px] h-[70px] object-contain" />
               <h3 className="mt-[24px] text-[44px] font-normal font-['Helvetica'] leading-tight">
                 {t.advantages.bottom.big.title}
@@ -132,6 +132,7 @@ export default function VPSHostingPage() {
           </div>
         </div>
       </section>
+      <Contact></Contact>
     </main>
   );
 }

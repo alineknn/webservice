@@ -32,13 +32,38 @@ export default function Services() {
 
   // Explicit md heights per tile (to match 592xH specs). Mobile stacks naturally.
   const heightClassesMd: string[] = [
-    "md:h-[743px]",
-    "md:h-[885px]",
-    "md:h-[632px]",
-    "md:h-[666px]",
-    "md:h-[411px]",
-    "md:h-[239px]",
+    "md:!h-[743px]",
+    "md:!h-[885px]",
+    "md:!h-[632px]",
+    "md:!h-[666px]",
+    "md:!h-[411px]",
+    "md:!h-[239px]",
   ];
+
+  // Mobile-only explicit tile sizes (do not affect desktop)
+  const sizeClassesSm: string[] = [
+    "w-[335px] h-[484px] md:w-auto md:h-auto", // 1
+    "w-[335px] h-[571px] md:w-auto md:h-auto", // 2
+    "w-[328px] h-[555px] md:w-auto md:h-auto", // 3
+    "w-[335px] h-[600px] md:w-auto md:h-auto", // 4
+    "w-[335px] h-[411px] md:w-auto md:h-auto", // 5
+    "w-[335px] h-[319px] md:w-auto md:h-auto", // 6
+  ];
+
+  // Mobile image positions/sizes for tiles with images
+  const imagePosSm: Record<number, string> = {
+    0: "left-[78px] top-[244px] w-[257px] h-[257px]",
+    1: "left-[79px] top-[315px] w-[256px] h-[256px]",
+    2: "left-[120px] top-[345px] w-[206px] h-[206px]",
+    3: "right-[67px] top-[343px] w-[268px] h-[268px]",
+  };
+
+  const imageSizeSm: Record<number, { w: number; h: number }> = {
+    0: { w: 257, h: 257 },
+    1: { w: 256, h: 256 },
+    2: { w: 206, h: 206 },
+    3: { w: 268, h: 268 },
+  };
 
   // Background color per tile (left->right, top->bottom)
   const indexBg: string[] = [
@@ -72,11 +97,11 @@ export default function Services() {
   };
 
   // Base tiles + colored variants
-  const tileBase = "relative rounded-xl border border-black/10 flex h-full flex-col overflow-hidden";
+  const tileBase = "relative rounded-xl border border-black/10 flex flex-col overflow-hidden";
 
   return (
-    <section id="services" className="py-24 px-4 md:px-6 lg:px-8">
-      <div className="mx-auto max-w-[1440px] px-[112px]">
+    <section id="services" className="py-24 px-0">
+      <div className="mx-auto max-w-[1440px] px-[20px] md:px-[112px]">
         {/* Header */}
         {t.badge ? (
           <div
@@ -88,8 +113,8 @@ export default function Services() {
         ) : null}
 
         <h2
-          className="mt-2 text-center"
-          style={{ fontFamily: "Helvetica", fontWeight: 400, fontSize: 52, lineHeight: 1.1 }}
+          className="mt-2 text-center text-[36px] md:text-[52px]"
+          style={{ fontFamily: "Helvetica", fontWeight: 400, lineHeight: 1.1 }}
         >
           {t.title}
         </h2>
@@ -102,8 +127,85 @@ export default function Services() {
           </p>
         ) : null}
 
+        {/* Mobile-only: ordered tiles 1..6 with exact sizes/positions */}
+        <div className="md:hidden mt-10 flex flex-col items-center gap-6">
+          {[0, 1, 2, 3, 4, 5].map((i) => {
+            const card = t.items[i];
+            if (!card) return null;
+            const bgClass = indexBg[i] ?? "bg-white";
+            const paraClass = bgClass.includes("#746FAE") ? "text-white/90" : "text-black/70";
+            const hClass = heightClassesMd[i] ?? ""; // md-only; harmless on mobile
+
+            return (
+              <article key={`m-${card.title}-${i}`} className={`${tileBase} ${bgClass} ${sizeClassesSm[i]} ${i === 5 ? "text-white" : ""}`}> 
+                <div
+                  className={`relative z-10 ${
+                    i === 4 ? "pt-[18px] pl-[20px] pr-[20px]" : "pt-[24px] pl-[20px] pr-[20px]"
+                  }`}
+                >
+                  {i === 4 && card.eyebrow ? (
+                    <div
+                      className="w-[173px] h-[32px] rounded-full flex items-center justify-center"
+                      style={{
+                        backgroundColor: "#FAF8F5",
+                        fontFamily: "Helvetica Neue",
+                        fontSize: 13,
+                        fontWeight: 400,
+                      }}
+                    >
+                      {card.eyebrow}
+                    </div>
+                  ) : null}
+
+                  <h3
+                    className={`text-[28px] ${i === 5 ? "text-white" : "text-black"}`}
+                    style={{
+                      fontFamily: "Helvetica",
+                      fontWeight: 400,
+                      lineHeight: 1.2,
+                      marginTop: i === 4 && card.eyebrow ? 16 : 0,
+                    }}
+                  >
+                    {card.title}
+                  </h3>
+
+                  {card.description ? (
+                    <p
+                      style={{
+                        fontFamily: "Avenir Next",
+                        fontWeight: 400,
+                        fontSize: 16,
+                        lineHeight: 1.5,
+                        marginTop: i === 5 ? 12 : 16,
+                      }}
+                      className={i === 5 ? "text-white" : paraClass}
+                    >
+                      {card.description}
+                    </p>
+                  ) : null}
+                </div>
+
+                {imageMap[i] ? (
+                  <div className={`absolute pointer-events-none z-0 ${imagePosSm[i] || ""}`}>
+                    {imageSizeSm[i] ? (
+                      <Image
+                        src={imageMap[i]}
+                        alt={card.title}
+                        width={imageSizeSm[i].w}
+                        height={imageSizeSm[i].h}
+                        className="object-contain"
+                        priority={i < 2}
+                      />
+                    ) : null}
+                  </div>
+                ) : null}
+              </article>
+            );
+          })}
+        </div>
+
         {/* Two explicit columns so each tile can have an exact md height */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="hidden md:grid mt-10 grid-cols-1 md:[grid-template-columns:592px_592px] md:gap-[32px] md:justify-center">
           {/* Left column: 0,2,4 */}
           <div className="flex flex-col gap-6">
             {[0, 2, 4].map((i) => {
@@ -115,26 +217,17 @@ export default function Services() {
               const origin = i === 3 ? "bottom left" : "bottom right";
 
               return (
-                <article key={`${card.title}-${i}`} className={`${tileBase} ${hClass} ${bgClass} ${i === 5 ? "text-white" : ""}`}>
+                <article key={`${card.title}-${i}`} className={`${tileBase} ${bgClass} ${sizeClassesSm[i]} ${hClass} ${i === 5 ? "text-white" : ""}`}>
                   <div
-                    className="relative z-10"
-                    style={{
-                      paddingLeft: 51,
-                      paddingTop: i === 5 ? 40 : 51,
-                      paddingRight: i === 5 ? 13 : 51,
-                    }}
+                    className={`relative z-10 ${
+                      i === 4 ? "pt-[18px] pl-[20px] pr-[20px]" : "pt-[24px] pl-[20px] pr-[20px]"
+                    } ${i === 5 ? "md:pt-[40px] md:pl-[51px] md:pr-[13px]" : "md:pt-[51px] md:pl-[51px] md:pr-[51px]"}`}
                   >
                     {i === 4 && card.eyebrow ? (
                       <div
+                        className="w-[173px] h-[32px] rounded-full flex items-center justify-center"
                         style={{
-                          marginTop: 73 - 51, // top distance from tile edge
-                          width: 173,
-                          height: 32,
                           backgroundColor: "#FAF8F5",
-                          display: "inline-flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          borderRadius: 9999, // pill shape
                           fontFamily: "Helvetica Neue",
                           fontSize: 13,
                           fontWeight: 400,
@@ -145,14 +238,14 @@ export default function Services() {
                     ) : null}
 
                     <h3
+                      className={`text-[28px] md:text-[36px] ${i === 5 ? "text-white" : "text-black"}`}
                       style={{
                         fontFamily: "Helvetica",
                         fontWeight: 400, // not bold
-                        fontSize: 36,
                         lineHeight: 1.2,
                         marginTop: i === 4 && card.eyebrow ? 16 : 0, // 16px below badge on tile 5, else stick to 51px top padding
+                        ...(i === 1 ? { marginRight: 46 } : {}),
                       }}
-                      className={i === 5 ? "text-white" : "text-black"}
                     >
                       {card.title}
                     </h3>
@@ -174,27 +267,45 @@ export default function Services() {
                   </div>
 
                   {imageMap[i] ? (
-                    <div
-                      className="absolute pointer-events-none z-0"
-                      style={{
-                        left: imageSpec[i]?.left,
-                        top: imageSpec[i]?.top,
-                        right: imageSpec[i]?.right,
-                        bottom: imageSpec[i]?.bottom,
-                        width: imageSpec[i]?.w,
-                        height: imageSpec[i]?.h,
-                      }}
-                    >
-                      <div className="w-full h-full md:scale-95 sm:scale-90" style={{ transformOrigin: origin }}>
-                        <Image
-                          src={imageMap[i]}
-                          alt={card.title}
-                          fill
-                          className="object-contain"
-                          priority={i < 2}
-                        />
+                    <>
+                      {/* Mobile image (explicit size; no fill) */}
+                      <div className={`absolute pointer-events-none z-0 block md:hidden ${imagePosSm[i] || ""}`}>
+                        {imageSizeSm[i] ? (
+                          <Image
+                            src={imageMap[i]}
+                            alt={card.title}
+                            width={imageSizeSm[i].w}
+                            height={imageSizeSm[i].h}
+                            className="object-contain"
+                            priority={i < 2}
+                          />
+                        ) : null}
                       </div>
-                    </div>
+
+                      {/* Desktop image (explicit wrapper + fill) */}
+                      <div
+                        className="absolute pointer-events-none z-0 hidden md:block"
+                        style={{
+                          left: imageSpec[i]?.left,
+                          top: imageSpec[i]?.top,
+                          right: imageSpec[i]?.right,
+                          bottom: imageSpec[i]?.bottom,
+                        }}
+                      >
+                        {imageSpec[i] ? (
+                          <div className="relative" style={{ width: imageSpec[i].w, height: imageSpec[i].h }}>
+                            <Image
+                              src={imageMap[i]}
+                              alt={card.title}
+                              fill
+                              className="object-contain"
+                              sizes="(min-width: 768px) 377px"
+                              priority={i < 2}
+                            />
+                          </div>
+                        ) : null}
+                      </div>
+                    </>
                   ) : null}
                 </article>
               );
@@ -212,28 +323,19 @@ export default function Services() {
               const origin = i === 3 ? "bottom left" : "bottom right";
 
               return (
-                <article key={`${card.title}-${i}`} className={`${tileBase} ${hClass} ${bgClass} ${i === 5 ? "text-white" : ""}`}>
+                <article key={`${card.title}-${i}`} className={`${tileBase} ${bgClass} ${sizeClassesSm[i]} ${hClass} ${i === 5 ? "text-white" : ""}`}>
                   <div
-                    className="relative z-10"
-                    style={{
-                      paddingLeft: 51,
-                      paddingTop: i === 5 ? 40 : 51,
-                      paddingRight: i === 5 ? 13 : 51,
-                    }}
+                    className={`relative z-10 ${
+                      i === 4 ? "pt-[18px] pl-[20px] pr-[20px]" : "pt-[24px] pl-[20px] pr-[20px]"
+                    } ${i === 5 ? "md:pt-[40px] md:pl-[51px] md:pr-[13px]" : "md:pt-[51px] md:pl-[51px] md:pr-[51px]"}`}
                   >
                     {i === 4 && card.eyebrow ? (
                       <div
+                        className="w-[173px] h-[32px] rounded-full flex items-center justify-center"
                         style={{
-                          marginTop: 73 - 51, // top distance from tile edge
-                          width: 173,
-                          height: 32,
                           backgroundColor: "#FAF8F5",
-                          display: "inline-flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          borderRadius: 9999, // pill shape
                           fontFamily: "Helvetica Neue",
-                          fontSize: 12,
+                          fontSize: 13,
                           fontWeight: 400,
                         }}
                       >
@@ -242,15 +344,14 @@ export default function Services() {
                     ) : null}
 
                     <h3
+                      className={`text-[28px] md:text-[36px] ${i === 5 ? "text-white" : "text-black"}`}
                       style={{
                         fontFamily: "Helvetica",
                         fontWeight: 400, // not bold
-                        fontSize: 36,
                         lineHeight: 1.2,
                         marginTop: i === 4 && card.eyebrow ? 16 : 0, // 16px below badge on tile 5, else stick to 51px top padding
                         marginRight: i === 1 ? 46 : 0,
                       }}
-                      className={i === 5 ? "text-white" : "text-black"}
                     >
                       {card.title}
                     </h3>
@@ -272,27 +373,45 @@ export default function Services() {
                   </div>
 
                   {imageMap[i] ? (
-                    <div
-                      className="absolute pointer-events-none z-0"
-                      style={{
-                        left: imageSpec[i]?.left,
-                        top: imageSpec[i]?.top,
-                        right: imageSpec[i]?.right,
-                        bottom: imageSpec[i]?.bottom,
-                        width: imageSpec[i]?.w,
-                        height: imageSpec[i]?.h,
-                      }}
-                    >
-                      <div className="w-full h-full md:scale-95 sm:scale-90" style={{ transformOrigin: origin }}>
-                        <Image
-                          src={imageMap[i]}
-                          alt={card.title}
-                          fill
-                          className="object-contain"
-                          priority={i < 2}
-                        />
+                    <>
+                      {/* Mobile image (explicit size; no fill) */}
+                      <div className={`absolute pointer-events-none z-0 block md:hidden ${imagePosSm[i] || ""}`}>
+                        {imageSizeSm[i] ? (
+                          <Image
+                            src={imageMap[i]}
+                            alt={card.title}
+                            width={imageSizeSm[i].w}
+                            height={imageSizeSm[i].h}
+                            className="object-contain"
+                            priority={i < 2}
+                          />
+                        ) : null}
                       </div>
-                    </div>
+
+                      {/* Desktop image (explicit wrapper + fill) */}
+                      <div
+                        className="absolute pointer-events-none z-0 hidden md:block"
+                        style={{
+                          left: imageSpec[i]?.left,
+                          top: imageSpec[i]?.top,
+                          right: imageSpec[i]?.right,
+                          bottom: imageSpec[i]?.bottom,
+                        }}
+                      >
+                        {imageSpec[i] ? (
+                          <div className="relative" style={{ width: imageSpec[i].w, height: imageSpec[i].h }}>
+                            <Image
+                              src={imageMap[i]}
+                              alt={card.title}
+                              fill
+                              className="object-contain"
+                              sizes="(min-width: 768px) 377px"
+                              priority={i < 2}
+                            />
+                          </div>
+                        ) : null}
+                      </div>
+                    </>
                   ) : null}
                 </article>
               );

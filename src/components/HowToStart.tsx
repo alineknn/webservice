@@ -37,23 +37,23 @@ export default function HowToStart() {
 
   return (
     <section id="how-to-start" className="pt-[112px] pb-[80px]">
-      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 min-[1440px]:px-[80px]">
+      <div className="mx-auto w-full max-w-[1280px] min-[1440px]:max-w-[1440px] px-[20px] sm:px-6 min-[1440px]:px-[80px]">
         {/* Header */}
         <div className="flex flex-col items-center">
           {t.badge ? (
-            <span className="inline-block mb-2 text-center text-[16px] font-normal font-['Helvetica']">
+            <span className="inline-flex items-center justify-center mb-2 w-[47px] h-[24px] text-center text-[16px] font-normal font-['Helvetica']">
               {t.badge}
             </span>
           ) : null}
 
-          <div className="w-[758px] h-[124px] mx-auto flex items-center justify-center">
-            <h2 className="text-[52px] font-normal font-['Helvetica'] leading-tight text-center">
+          <div className="mx-auto flex items-center justify-center mt-4 w-full md:w-[758px] md:h-[124px]">
+            <h2 className="text-[36px] md:text-[52px] font-normal font-['Helvetica'] leading-tight text-center">
               {t.title}
             </h2>
           </div>
 
           {t.subtitle ? (
-            <div className="mt-4 w-[562px] h-[52px] mx-auto flex items-center justify-center">
+            <div className="mt-4 mx-auto flex items-center justify-center w-full md:w-[562px] md:h-[52px]">
               <p className="text-[18px] font-normal font-['Avenir Next'] text-center text-black">
                 {t.subtitle}
               </p>
@@ -62,14 +62,14 @@ export default function HowToStart() {
         </div>
 
         {/* Steps */}
-        <div className="mt-[80px] grid grid-cols-1 gap-8 md:[grid-template-columns:repeat(3,405px)] md:justify-between">
+        <div className="mt-[80px] grid grid-cols-1 gap-8 justify-center md:[grid-template-columns:repeat(3,405px)] md:gap-[32px] md:justify-start">
           {t.steps.map((s, i) => {  
             const bg = i === 0 ? 'bg-[#F2F2F3]' : i === 1 ? 'bg-[#FDFFFF]' : 'bg-[#EFF4F9]';
             const size = i === 1 ? 48 : 42;
             const sizeClass = i === 1 ? "w-[48px] h-[48px]" : "w-[42px] h-[42px]";
             return (
               <article
-                className={`rounded-lg border border-[rgba(0,13,13,0.15)] ${bg} w-[405px] h-[296px] pl-[32px] pt-[44px] pr-[32px] pb-[32px]`}
+                className={`rounded-lg border border-[rgba(0,13,13,0.15)] ${bg} w-[335px] h-[296px] md:w-[405px] pl-[32px] pt-[44px] pr-[32px] pb-[32px]`}
                 key={`${s.title}-${i}`}
               >
                 <div className="flex flex-col items-start text-left">
@@ -81,7 +81,7 @@ export default function HowToStart() {
                     className={`${sizeClass} object-contain`}
                     priority={i === 0}
                   />
-                  <div className="mt-6 w-[341px] h-[78px]">
+                  <div className="mt-6 w-full md:w-[341px] h-[78px]">
                     <h3 className="text-[28px] font-normal font-['Helvetica'] leading-snug">
                       {s.title}
                     </h3>

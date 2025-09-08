@@ -27,7 +27,7 @@ export default function Hero() {
         className="absolute left-1/2 top-0 -translate-x-1/2 object-contain z-0 w-full max-w-[1440px]"
         priority
       />
-      <div className="relative z-10 mx-auto w-full max-w-[1312px] min-[1440px]:max-w-[calc(100vw-128px)] min-[1920px]:max-w-[1748px] px-4 sm:px-6 min-[1440px]:px-[64px] min-[1920px]:px-[86px]">
+      <div className="relative z-10 mx-auto w-full max-w-[1312px] min-[1440px]:max-w-[calc(100vw-128px)] min-[1920px]:max-w-[1748px] px-[20px] sm:px-6 min-[1440px]:px-[64px] min-[1920px]:px-[86px]">
         <div className="mx-auto text-center">
         {/* Main headline */}
         <h1 className="text-[32px] md:text-[52px] font-bold leading-tight font-['Helvetica']">
@@ -43,24 +43,24 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-4 text-base md:text-[22px] text-blue/50 font-medium max-w-[694px] mx-auto text-center">
+        <p className="mt-4 text-[12px] md:text-[22px] text-blue/50 font-medium max-w-[694px] mx-auto text-center">
           {t.subtitle}
         </p>
 
         {/* CTAs */}
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
           <Link href="/vps-hosting">
-            <Button variant="teal" size="md" className="px-8">
+            <Button variant="teal" size="md" className="!w-[335px] !h-[47px] md:!w-[310px] md:!h-[64px] text-[14px] md:text-[18px] px-8">
               {t.cta.vps}
             </Button>
           </Link>
           <Link href="/web-hosting">
-            <Button variant="purple" size="md" className="px-8">
+            <Button variant="purple" size="md" className="!w-[335px] !h-[47px] md:!w-[310px] md:!h-[64px] text-[14px] md:text-[18px] px-8">
               {t.cta.web}
             </Button>
           </Link>
           <Link href="/ssl-certificates">
-            <Button variant="black" size="md" className="px-8">
+            <Button variant="black" size="md" className="!w-[335px] !h-[47px] md:!w-[310px] md:!h-[64px] text-[14px] md:text-[18px] px-8">
               {t.cta.ssl}
             </Button>
           </Link>
@@ -72,9 +72,9 @@ export default function Hero() {
             alt="Hero illustration"
             width={1312}
             height={474}
-            className="mx-auto rounded-xl"
+            className="mx-auto rounded-xl w-[335px] h-[335px] md:w-auto md:h-auto"
             priority
-            sizes="(min-width: 1440px) 1312px, calc(100vw - 128px)"
+            sizes="(max-width: 767px) 335px, (min-width: 1440px) 1312px, calc(100vw - 128px)"
           />
         </div>
       </div>

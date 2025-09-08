@@ -4,7 +4,7 @@ export default function FeatureCard(props: {
 }) {
   const { title, children } = props;
   return (
-    <div className="bg-white-900 border-gray/10 p-6  border-r">
+    <div className="bg-white-900 border-gray/10 p-6  border-l">
       {/* Title at the very top */}
       <h3 className="text-3xl font-medium">{title}</h3>
 

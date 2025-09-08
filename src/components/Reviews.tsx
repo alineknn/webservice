@@ -78,11 +78,11 @@ export default function Reviews() {
   return (
     <section
       id="reviews"
-      className="py-24 px-4 md:px-6 lg:px-8"
+      className="py-24 px-0"
       onMouseEnter={stop}
       onMouseLeave={start}
     >
-      <div className="mx-auto max-w-screen-2xl px-0">
+      <div className="mx-auto w-full max-w-[1280px] min-[1440px]:max-w-[1440px] px-[20px] sm:px-6 min-[1440px]:px-[80px]">
         <h2 className="text-5xl md:text-6xl font-semibold tracking-tight">
           {dict.title}
         </h2>

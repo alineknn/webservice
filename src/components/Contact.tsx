@@ -150,7 +150,7 @@ export default function Contact() {
                 <input
                   name="name"
                   required
-                  className="w-full rounded-lg bg-transparent border-none px-0 py-0 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40"
+                  className="w-full rounded-none bg-transparent border-0 border-b-2 border-[rgba(0,13,13,0.26)] focus:border-[#74C2CD] px-0 py-2 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40 transition-colors"
                   placeholder="John Doe"
                 />
               </div>
@@ -161,7 +161,7 @@ export default function Contact() {
                 </label>
                 <input
                   name="phone"
-                  className="w-full rounded-lg bg-transparent border-none px-0 py-0 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40"
+                  className="w-full rounded-none bg-transparent border-0 border-b-2 border-[rgba(0,13,13,0.26)] focus:border-[#74C2CD] px-0 py-2 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40 transition-colors"
                   placeholder="+996 555 000 000"
                 />
               </div>
@@ -174,7 +174,7 @@ export default function Contact() {
                   type="email"
                   name="email"
                   required
-                  className="w-full rounded-lg bg-transparent border-none px-0 py-0 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40"
+                  className="w-full rounded-none bg-transparent border-0 border-b-2 border-[rgba(0,13,13,0.26)] focus:border-[#74C2CD] px-0 py-2 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40 transition-colors"
                   placeholder="you@example.com"
                 />
               </div>
@@ -186,7 +186,7 @@ export default function Contact() {
                 <textarea
                   name="message"
                   rows={6}
-                  className="w-full rounded-lg bg-transparent border-none px-0 py-0 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40"
+                  className="w-full rounded-none bg-transparent border-0 border-b-2 border-[rgba(0,13,13,0.26)] focus:border-[#74C2CD] px-0 py-2 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40 transition-colors"
                   placeholder={t.form.messagePlaceholder}
                 />
               </div>

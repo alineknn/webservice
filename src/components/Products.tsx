@@ -46,17 +46,17 @@ export default function Products() {
 
   return (
     <section id="products" className="pt-[112px] pb-[80px]">
-      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 min-[1440px]:px-[80px]">
+      <div className="mx-auto w-full max-w-[1280px] px-[20px] sm:px-6 min-[1440px]:px-[80px]">
         {/* Top row: badge/title/subtitle + USP pill */}
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div>
             {t.badge ? (
-              <span className="inline-block mb-2 text-[16px] font-bold font-['Helvetica']">
+              <span className="inline-block mb-2 text-[16px] font-normal font-['Helvetica']">
                 {t.badge}
               </span>
             ) : null}
 
-            <h2 className="text-[52px] font-normal font-['Helvetica'] tracking-tight">
+            <h2 className="mt-4 text-[36px] md:text-[52px] font-normal font-['Helvetica'] tracking-tight">
               {t.title}
             </h2>
 
@@ -68,8 +68,8 @@ export default function Products() {
           </div>
 
           {t.usp ? (
-            <div className="mt-2 md:mt-0">
-              <span className="max-w-[425px] w-full h-[102px] bg-[#746FAE] text-[#f2f2f2] text-[22px] font-normal font-['Helvetica'] px-[30px] py-[20px] flex items-center justify-center rounded-lg shadow-sm">
+            <div className="mt-[25px] md:mt-0">
+              <span className="max-w-[425px] w-full h-[102px] bg-[#746FAE] text-[#f2f2f2] text-[18px] md:text-[22px] font-normal font-['Helvetica'] px-[30px] py-[20px] flex items-center justify-center rounded-lg shadow-sm">
                 {t.usp}
               </span>
             </div>
@@ -87,7 +87,7 @@ export default function Products() {
               >
                 {/* Image */}
                 <div className="rounded-xl bg-white shadow-sm ring-1 ring-black/5 overflow-hidden">
-                  <div className="relative w-full max-w-[395px] aspect-[395/240]">
+                  <div className="relative w-full md:max-w-[395px] aspect-[395/240]">
                     <Image
                       src={fallbackImg}
                       alt={p.title}
@@ -132,12 +132,12 @@ export default function Products() {
                   <div>
                     {p.slug ? (
                       <Link href={p.slug}>
-                        <Button variant="teal" size="sm" className="bg-[#74C2CD] text-white font-['Avenir Next'] text-[16px] h-[36px] w-[149px] justify-center text-center !w-[149px] !h-[36px] !min-w-[149px] !min-h-[36px] px-0">
+                        <Button variant="teal" size="sm" className="bg-[#74C2CD] text-white font-['Avenir Next'] text-[16px] leading-none flex items-center justify-center text-center whitespace-nowrap px-0 !w-[335px] !h-[44px] md:!w-[149px] md:!h-[36px]">
                           {p.ctaLabel}
                         </Button>
                       </Link>
                     ) : (
-                      <Button variant="teal" size="sm" className="bg-[#74C2CD] text-white font-['Avenir Next'] text-[16px] h-[36px] w-[149px] justify-center text-center !w-[149px] !h-[36px] !min-w-[149px] !min-h-[36px] px-0">
+                      <Button variant="teal" size="sm" className="bg-[#74C2CD] text-white font-['Avenir Next'] text-[16px] leading-none flex items-center justify-center text-center whitespace-nowrap px-0 !w-[335px] !h-[44px] md:!w-[149px] md:!h-[36px]">
                         {p.ctaLabel}
                       </Button>
                     )}
