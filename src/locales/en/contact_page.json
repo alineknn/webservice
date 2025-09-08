@@ -1,0 +1,34 @@
+{
+  "title": "Contact us",
+  "intro": "We’re ready to answer questions and help you choose.",
+  "cards": [
+    {
+      "icon": "email",
+      "title": "Email",
+      "text": "Reach out for more information and support.",
+      "linkLabel": "info@webservice.kg",
+      "href": "mailto:info@webservice.kg"
+    },
+    {
+      "icon": "chat",
+      "title": "Support chat",
+      "text": "We’re happy to help you anytime.",
+      "linkLabel": "Start a new chat",
+      "href": "#chat"
+    },
+    {
+      "icon": "phone",
+      "title": "Phone",
+      "text": "Call us for quick assistance.",
+      "linkLabel": "+996 (555) 000-000",
+      "href": "tel:+996555000000"
+    },
+    {
+      "icon": "office",
+      "title": "Office",
+      "text": "We are located in central Bishkek.",
+      "linkLabel": "123 Sample St, Bishkek, Kyrgyzstan",
+      "href": "https://maps.google.com/?q=Bishkek"
+    }
+  ]
+}

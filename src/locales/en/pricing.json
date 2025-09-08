@@ -1,0 +1,13 @@
+{
+  "title": "Pricing & server rental plans",
+  "headers": { "plan": "Plan", "ram": "RAM", "vcpu": "vCPU", "ssd": "SSD", "traffic": "Traffic", "price": "Price / mo" },
+  "rows": [
+    { "plan": "BASIC",   "ram": "1536 MiB", "vcpu": "1 vCPU",  "ssd": "10 GiB",  "traffic": "Unlimited", "price": "999 KGS",   "href": "/order/basic" },
+    { "plan": "STANDART","ram": "2560 MiB", "vcpu": "2 vCPU",  "ssd": "60 GiB",  "traffic": "Unlimited", "price": "1599 KGS",  "href": "/order/standart" },
+    { "plan": "PRO",     "ram": "4096 MiB", "vcpu": "4 vCPU",  "ssd": "80 GiB",  "traffic": "Unlimited", "price": "2199 KGS",  "href": "/order/pro" },
+    { "plan": "EXPERT",  "ram": "8 GiB",    "vcpu": "4 vCPU",  "ssd": "160 GiB", "traffic": "Unlimited", "price": "4999 KGS",  "href": "/order/expert" },
+    { "plan": "POWER",   "ram": "16 GiB",   "vcpu": "8 vCPU",  "ssd": "320 GiB", "traffic": "Unlimited", "price": "8499 KGS",  "href": "/order/power" },
+    { "plan": "DIGITAL KARYSHKYR","ram": "32 GiB","vcpu": "16 vCPU","ssd": "500 GiB","traffic": "Unlimited","price": "10999 KGS","href": "/order/digital" }
+  ],
+  "cta": "Build your configuration"
+}
