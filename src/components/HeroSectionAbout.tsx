@@ -42,7 +42,7 @@ export default function HeroSectionAbout() {
           <p className="font-['Helvetica'] font-bold text-[16px]">{t.badge}</p>
 
           {/* Heading */}
-          <h1 className="mt-3 md:mt-4 text-[44px] md:text-[72px] font-bold font-['Helvetica'] leading-tight">
+          <h1 className="mt-3 md:mt-4 text-[44px] md:text-[72px] font-['Helvetica'] leading-tight">
             {t.title}
           </h1>
 
@@ -56,7 +56,10 @@ export default function HeroSectionAbout() {
             <Link href={t.primaryHref || "#"} className="inline-flex items-center justify-center text-center w-[110px] md:w-[139px] h-[30px] md:h-[36px] rounded-md bg-[#2563EB] text-white font-['Inter'] text-[14px] md:text-[16px]">
               {t.primaryCta}
             </Link>
-            <Link href={t.secondaryHref || "#"} className="inline-flex items-center justify-center text-center w-[82px] md:w-[102px] h-[30px] md:h-[36px] rounded-md bg-[#000D0D] text-white font-['Inter'] text-[14px] md:text-[16px]">
+            <Link
+              href={t.secondaryHref || "#"}
+              className="inline-flex items-center justify-center text-center w-[82px] md:w-[102px] h-[30px] md:h-[36px] rounded-md bg-white border border-[#000D0D26] text-black font-['Inter'] text-[14px] md:text-[16px]"
+            >
               {t.secondaryCta}
             </Link>
           </div>
