@@ -2,42 +2,54 @@
   "brand": { "logoAlt": "WEBSERVICE.KG" },
   "company": {
     "title": "Company address",
-    "addressLines": ["123 Example St", "Bishkek, Kyrgyzstan"],
-    "email": "hello@webservice.kg",
-    "phone": "+996 700 997 779"
+    "addressLines": [
+      "123 Example St",
+      "Bishkek, Kyrgyzstan"
+    ]
   },
   "contacts": {
     "title": "Contacts",
-    "email": "hello@webservice.kg",
-    "phone": "+996 700 997 779",
-    "messengers": [
-      { "label": "Telegram", "href": "https://t.me/webservicekg" },
-      { "label": "WhatsApp", "href": "https://api.whatsapp.com/send/?phone=996700997779" }
-    ]
-  },
-  "links": {
-    "title": "Links",
     "items": [
-      { "label": "Home", "href": "/" },
-      { "label": "Blog", "href": "/blog" },
-      { "label": "Pricing", "href": "/pricing" },
-      { "label": "FAQ", "href": "/faq" }
+      { "type": "email", "label": "hello@webservice.kg", "href": "mailto:hello@webservice.kg" },
+      { "type": "phone", "label": "+996 700 997 779", "href": "tel:+996700997779" },
+      { "type": "address", "label": "123 Example St, Bishkek, Kyrgyzstan" },
+      { "type": "telegram", "label": "Telegram", "href": "https://t.me/webservicekg" },
+      { "type": "whatsapp", "label": "WhatsApp", "href": "https://api.whatsapp.com/send/?phone=996700997779" }
     ]
   },
-  "subscribe": {
-    "title": "Subscribe",
-    "text": "Get product updates and news.",
-    "placeholder": "Enter your email",
-    "buttonLabel": "Subscribe",
-    "consent": "By subscribing, you agree to our Privacy Policy."
-  },
+  "linksGroups": [
+    {
+      "title": "Services",
+      "items": [
+        { "label": "VPS Hosting", "href": "/vps-hosting" },
+        { "label": "Hosting for 1C & Bitrix24", "href": "/vps-1c-bitrix" },
+        { "label": "Web Hosting", "href": "/web-hosting" },
+        { "label": "SSL Certificates", "href": "/ssl-certificates" },
+        { "label": "Server Rental", "href": "/servers" },
+        { "label": "ISPsystem Panel", "href": "/ispsystem" }
+      ]
+    },
+    {
+      "title": "",
+      "items": [
+        { "label": "Blog", "href": "/blog" },
+        { "label": "About", "href": "/about" },
+        { "label": "Contact", "href": "/contact" }
+      ]
+    }
+  ],
   "social": {
     "items": [
       { "label": "Facebook", "href": "#" },
+      { "label": "Instagram", "href": "#" },
       { "label": "X", "href": "#" },
-      { "label": "Instagram", "href": "#" }
+      { "label": "LinkedIn", "href": "#" },
+      { "label": "YouTube", "href": "#" }
     ]
   },
+  "partner": "Official partner of ISPsystem.ru in Kyrgyzstan",
+  "partnerLinkLabel": "ISPsystem.ru",
+  "partnerLinkHref": "https://www.ispsystem.com",
   "legal": {
     "copyrightPrefix": "©",
     "items": [

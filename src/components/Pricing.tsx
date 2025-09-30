@@ -35,7 +35,7 @@ export default function PricingTable() {
 
   return (
     <section id="pricing" className="pt-[112px] pb-[112px]">
-      <div className="mx-auto w-full max-w-[1440px] px-[20px] min-[1440px]:px-[80px]">
+      <div className="mx-auto w-full max-w-[1280px] px-[8px] min-[1440px]:px-[80px]">
         {/* Title */}
         <h2 className="text-center text-[52px] font-normal font-['Helvetica'] leading-tight">
           {t.title}

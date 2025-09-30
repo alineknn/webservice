@@ -1,0 +1,10 @@
+{
+  "badge": "Надежность",
+  "title": "О компании WebService",
+  "body": "Ваш надежный партнер в мире хостинга и VPS/VDS в Кыргызстане с круглосуточной поддержкой.",
+  "primaryCta": "Узнать больше",
+  "primaryHref": "/about",
+  "secondaryCta": "Связаться",
+  "secondaryHref": "/contact",
+  "image": "/images/about/hero-orb.png"
+}

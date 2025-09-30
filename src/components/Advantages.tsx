@@ -8,12 +8,13 @@ import Image from "next/image";
 import dbImage from "@/assets/images/db-image.png";
 import mapOfKg from "@/assets/images/map of kg.png";
 import cavisLogo from "@/assets/images/cavis logo.png";
-import mapPin from "@/assets/images/map pin.png";
-import chartIcon from "@/assets/images/chart icon.png";
-import speedometer from "@/assets/images/speedometer.png";
-import gear from "@/assets/images/gear.png";
-import kgIcon from "@/assets/images/KG.png";
-import globalIcon from "@/assets/images/global.png";
+import mapPin from "@/assets/images/advantages/map pin.svg";
+import chartIcon from "@/assets/images/advantages/Data.svg";
+import speedometer from "@/assets/images/advantages/Speed.svg";
+import gear from "@/assets/images/advantages/Management.svg";
+import kgIcon from "@/assets/images/advantages/KG.svg";
+import globalIcon from "@/assets/images/advantages/tdesign_internet-filled.svg";
+import cavisPattern from "@/assets/images/advantages/cavis pattern.svg";
 
 export default function AdvantagesAndAudience() {
   const { locale } = useRouter();
@@ -53,11 +54,18 @@ export default function AdvantagesAndAudience() {
   const slideWidthPct = `${100 / slidesCount}%`;
 
   return (
-    <section id="Advantages" className="py-24 px-4 md:px-6 lg:px-8">
+    <section id="Advantages" className="relative py-24 px-4 md:px-6 lg:px-8">
       {/* Outer frame capped at 1440px for desktop while remaining responsive */}
-      <div className="mx-auto max-w-[1440px]">
+      <div className="relative mx-auto max-w-[1440px]">
+        {/* Background pattern — overlaps content, shifted 444px to the right */}
+        <Image
+          src={cavisPattern}
+          alt="cavis pattern"
+          className="pointer-events-none select-none absolute left-[444px] -top-[113px] w-auto h-auto z-0 hidden md:block"
+          priority
+        />
         {/* Optional inner content cap (keeps your existing margin logic) */}
-        <div className="mx-auto max-w-[1280px]">
+        <div className="relative z-10 mx-auto max-w-[1280px]">
           {/* Badge, Title & Description */}
           <div className="text-left">
             {/* Badge 131×40 with 16px text */}

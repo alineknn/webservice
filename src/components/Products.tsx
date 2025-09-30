@@ -16,12 +16,11 @@ import imgSsl from "@/assets/images/ssl cert.png";
 type ProductCard = {
   slug?: string;
   title: string;
-  description?: string;
-  image?: string;         // from JSON (optional)
-  priceLabel: string;     // "от 500 сом"
-  perMonth: string;       // "в месяц"
-  fitNote?: string;       // "Подходит для стартапов"
-  ctaLabel: string;       // "Подробнее"
+  description?: string;         // supports extra text
+  image?: string;               // from JSON (optional)
+  priceLabel: string;           // "от 500 сом"
+  perMonth: string;             // "в месяц"
+  ctaLabel: string;             // "Подробнее"
 };
 
 type ProductsLocale = {
@@ -46,7 +45,8 @@ export default function Products() {
 
   return (
     <section id="products" className="pt-[112px] pb-[80px]">
-      <div className="mx-auto w-full max-w-[1280px] px-[20px] sm:px-6 min-[1440px]:px-[80px]">
+      {/* side margins: 8 on mobile, standard elsewhere */}
+      <div className="mx-auto w-full max-w-[1280px] px-[8px] sm:px-6 min-[1440px]:px-[80px]">
         {/* Top row: badge/title/subtitle + USP pill */}
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div>
@@ -77,89 +77,70 @@ export default function Products() {
         </div>
 
         {/* Cards */}
-        <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
+        {/* gap-6 = 24px on both mobile and desktop */}
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {t.items.map((p, idx) => {
             const fallbackImg = imageMap[idx];
             return (
               <article
                 key={`${p.title}-${idx}`}
-                className="flex flex-col"
+                className="group rounded-2xl border border-black/10 bg-white overflow-hidden transition-shadow duration-200 hover:shadow-lg flex flex-col"
               >
                 {/* Image */}
-                <div className="rounded-xl bg-white shadow-sm ring-1 ring-black/5 overflow-hidden">
-                  <div className="relative w-full md:max-w-[395px] aspect-[395/240]">
-                    <Image
-                      src={fallbackImg}
-                      alt={p.title}
-                      fill
-                      className="object-cover object-center"
-                      sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
-                      priority={idx === 0}
-                    />
-                  </div>
+                <div className="relative w-full aspect-[410/250]">
+                  <Image
+                    src={fallbackImg}
+                    alt={p.title}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
+                    priority={idx === 0}
+                  />
                 </div>
 
-                {/* Text */}
-                <div className="mt-6">
-                  <h3 className="text-[28px] font-normal font-['Helvetica']">{p.title}</h3>
+                {/* Body (flex-1 so CTA sticks to card bottom) */}
+                <div className="flex-1 px-5 pt-5">{/* 20px side padding */}
+                  <h3 className="text-[26px] font-normal font-['Helvetica']">{p.title}</h3>
                   {p.description ? (
                     <p className="mt-2 text-[16px] font-normal font-['Avenir Next'] text-black/60 leading-relaxed">
                       {p.description}
                     </p>
                   ) : null}
+
+                  {/* Price & meta (same line) */}
+                  <div className="mt-6">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-[32px] font-normal font-['Helvetica']">{p.priceLabel}</span>
+                      <span className="text-[16px] font-semibold font-['Avenir Next'] text-black">{p.perMonth}</span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Price + CTA grid */}
-                <div className="mt-[87px] grid grid-rows-[auto_93px_auto]">
-                  {/* Row 1: Price label */}
-                  <div className="text-[52px] font-normal font-['Helvetica']">
-                    {p.priceLabel}
-                  </div>
-
-                  {/* Row 2: Fixed 93px for meta (per month + fit note) */}
-                  <div>
-                    <div className="mt-1 text-[16px] font-bold font-['Avenir Next'] uppercase tracking-wide text-black/60">
-                      {p.perMonth}
-                    </div>
-                    {p.fitNote ? (
-                      <div className="mt-2 text-[16px] font-normal font-['Avenir Next'] text-black/60">
-                        {p.fitNote}
-                      </div>
-                    ) : null}
-                  </div>
-
-                  {/* Row 3: CTA – starts exactly 93px under the price label */}
-                  <div>
-                    {p.slug ? (
-                      <Link href={p.slug}>
-                        <Button variant="teal" size="sm" className="bg-[#74C2CD] text-white font-['Avenir Next'] text-[16px] leading-none flex items-center justify-center text-center whitespace-nowrap px-0 !w-[335px] !h-[44px] md:!w-[149px] md:!h-[36px]">
-                          {p.ctaLabel}
-                        </Button>
-                      </Link>
-                    ) : (
-                      <Button variant="teal" size="sm" className="bg-[#74C2CD] text-white font-['Avenir Next'] text-[16px] leading-none flex items-center justify-center text-center whitespace-nowrap px-0 !w-[335px] !h-[44px] md:!w-[149px] md:!h-[36px]">
+                {/* CTA – 20px below price, 20px left/right/bottom, height 44; fills card width (370px on 410px card) */}
+                <div className="px-5 pb-5 mt-[20px]">
+                  {p.slug ? (
+                    <Link href={p.slug} className="block">
+                      <Button
+                        variant="teal"
+                        size="sm"
+                        className="bg-[#74C2CD] text-white font-['Avenir Next'] text-[16px] leading-none flex items-center justify-center text-center whitespace-nowrap px-0 w-full h-[44px]"
+                      >
                         {p.ctaLabel}
                       </Button>
-                    )}
-                  </div>
+                    </Link>
+                  ) : (
+                    <Button
+                      variant="teal"
+                      size="sm"
+                      className="bg-[#74C2CD] text-white font-['Avenir Next'] text-[16px] leading-none flex items-center justify-center text-center whitespace-nowrap px-0 w-full h-[44px]"
+                    >
+                      {p.ctaLabel}
+                    </Button>
+                  )}
                 </div>
               </article>
             );
           })}
-        </div>
-
-        {/* Section footer actions (not repeated) */}
-        <div className="mt-[80px] flex gap-4 items-center">
-          <button
-            className="w-[90px] h-[36px] text-[16px] font-normal font-['Avenir Next'] bg-transparent border border-[rgba(0,13,13,0.15)] text-black rounded-md inline-flex items-center justify-center text-center leading-none"
-          >
-            {t.footerSelect ?? (locale === "en" ? "Choose" : "Выбрать")}
-          </button>
-          <button
-            className="w-[121px] h-[24px] text-[16px] font-normal font-['Avenir Next'] text-black inline-flex items-center justify-center text-center leading-none"
-          >
-            {t.footerMore ?? (locale === "en" ? "Learn more" : "Подробнее")}
-          </button>
         </div>
       </div>
     </section>

@@ -54,7 +54,7 @@ export default function VPSHostingPage() {
     <main id="vps-hosting">
       {/* Hero / Header */}
       <section className="pt-[112px] pb-[112px]">
-        <div className="mx-auto w-full max-w-[1440px] px-[20px] min-[1440px]:px-[80px]">
+        <div className="mx-auto w-full max-w-[1280px] px-[80px]">
           {/* Heading */}
           <div className="text-left md:text-center">
             <div className="mx-auto max-w-[1016px]">
@@ -104,7 +104,7 @@ export default function VPSHostingPage() {
 
       {/* Advantages */}
       <section id="advantages" className="pt-[112px] pb-[112px]">
-        <div className="mx-auto w-full max-w-[1440px] px-[20px] min-[1440px]:px-[80px]">
+        <div className="mx-auto w-full max-w-[1280px] px-[80px]">
           <h2 className="text-left md:text-center text-[40px] md:text-[52px] font-normal font-['Helvetica'] leading-[1.2]">
             {t.advantages.heading}
           </h2>
@@ -169,7 +169,7 @@ export default function VPSHostingPage() {
 
       {/* Solutions */}
       <section id="solutions" className="pt-[112px] pb-[112px]">
-        <div className="mx-auto w-full max-w-[1440px] px-[20px] min-[1440px]:px-[80px]">
+        <div className="mx-auto w-full max-w-[1280px] px-[80px]">
           <h2 className="text-[36px] md:text-[52px] font-normal font-['Helvetica'] leading-tight text-center md:text-left">
             {t.solutions?.title}
           </h2>

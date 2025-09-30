@@ -23,6 +23,8 @@ type LocaleBlock = {
   title: string;
   subtitle?: string;
   steps: Step[];
+  cta?: string;
+  ctaNote?: string;
 };
 
 const iconMap: Record<Step["icon"], any> = {
@@ -92,6 +94,26 @@ export default function HowToStart() {
             );
           })}
         </div>
+
+        {/* CTA below cards (80px), centered */}
+        {t.cta ? (
+          <div className="mt-[80px] flex justify-center">
+            <button
+              className="w-[310px] h-[64px] bg-[#74C2CD] text-white text-[20px] font-['Inter'] rounded-md flex items-center justify-center text-center"
+            >
+              {t.cta}
+            </button>
+          </div>
+        ) : null}
+
+        {/* Subtitle 20px below CTA, desktop only */}
+        {t.ctaNote ? (
+          <div className="hidden md:flex mt-[20px] justify-center">
+            <p className="w-[366px] h-[44px] text-[20px] font-['Inter'] text-black text-center leading-snug">
+              {t.ctaNote}
+            </p>
+          </div>
+        ) : null}
       </div>
     </section>
   );

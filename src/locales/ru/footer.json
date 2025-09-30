@@ -2,47 +2,59 @@
   "brand": { "logoAlt": "WEBSERVICE.KG" },
   "company": {
     "title": "Адрес компании",
-    "addressLines": ["ул. Примерная 123", "Бишкек, Кыргызстан"],
-    "email": "hello@webservice.kg",
-    "phone": "+996 700 997 779"
+    "addressLines": [
+      "123 Example St",
+      "Бишкек, Кыргызстан"
+    ]
   },
   "contacts": {
     "title": "Контакты",
-    "email": "hello@webservice.kg",
-    "phone": "+996 700 997 779",
-    "messengers": [
-      { "label": "Telegram", "href": "https://t.me/webservicekg" },
-      { "label": "WhatsApp", "href": "https://api.whatsapp.com/send/?phone=996700997779" }
-    ]
-  },
-  "links": {
-    "title": "Ссылки",
     "items": [
-      { "label": "Главная", "href": "/" },
-      { "label": "Блог", "href": "/blog" },
-      { "label": "Цены", "href": "/pricing" },
-      { "label": "FAQ", "href": "/faq" }
+      { "type": "email", "label": "hello@webservice.kg", "href": "mailto:hello@webservice.kg" },
+      { "type": "phone", "label": "+996 700 997 779", "href": "tel:+996700997779" },
+      { "type": "address", "label": "123 Example St, Бишкек, Кыргызстан" },
+      { "type": "telegram", "label": "Telegram", "href": "https://t.me/webservicekg" },
+      { "type": "whatsapp", "label": "WhatsApp", "href": "https://api.whatsapp.com/send/?phone=996700997779" }
     ]
   },
-  "subscribe": {
-    "title": "Подписаться",
-    "text": "Подпишитесь на нашу рассылку, чтобы быть в курсе новинок.",
-    "placeholder": "Введите ваш email",
-    "buttonLabel": "Подписаться",
-    "consent": "Нажимая «Подписаться», вы соглашаетесь с Политикой конфиденциальности."
-  },
+  "linksGroups": [
+    {
+      "title": "Услуги",
+      "items": [
+        { "label": "VPS-хостинг", "href": "/vps-hosting" },
+        { "label": "Хостинг для 1С и Bitrix24", "href": "/vps-1c-bitrix" },
+        { "label": "WEB-хостинг", "href": "/web-hosting" },
+        { "label": "SSL-сертификаты", "href": "/ssl-certificates" },
+        { "label": "Аренда серверов", "href": "/servers" },
+        { "label": "Панель ISPsystem", "href": "/ispsystem" }
+      ]
+    },
+    {
+      "title": "",
+      "items": [
+        { "label": "Блог", "href": "/blog" },
+        { "label": "О компании", "href": "/about" },
+        { "label": "Связаться с нами", "href": "/contact" }
+      ]
+    }
+  ],
   "social": {
     "items": [
       { "label": "Facebook", "href": "#" },
+      { "label": "Instagram", "href": "#" },
       { "label": "X", "href": "#" },
-      { "label": "Instagram", "href": "#" }
+      { "label": "LinkedIn", "href": "#" },
+      { "label": "YouTube", "href": "#" }
     ]
   },
+  "partner": "Официальный партнёр ISPsystem.ru в Кыргызстане",
+  "partnerLinkLabel": "ISPsystem.ru",
+  "partnerLinkHref": "https://www.ispsystem.ru",
   "legal": {
     "copyrightPrefix": "©",
     "items": [
       { "label": "Политика конфиденциальности", "href": "/privacy" },
-      { "label": "Условия использования", "href": "/terms" }
+      { "label": "Условия обслуживания", "href": "/terms" }
     ]
   }
 }

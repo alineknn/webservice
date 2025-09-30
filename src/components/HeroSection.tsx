@@ -27,7 +27,7 @@ export default function Hero() {
         className="absolute left-1/2 top-0 -translate-x-1/2 object-contain z-0 w-full max-w-[1440px]"
         priority
       />
-      <div className="relative z-10 mx-auto w-full max-w-[1312px] min-[1440px]:max-w-[calc(100vw-128px)] min-[1920px]:max-w-[1748px] px-[20px] sm:px-6 min-[1440px]:px-[64px] min-[1920px]:px-[86px]">
+      <div className="relative z-10 mx-auto w-full max-w-[1312px] min-[1440px]:max-w-[calc(100vw-128px)] min-[1920px]:max-w-[1748px] px-[8px] sm:px-6 min-[1440px]:px-[64px] min-[1920px]:px-[86px]">
         <div className="mx-auto text-center">
         {/* Main headline */}
         <h1 className="text-[32px] md:text-[52px] font-bold leading-tight font-['Helvetica']">
@@ -67,15 +67,16 @@ export default function Hero() {
         </div>
         {/* Hero illustration */}
         <div className="mt-12">
-          <Image
-            src={heroImage}
-            alt="Hero illustration"
-            width={1312}
-            height={474}
-            className="mx-auto rounded-xl w-[335px] h-[335px] md:w-auto md:h-auto"
-            priority
-            sizes="(max-width: 767px) 335px, (min-width: 1440px) 1312px, calc(100vw - 128px)"
-          />
+          <div className="relative mx-auto w-full max-w-[1312px] aspect-[335/798] md:aspect-[1312/474]">
+            <Image
+              src={heroImage}
+              alt="Hero illustration"
+              fill
+              className="rounded-xl object-contain"
+              priority
+              sizes="(max-width: 767px) calc(100vw - 16px), (min-width: 1440px) 1312px, calc(100vw - 128px)"
+            />
+          </div>
         </div>
       </div>
       </div>

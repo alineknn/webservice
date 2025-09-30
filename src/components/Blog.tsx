@@ -76,7 +76,7 @@ export default function Blog() {
                   </p>
 
                   <div className="mt-4 text-[16px] font-['Avenir Next'] py-4 ">
-                    {locale === "en" ? "Read more" : "Читать далее"}
+                    {locale === "en" ? "Read more >" : "Читать далее >"}
                   </div>
                 </div>
               </Link>

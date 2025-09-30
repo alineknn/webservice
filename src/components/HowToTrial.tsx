@@ -37,7 +37,7 @@ export default function HowToTrial() {
 
   return (
     <section id="how-to-start" className="pt-[112px] pb-[80px]">
-      <div className="mx-auto w-full max-w-[1280px] min-[1440px]:max-w-[1440px] px-[20px] sm:px-6 min-[1440px]:px-[80px]">
+      <div className="mx-auto w-full max-w-[1280px] px-[8px] min-[1440px]:px-[80px]">
         {/* Header */}
         <div className="flex flex-col items-center">
           {t.badge ? (

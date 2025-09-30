@@ -21,5 +21,7 @@
       "text": "All credentials arrive by email right after activation. Hosting is ready instantly.",
       "tone": "blue"
     }
-  ]
+  ],
+    "cta": "First 14 days — free!",
+  "ctaNote": "* after verification, our support team will contact you"
 }

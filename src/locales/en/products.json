@@ -1,37 +1,37 @@
 {
   "badge": "Services",
   "title": "Our Products",
-  "subtitle": "Best solutions for your business",
-  "usp": "Quality Guarantee",
-  "footerSelect": "Choose",
-  "footerMore": "Learn more >",
+  "subtitle": "From simple site hosting to enterprise-grade infrastructure rental solutions.",
+  "usp": "No bandwidth limits, 99.9% uptime guaranteed",
   "items": [
     {
-      "slug": "/vps",
+      "slug": "/vps-hosting",
       "title": "VPS Hosting",
-      "description": "Reliable VPS for your project",
-      "priceLabel": "from $7",
+      "description": "Dedicated CPU/RAM/SSD or HDD, OS choice, plus easy monitoring and charts.",
+      "priceLabel": "from 500 KGS",
       "perMonth": "per month",
       "fitNote": "Great for startups",
-      "ctaLabel": "Learn more >"
+      "ctaLabel": "Learn more"
     },
     {
-      "slug": "/web",
+      "slug": "/web-hosting",
       "title": "Web Hosting",
-      "description": "High-speed web hosting",
-      "priceLabel": "from $5",
+      "description": "Perfect for .KG sites with an easy control panel and automated backups.",
+      "priceLabel": "from 6000 KGS",
       "perMonth": "per month",
       "fitNote": "Great for startups",
-      "ctaLabel": "Learn more >"
+      "ctaLabel": "Learn more"
     },
     {
-      "slug": "/ssl",
+      "slug": "/ssl-certificates",
       "title": "SSL Certificates",
-      "description": "Protect your website",
-      "priceLabel": "from $20",
-      "perMonth": "per year",
-      "fitNote": "Builds customer trust",
-      "ctaLabel": "Learn more >"
+      "description": "Security foundation for your project. We’ll help select, install, and configure.",
+      "priceLabel": "from 0 KGS",
+      "perMonth": "per month",
+      "fitNote": "Free and paid options",
+      "ctaLabel": "Learn more"
     }
-  ]
+  ],
+  "footerSelect": "Choose",
+  "footerMore": "Learn more"
 }

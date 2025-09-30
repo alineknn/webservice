@@ -2,16 +2,15 @@
 
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import {
-  EnvelopeIcon,
-  PhoneIcon,
-  MapPinIcon,
-} from "@heroicons/react/24/outline";
 import Button from "@/components/Button";
 import Image from "next/image";
 import contactBg from "@/assets/images/contact background.jpg";
-import whatsappIcon from "@/assets/images/Whatsapp.png";
-import telegramIcon from "@/assets/images/Telegram.png";
+
+import mailIcon from "@/assets/images/footer/mail.svg";
+import callIcon from "@/assets/images/footer/call.svg";
+import mapIcon from "@/assets/images/footer/map.svg";
+import telegramIcon from "@/assets/images/footer/Telegram.svg";
+import whatsappIcon from "@/assets/images/footer/whatsapp.svg";
 
 import en from "@/locales/en/contact.json";
 import ru from "@/locales/ru/contact.json";
@@ -88,51 +87,51 @@ export default function Contact() {
             </div>
 
             <div className="mt-10 space-y-4">
-              <div className="flex items-start gap-3">
-                <EnvelopeIcon className="h-6 w-6 text-black/60" />
+              <div className="flex items-start gap-4">
+                <Image src={mailIcon} alt="Email" width={24} height={24} className="w-6 h-6" />
                 <div>
-                  <Link
+                  <a
                     href={`mailto:${t.company.email}`}
-                    className="hover:underline font-['Avenir Next'] text-[16px]"
+                    className="underline font-['Avenir Next'] text-[16px]"
                   >
                     {t.company.email}
-                  </Link>
+                  </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <PhoneIcon className="h-6 w-6 text-black/60" />
+              <div className="flex items-start gap-4">
+                <Image src={callIcon} alt="Phone" width={24} height={24} className="w-6 h-6" />
                 <div>
-                  <a href={`tel:${t.company.phone}`} className="hover:underline font-['Avenir Next'] text-[16px]">
+                  <a href={`tel:${t.company.phone}`} className="underline font-['Avenir Next'] text-[16px]">
                     {t.company.phone}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <MapPinIcon className="h-6 w-6 text-black/60" />
+              <div className="flex items-start gap-4">
+                <Image src={mapIcon} alt="Address" width={24} height={24} className="w-6 h-6" />
                 <div className="font-['Avenir Next'] text-[16px]">{t.company.address}</div>
               </div>
             </div>
 
             {/* Messengers */}
-            <div className="mt-4 flex flex-col space-y-2">
+            <div className="mt-4 flex flex-col space-y-4">
               <Link
                 href={t.company.whatsappUrl}
                 target="_blank"
-                className="inline-flex items-center gap-3"
+                className="inline-flex items-center gap-4"
               >
-                <Image src={whatsappIcon} alt="WhatsApp" width={57} height={57} className="w-[57px] h-[57px] object-contain" />
-                <span className="font-normal underline font-['Avenir Next'] text-[16px]">{t.links.whatsapp}</span>
+                <Image src={whatsappIcon} alt="WhatsApp" width={24} height={24} className="w-6 h-6 object-contain" />
+                <span className="font-normal font-['Avenir Next'] text-[16px]">{t.links.whatsapp}</span>
               </Link>
 
               <Link
                 href={t.company.telegramUrl}
                 target="_blank"
-                className="inline-flex items-center gap-3"
+                className="inline-flex items-center gap-4"
               >
-                <Image src={telegramIcon} alt="Telegram" width={57} height={57} className="w-[57px] h-[57px] object-contain" />
-                <span className="font-normal underline font-['Avenir Next'] text-[16px]">{t.links.telegram}</span>
+                <Image src={telegramIcon} alt="Telegram" width={24} height={24} className="w-6 h-6 object-contain" />
+                <span className="font-normal font-['Avenir Next'] text-[16px]">{t.links.telegram}</span>
               </Link>
             </div>
           </div>
