@@ -24,8 +24,8 @@ export default function HeroSectionAbout() {
   return (
     <section id="about-hero" className="relative md:py-0  overflow-hidden">
       <div className="relative mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px] py-[64px]">
-        {/* Decorative image (desktop only) with margins: L=851, T=112 */}
-        <div className="hidden md:block pointer-events-none absolute top-[112px] left-[851px] z-0">
+        {/* Decorative image (desktop only) with margins: L=851, T=187 */}
+        <div className="hidden md:block pointer-events-none absolute top-[187px] left-[851px] z-0">
           <Image
             src={heroImage}
             alt="About hero"

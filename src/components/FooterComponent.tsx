@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -11,6 +12,12 @@ import callIcon from "@/assets/images/footer/call.svg";
 import mapIcon from "@/assets/images/footer/map.svg";
 import telegramIcon from "@/assets/images/footer/Telegram.svg";
 import whatsappIcon from "@/assets/images/footer/whatsapp.svg";
+
+import facebookIcon from "@/assets/images/footer/Facebook.svg";
+import instagramIcon from "@/assets/images/footer/Instagram.svg";
+import xIcon from "@/assets/images/footer/X.svg";
+import linkedinIcon from "@/assets/images/footer/LinkedIn.svg";
+import youtubeIcon from "@/assets/images/footer/Youtube.svg";
 
 import en from "@/locales/en/footer.json";
 import ru from "@/locales/ru/footer.json";
@@ -56,6 +63,19 @@ const contactIconFor = (type: ContactItem["type"]) => {
     default:
       return <Image src={mailIcon} alt="mail" width={24} height={24} className={common} />;
   }
+};
+
+const SOCIAL_ICONS: Record<string, StaticImageData> = {
+  facebook: facebookIcon,
+  instagram: instagramIcon,
+  x: xIcon,
+  linkedin: linkedinIcon,
+  youtube: youtubeIcon,
+};
+
+const socialIconFor = (label: string): StaticImageData => {
+  const key = label?.trim().toLowerCase();
+  return SOCIAL_ICONS[key] ?? facebookIcon; // fallback
 };
 
 export default function Footer() {
@@ -109,10 +129,10 @@ export default function Footer() {
           <div className="w-full lg:w-[303px] lg:ml-[64px]">
             {t.linksGroups && t.linksGroups[0] ? (
               <div>
-                <h4 className="text-[22px] font-semibold">{t.linksGroups[0].title}</h4>
+                <h4 className="text-[22px] font-semibold font-['Inter']">{t.linksGroups[0].title}</h4>
                 <ul className="mt-4 space-y-2">
                   {t.linksGroups[0].items.map((item) => (
-                    <li key={item.href} className="text-[14px] ">
+                    <li key={item.href} className="text-[14px] font-['Inter'] font-semibold">
                       <Link href={item.href} className="hover:text-[#746FAE] transition">{item.label}</Link>
                     </li>
                   ))}
@@ -126,28 +146,35 @@ export default function Footer() {
             {t.linksGroups && t.linksGroups[1] ? (
               <>
                 <ul className="mt-[22px] space-y-2">
-                  {t.linksGroups[1].items.map((item) => (
-                    <li key={item.href} className="text-[14px] font-semibold">
+                  {t.linksGroups[1].items.map((item, idx) => (
+                    <li
+                      key={item.href}
+                      className={`text-[14px] font-['Inter'] ${idx === 2 ? 'font-semibold' : 'font-normal'}`}
+                    >
                       <Link href={item.href} className="hover:text-[#746FAE] transition">{item.label}</Link>
                     </li>
                   ))}
                 </ul>
 
                 {t.social?.items?.length ? (
-                  <div className="mt-6 w-full">
+                  <div className="mt-[92px] w-full">
                     <div className="flex items-center gap-4">
                       {t.social.items.map((s) => (
                         <a
                           key={s.href}
                           href={s.href}
                           target="_blank"
+                          rel="noopener noreferrer"
                           aria-label={s.label}
                           className="inline-flex items-center justify-center w-6 h-6"
                         >
-                          {/* 24x24 placeholder icon */}
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <circle cx="12" cy="12" r="10" />
-                          </svg>
+                          <Image
+                            src={socialIconFor(s.label)}
+                            alt={s.label}
+                            width={24}
+                            height={24}
+                            className="w-6 h-6"
+                          />
                         </a>
                       ))}
                     </div>

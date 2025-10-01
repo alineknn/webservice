@@ -1,0 +1,9 @@
+{
+  "title": "Customer Review",
+  "quote": "Excellent service! Fast support and reliable servers that fully meet our needs.",
+  "name": "Ivan Petrov",
+  "role": "Manager",
+  "company": "Company XYZ",
+  "rating": 5,
+  "imageAlt": "Server rack in a data center"
+}

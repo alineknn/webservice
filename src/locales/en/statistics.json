@@ -1,0 +1,19 @@
+{
+  "badge": "Statistics",
+  "title": "Our key metrics and achievements",
+  "lede": "We are proud to have provided services for over 5 years. Our client base continues to grow thanks to high quality of service.",
+  "stats": [
+    {
+      "value": "3000",
+      "label": "The number of satisfied clients to date."
+    },
+    {
+      "value": "150",
+      "label": "Number of servers ensuring reliability and speed."
+    }
+  ],
+  "primaryCta": "Learn more",
+  "primaryHref": "#",
+  "secondaryCta": "Contact us",
+  "secondaryHref": "#"
+}
