@@ -31,7 +31,7 @@ export default function RootLayout({
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className="…">
+      <body className="">
         <Navbar />
         {children}
         <Footer />

@@ -129,8 +129,6 @@ export default function Navbar() {
           </AnimatePresence>
         </div>
       </header>
-      {/* Spacer */}
-      <div className="pb-[86px] md:pb-[98px] lg:pb-[130px]" />
     </>
   );
 }
