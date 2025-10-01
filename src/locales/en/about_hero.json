@@ -5,6 +5,5 @@
   "primaryCta": "Learn more",
   "primaryHref": "/about",
   "secondaryCta": "Contact",
-  "secondaryHref": "/contact",
-  "image": "/images/about/hero-orb.png"
+  "secondaryHref": "/contact"
 }

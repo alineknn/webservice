@@ -5,6 +5,5 @@
   "primaryCta": "Узнать больше",
   "primaryHref": "/about",
   "secondaryCta": "Связаться",
-  "secondaryHref": "/contact",
-  "image": "/images/about/hero-orb.png"
+  "secondaryHref": "/contact"
 }

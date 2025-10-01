@@ -41,17 +41,33 @@ export default function ReliabilityAbout() {
             <div className="mt-[24px] md:mt-[38px] flex items-center gap-[24px]">
               <Link
                 href={t.primaryHref || "#"}
-                className="inline-flex items-center justify-center text-center w-[63px] md:w-[76px] h-[30px] md:h-[36px] rounded-md bg-white border border-[#000D0D26] text-black font-['Inter'] text-[14px]"
+                className="inline-flex items-center justify-center text-center w-[63px] md:w-[76px] h-[30px] md:h-[36px] rounded-md bg-white border border-[#000D0D26] text-black font-['Avenir Next'] text-[14px]"
               >
                 {t.primaryCta}
               </Link>
 
-              <Link
-                href={t.secondaryHref || "#"}
-                className="inline-flex items-center justify-center text-center w-[90px] md:w-[110px] h-[24px] md:h-[24px] rounded-md bg-white text-black font-['Inter'] text-[14px]"
-              >
-                {t.secondaryCta}
-              </Link>
+              <span className="flex items-center gap-2">
+                <Link
+                  href={t.secondaryHref || "#"}
+                  className="inline-flex items-center justify-center text-center w-[90px] md:w-[110px] h-[24px] md:h-[24px] rounded-md bg-white text-black font-['Avenir Next'] text-[14px]"
+                >
+                  {t.secondaryCta}
+                </Link>
+                {/* 24x24 icon to the right of the second CTA */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-6 h-6 text-black"
+                  aria-hidden="true"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </span>
             </div>
           </div>
         </div>

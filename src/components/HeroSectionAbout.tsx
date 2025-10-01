@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
+import heroImage from '@/assets/images/about/hero-orb.svg';
 import en from "@/locales/en/about_hero.json";
 import ru from "@/locales/ru/about_hero.json";
 
@@ -23,18 +23,18 @@ export default function HeroSectionAbout() {
 
   return (
     <section id="about-hero" className="relative md:py-0 py-[64px] overflow-hidden">
-      <div className="mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">
-        {/* Decorative image (desktop only) */}
-        {t.image ? (
+      <div className="relative mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">
+        {/* Decorative image (desktop only) with margins: L=851, T=112 */}
+        <div className="hidden md:block pointer-events-none absolute top-[112px] left-[851px] z-0">
           <Image
-            src={t.image}
+            src={heroImage}
             alt="About hero"
-            width={720}
-            height={720}
+            width={509}
+            height={509}
             priority
-            className="hidden md:block absolute top-[112px] left-[851px] w-auto h-auto"
+            className="w-auto h-auto"
           />
-        ) : null}
+        </div>
 
         {/* Text block */}
         <div className="pt-0 md:pt-[187px] relative z-10 max-w-[720px]">
