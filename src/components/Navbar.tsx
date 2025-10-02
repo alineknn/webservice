@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50 w-full max-w-full overflow-x-hidden">
-        <div className="mx-auto max-w-[1440px] w-full">
+        <div className="mx-auto max-w-[1440px] w-full relative">
           <div className="w-full bg-white rounded-[27px] md:rounded-full">
             <div className="relative flex items-center justify-between h-[72px] px-[20px] md:px-[64px]">
               {/* Logo */}
@@ -100,29 +100,33 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Menu */}
-          <AnimatePresence>
+          {/* Mobile Menu (animated) */}
+          <AnimatePresence initial={false}>
             {isOpen && (
               <motion.div
-                initial={{ height: 0 }}
-                animate={{ height: 'auto' }}
-                exit={{ height: 0 }}
-                className="absolute left-0 right-0 top-[72px] z-40 overflow-hidden md:hidden bg-white border-t border-black/10"
+                key="mobile-menu"
+                initial={{ opacity: 0, scaleY: 0 }}
+                animate={{ opacity: 1, scaleY: 1 }}
+                exit={{ opacity: 0, scaleY: 0 }}
+                transition={{ duration: 0.18, ease: 'easeOut' }}
+                className="fixed left-0 right-0 top-[72px] z-[60] md:hidden bg-white border-t border-black/10 shadow-lg origin-top will-change-transform transform-gpu"
               >
-                <div className="flex flex-col gap-4 px-[20px] py-4 text-black">
-                  {t.servicesItems.map((item) => (
-                    <Link key={item.href} href={item.href} className="py-2">
-                      {item.label}
+                <div className="mx-auto max-w-[1440px] w-full">
+                  <div className="flex flex-col gap-4 px-[20px] py-4 text-black">
+                    {t.servicesItems.map((item) => (
+                      <Link key={item.href} href={item.href} className="py-2" onClick={() => setIsOpen(false)}>
+                        {item.label}
+                      </Link>
+                    ))}
+                    {t.links.map((link) => (
+                      <Link key={link.href} href={link.href} className="py-2" onClick={() => setIsOpen(false)}>
+                        {link.label}
+                      </Link>
+                    ))}
+                    <Link href={t.contact.href} className="py-2" onClick={() => setIsOpen(false)}>
+                      {t.contact.label}
                     </Link>
-                  ))}
-                  {t.links.map(link => (
-                    <Link key={link.href} href={link.href} className="py-2">
-                      {link.label}
-                    </Link>
-                  ))}
-                  <Link href={t.contact.href} className="py-2">
-                    {t.contact.label}
-                  </Link>
+                  </div>
                 </div>
               </motion.div>
             )}

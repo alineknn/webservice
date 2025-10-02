@@ -39,7 +39,7 @@ export default function HowToStart() {
 
   return (
     <section id="how-to-start" className="pt-[112px] pb-[80px]">
-      <div className="mx-auto w-full max-w-[1280px] min-[1440px]:max-w-[1440px] px-[20px] sm:px-6 min-[1440px]:px-[80px]">
+      <div className="mx-auto w-full max-w-[1280px] min-[1440px]:max-w-[1440px] px-[20px] min-[1440px]:px-[80px]">
         {/* Header */}
         <div className="flex flex-col items-center">
           {t.badge ? (
@@ -64,14 +64,14 @@ export default function HowToStart() {
         </div>
 
         {/* Steps */}
-        <div className="mt-[80px] grid grid-cols-1 gap-8 justify-center md:[grid-template-columns:repeat(3,405px)] md:gap-[32px] md:justify-start">
+        <div className="mt-[80px] grid grid-cols-1 gap-8 justify-center md:grid-cols-2 md:gap-[24px] md:justify-center min-[1280px]:[grid-template-columns:repeat(3,405px)] min-[1280px]:gap-[32px] min-[1280px]:justify-start">
           {t.steps.map((s, i) => {  
             const bg = i === 0 ? 'bg-[#F2F2F3]' : i === 1 ? 'bg-[#FDFFFF]' : 'bg-[#EFF4F9]';
             const size = i === 1 ? 48 : 42;
             const sizeClass = i === 1 ? "w-[48px] h-[48px]" : "w-[42px] h-[42px]";
             return (
               <article
-                className={`rounded-lg border border-[rgba(0,13,13,0.15)] ${bg} w-[335px] h-[296px] md:w-[405px] pl-[32px] pt-[44px] pr-[32px] pb-[32px]`}
+                className={`rounded-lg border border-[rgba(0,13,13,0.15)] ${bg} w-[335px] h-auto md:h-[296px] md:w-full min-[1280px]:w-[405px] pl-[32px] pt-[44px] pr-[32px] pb-[32px]`}
                 key={`${s.title}-${i}`}
               >
                 <div className="flex flex-col items-start text-left">
@@ -83,12 +83,12 @@ export default function HowToStart() {
                     className={`${sizeClass} object-contain`}
                     priority={i === 0}
                   />
-                  <div className="mt-6 w-full md:w-[341px] h-[78px]">
+                  <div className="mt-6 w-full md:w-[341px] md:h-[78px]">
                     <h3 className="text-[28px] font-normal font-['Helvetica'] leading-snug">
                       {s.title}
                     </h3>
                   </div>
-                  <p className="mt-2 text-[16px] font-normal font-['Avenir Next']">{s.text}</p>
+                  <p className="mt-3 text-[16px] font-normal font-['Avenir Next']">{s.text}</p>
                 </div>
               </article>
             );
