@@ -1,0 +1,92 @@
+{
+  "kicker": "Блог",
+  "title": "Блог WebService",
+  "subtitle": "Последние новости, обновления и советы по хостингу и VPS/VDS.",
+  "readMore": "Читать далее",
+  "posts": [
+    {
+      "id": "p1",
+      "slug": "vybor-hostinga-dlya-biznesa",
+      "image": "/assets/images/blog/post-1.jpg",
+      "badge": "Технологии",
+      "date": "11 июл 2025",
+      "author": {
+        "name": "Артём Козырев",
+        "role": "Технический директор",
+        "avatar": "/assets/images/blog/authors/koz.jpg"
+      },
+      "title": "Как выбрать хостинг для вашего бизнеса",
+      "excerpt": "Советы по выбору надежного хостинга для стартапов и бизнеса."
+    },
+    {
+      "id": "p2",
+      "slug": "top-5-sovetov-bezopasnosti",
+      "image": "/assets/images/blog/post-2.jpg",
+      "badge": "Обновления",
+      "date": "11 июл 2025",
+      "author": {
+        "name": "Анна Турсунбаева",
+        "role": "Руководитель сервиса",
+        "avatar": "/assets/images/blog/authors/anna.jpg"
+      },
+      "title": "Топ-5 советов по безопасности данных",
+      "excerpt": "Как защитить ваши данные в интернете и избежать утечек."
+    },
+    {
+      "id": "p3",
+      "slug": "preimushchestva-oblachnogo-hostinga",
+      "image": "/assets/images/blog/post-3.jpg",
+      "badge": "Безопасность",
+      "date": "11 июл 2025",
+      "author": {
+        "name": "Тимур Исенаков",
+        "role": "DevOps-инженер",
+        "avatar": "/assets/images/blog/authors/timur.jpg"
+      },
+      "title": "Преимущества облачного хостинга для бизнеса",
+      "excerpt": "Гибкость и масштабируемость для вашего бизнеса."
+    },
+    {
+      "id": "p4",
+      "slug": "vybor-hostinga-povtor",
+      "image": "/assets/images/blog/post-4.jpg",
+      "badge": "Технологии",
+      "date": "11 июл 2025",
+      "author": {
+        "name": "Артык Канимов",
+        "role": "Контент-менеджер",
+        "avatar": "/assets/images/blog/authors/artyk.jpg"
+      },
+      "title": "Как выбрать хостинг для вашего бизнеса",
+      "excerpt": "У нас есть всё, что нужно вашему проекту."
+    },
+    {
+      "id": "p5",
+      "slug": "top-5-sovetov-bezopasnosti-2",
+      "image": "/assets/images/blog/post-5.jpg",
+      "badge": "Обновления",
+      "date": "11 июл 2025",
+      "author": {
+        "name": "Алексей Романов",
+        "role": "Ведущий специалист по инфраструктуре",
+        "avatar": "/assets/images/blog/authors/alex.jpg"
+      },
+      "title": "Топ-5 советов по безопасности",
+      "excerpt": "Практики для повышения безопасности и устойчивости."
+    },
+    {
+      "id": "p6",
+      "slug": "preimushchestva-oblachnogo-hostinga-2",
+      "image": "/assets/images/blog/post-6.jpg",
+      "badge": "Безопасность",
+      "date": "11 июл 2025",
+      "author": {
+        "name": "Нурлан Асанов",
+        "role": "Ведущий специалист",
+        "avatar": "/assets/images/blog/authors/nurlan.jpg"
+      },
+      "title": "Преимущества облачного хостинга",
+      "excerpt": "Масштабируемость без лишних сложностей."
+    }
+  ]
+}

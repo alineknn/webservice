@@ -1,0 +1,92 @@
+{
+  "kicker": "Blog",
+  "title": "WebService Blog",
+  "subtitle": "Latest news, updates, and hosting/VPS insights.",
+  "readMore": "Read more",
+  "posts": [
+    {
+      "id": "p1",
+      "slug": "how-to-choose-hosting",
+      "image": "/assets/images/blog/post-1.jpg",
+      "badge": "Technology",
+      "date": "Jul 11, 2025",
+      "author": {
+        "name": "Artyom Kozyrev",
+        "role": "CTO",
+        "avatar": "/assets/images/blog/authors/koz.jpg"
+      },
+      "title": "How to choose hosting for your business",
+      "excerpt": "Tips for picking reliable hosting for startups and companies."
+    },
+    {
+      "id": "p2",
+      "slug": "top-5-security-tips",
+      "image": "/assets/images/blog/post-2.jpg",
+      "badge": "Updates",
+      "date": "Jul 11, 2025",
+      "author": {
+        "name": "Anna Tursunbaeva",
+        "role": "Service Lead",
+        "avatar": "/assets/images/blog/authors/anna.jpg"
+      },
+      "title": "Top-5 data security tips",
+      "excerpt": "Protect your data online and avoid breaches."
+    },
+    {
+      "id": "p3",
+      "slug": "cloud-hosting-benefits",
+      "image": "/assets/images/blog/post-3.jpg",
+      "badge": "Security",
+      "date": "Jul 11, 2025",
+      "author": {
+        "name": "Timur Isenakov",
+        "role": "DevOps Engineer",
+        "avatar": "/assets/images/blog/authors/timur.jpg"
+      },
+      "title": "Cloud hosting benefits for business",
+      "excerpt": "Flexibility and scalability for your workloads."
+    },
+    {
+      "id": "p4",
+      "slug": "choose-hosting-again",
+      "image": "/assets/images/blog/post-4.jpg",
+      "badge": "Technology",
+      "date": "Jul 11, 2025",
+      "author": {
+        "name": "Artyk Kanimov",
+        "role": "Content Manager",
+        "avatar": "/assets/images/blog/authors/artyk.jpg"
+      },
+      "title": "How to choose hosting for your business",
+      "excerpt": "Everything your project needs—without the headache."
+    },
+    {
+      "id": "p5",
+      "slug": "top-5-security-2",
+      "image": "/assets/images/blog/post-5.jpg",
+      "badge": "Updates",
+      "date": "Jul 11, 2025",
+      "author": {
+        "name": "Alexey Romanov",
+        "role": "Lead Infrastructure Engineer",
+        "avatar": "/assets/images/blog/authors/alex.jpg"
+      },
+      "title": "Top-5 security tips",
+      "excerpt": "Practical steps to improve security and resilience."
+    },
+    {
+      "id": "p6",
+      "slug": "cloud-hosting-benefits-2",
+      "image": "/assets/images/blog/post-6.jpg",
+      "badge": "Security",
+      "date": "Jul 11, 2025",
+      "author": {
+        "name": "Nurlan Asanov",
+        "role": "Lead Engineer",
+        "avatar": "/assets/images/blog/authors/nurlan.jpg"
+      },
+      "title": "Benefits of cloud hosting",
+      "excerpt": "Scale without the complexity."
+    }
+  ]
+}
