@@ -45,8 +45,8 @@ export default function Products() {
 
   return (
     <section id="products" className="pt-[112px] pb-[80px]">
-      {/* side margins: 8 on mobile, standard elsewhere */}
-      <div className="mx-auto w-full max-w-[1280px] px-[8px] sm:px-6 min-[1440px]:px-[80px]">
+      {/* side margins: 20px on mobile, 80px at ≥1440px */}
+      <div className="mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">
         {/* Top row: badge/title/subtitle + USP pill */}
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div>

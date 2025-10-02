@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <section
       id="Home"
-      className="py-4 lg:py-8 min-h-screen relative overflow-hidden"
+      className="pt-[calc(var(--nav-h,64px)+48px)] pb-4 md:pb-8 min-h-screen relative overflow-hidden"
     >
       <Image
         src={heroBackground}
@@ -66,15 +66,15 @@ export default function Hero() {
           </Link>
         </div>
         {/* Hero illustration */}
-        <div className="mt-12">
-          <div className="relative mx-auto w-full max-w-[1312px] aspect-[335/798] md:aspect-[1312/474]">
+        <div className="mt-[48px]">
+          <div className="relative mx-auto w-[335px] md:w-full max-w-[1312px] overflow-hidden aspect-square md:aspect-[1312/474]">
             <Image
               src={heroImage}
               alt="Hero illustration"
               fill
               className="rounded-xl object-contain"
               priority
-              sizes="(max-width: 767px) calc(100vw - 16px), (min-width: 1440px) 1312px, calc(100vw - 128px)"
+              sizes="(max-width: 767px) 335px, (min-width: 1440px) 1312px, calc(100vw - 128px)"
             />
           </div>
         </div>
