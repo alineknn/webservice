@@ -18,14 +18,14 @@ export default function BannerCustomer() {
   return (
     <section className="py-[103px]">
       <div className="mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">
-        <div className="flex items-center gap-8 md:gap-16">
+        <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-16">
           {/* Left heading */}
-          <p className="shrink-0 font-['Avenir Next'] font-bold text-[18px] leading-snug w-[280px]">
+          <p className="w-full md:w-[280px] text-center md:text-left font-['Avenir Next'] font-bold text-[18px] leading-snug mb-8 md:mb-0">
             {t.heading}
           </p>
 
           {/* Logos row */}
-          <div className="flex-1 flex justify-center gap-8 md:gap-12 flex-wrap">
+          <div className="w-full md:flex-1 flex justify-center md:justify-start gap-8 md:gap-12 flex-wrap">
             {items.map((_, i) => (
               <div
                 key={i}
