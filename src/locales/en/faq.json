@@ -1,10 +1,10 @@
 {
-  "title": "FAQs",
-  "items": [
-    { "q": "...", "a": "..." },
-    { "q": "...", "a": "..." },
-    { "q": "...", "a": "..." },
-    { "q": "...", "a": "..." }
-    
-  ]
+"title": "Frequently Asked Questions",
+"subjects": [
+{ "q": "How is VPS different from regular hosting?", "a": "..." },
+{ "q": "What operating systems can I install?", "a": "..." },
+{ "q": "What if I don't understand administration?", "a": "..." },
+{ "q": "What payment methods are available?", "a": "..." },
+{ "q": "How do I migrate my website?", "a": "..." }
+]
 }
