@@ -22,7 +22,7 @@ export default function ReliabilityAbout() {
 
   return (
     <section className="py-[112px]">
-      <div className="mx-auto w-full max-w-[1280px] px-[8px] min-[1440px]:px-[80px]">
+      <div className="mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">
         <div className="grid md:grid-cols-[1fr,1fr] md:gap-x-[80px] items-start">
           {/* Left: subtitle + title */}
           <div>
