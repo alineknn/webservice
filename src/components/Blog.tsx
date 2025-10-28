@@ -7,12 +7,17 @@ import { useRouter } from "next/navigation";
 import en from "@/locales/en/blog.json";
 import ru from "@/locales/ru/blog.json";
 
+import blogImg1 from "@/assets/images/blog image 1.svg";
+import blogImg2 from "@/assets/images/blog image 2.svg";
+import blogImg3 from "@/assets/images/blog image 3.svg";
+
 type Post = {
   slug: string;
   tag: string;
   title: string;
   excerpt: string;
   image: string; // public/ path or import
+  objectPosition?: string; // e.g. "50% 35%" from Figma focal point
 };
 
 type BlogLocale = {
@@ -26,6 +31,15 @@ type BlogLocale = {
 export default function Blog() {
   const { locale } = useRouter();
   const t = (locale === "en" ? (en as BlogLocale) : (ru as BlogLocale));
+
+  const localImages = [blogImg1, blogImg2, blogImg3] as const;
+
+  // Optional per-image focal positions (percentages). Tweak to match Figma crop.
+  const focalPositions = [
+    "50% 45%", // image 1 focus (x y)
+    "55% 50%", // image 2 focus
+    "50% 40%", // image 3 focus
+  ] as const;
 
   return (
     <section id="blog" className="pt-[112px] pb-[80px]">
@@ -43,18 +57,19 @@ export default function Blog() {
 
         {/* Cards */}
         <div className="mt-[80px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {t.posts.slice(0, 3).map((post) => (
+          {t.posts.slice(0, 3).map((post, idx) => (
             <article
               key={post.slug}
               className="group rounded-2xl bg-white/90 overflow-hidden hover:shadow-md transition"
             >
               <Link href={`/blog/${post.slug}`} className="block">
-                <div className="relative w-full max-w-[405px] h-[270px] mx-auto">
+                <div className="relative w-full h-[200px] md:h-[240px] lg:w-[405px] lg:h-[270px] mx-auto overflow-hidden">
                   <Image
-                    src={post.image}
+                    src={localImages[idx] ?? post.image}
                     alt={post.title}
                     fill
-                    className="object-cover"
+                    className="object-contain object-center"
+                    style={{ objectPosition: post.objectPosition ?? focalPositions[idx] ?? "50% 50%" }}
                     sizes="(max-width: 1024px) 100vw, 33vw"
                     priority={false}
                   />
