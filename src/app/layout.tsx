@@ -25,13 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" className="dark" suppressHydrationWarning>
       <head>
-        {/* Prevent browsers from auto-darkening form controls, etc. */}
-        <meta name="color-scheme" content="light" />
-        <meta name="theme-color" content="#ffffff" />
+        {/* Lock the UI to a single (dark) theme, regardless of OS setting */}
+        <meta name="theme-color" content="#0a0a0a" />
+        <style>{`:root{color-scheme: dark;}`}</style>
       </head>
-      <body className="">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
         {children}
         <Footer />
