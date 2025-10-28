@@ -1,0 +1,25 @@
+{
+  "badge": "Blog",
+  "title": "Latest blog posts",
+  "viewAll": "View all",
+  "posts": [
+    {
+      "slug": "choose-vps-hosting",
+      "tag": "Technology",
+      "title": "How to choose the right hosting for your business",
+      "excerpt": "Tips on choosing reliable hosting for startups and businesses."
+    },
+    {
+      "slug": "top-5-security-tips",
+      "tag": "Updates",
+      "title": "Top-5 security tips",
+      "excerpt": "How to protect your data on the internet and avoid leaks."
+    },
+    {
+      "slug": "benefits-of-cloud-hosting",
+      "tag": "Security",
+      "title": "Benefits of cloud hosting",
+      "excerpt": "Flexible and scalable hosting for your business."
+    }
+  ]
+}

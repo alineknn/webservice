@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Button from "@/components/Button";
@@ -53,6 +54,72 @@ export default function Contact() {
   const { locale } = useRouter();
   const t: ContactLocale = (locale === "en" ? (en as any) : (ru as any));
 
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const isMobile = () => window.innerWidth < 768;
+
+    const handleFocus = (e: Event) => {
+      if (!isMobile()) return;
+      const target = e.target as HTMLElement;
+
+      // Ensure there's space below for the keyboard; push content up.
+      const vv = (window as any).visualViewport;
+      let extra = 220; // fallback extra padding in px
+      if (vv && sectionRef.current) {
+        const kb = window.innerHeight - vv.height; // keyboard height approximation
+        extra = kb > 0 ? kb + 24 : 220; // add a little extra
+        sectionRef.current.style.paddingBottom = `${80 + extra}px`; // preserve original 80px
+      } else if (sectionRef.current) {
+        sectionRef.current.style.paddingBottom = `${80 + extra}px`;
+      }
+
+      // Help the browser center the focused control
+      (target.style as any).scrollMarginBottom = "120px";
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+      }, 100);
+    };
+
+    const handleBlur = () => {
+      if (sectionRef.current) {
+        sectionRef.current.style.paddingBottom = ""; // reset to Tailwind value
+      }
+    };
+
+    const inputs = Array.from(document.querySelectorAll("#contact input, #contact textarea"));
+    inputs.forEach((el) => {
+      el.addEventListener("focus", handleFocus, { passive: true } as any);
+      el.addEventListener("blur", handleBlur, { passive: true } as any);
+    });
+
+    // Keep padding synced with keyboard height on iOS/Android Chrome
+    let vvHandler: any = null;
+    if ((window as any).visualViewport) {
+      vvHandler = () => {
+        if (!isMobile() || !sectionRef.current) return;
+        const vv = (window as any).visualViewport;
+        const kb = window.innerHeight - vv.height;
+        if (kb > 0) {
+          sectionRef.current.style.paddingBottom = `${80 + kb + 24}px`;
+        }
+      };
+      (window as any).visualViewport.addEventListener("resize", vvHandler);
+    }
+
+    return () => {
+      inputs.forEach((el) => {
+        el.removeEventListener("focus", handleFocus as any);
+        el.removeEventListener("blur", handleBlur as any);
+      });
+      if ((window as any).visualViewport && vvHandler) {
+        (window as any).visualViewport.removeEventListener("resize", vvHandler);
+      }
+    };
+  }, []);
+
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
@@ -61,7 +128,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="pt-[112px] pb-[80px] relative overflow-hidden">
+    <section id="contact" ref={sectionRef} className="pt-[112px] pb-[80px] relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
           src={contactBg}

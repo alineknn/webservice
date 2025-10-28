@@ -7,6 +7,10 @@ import { useRouter } from "next/navigation";
 import ru from "@/locales/ru/blog_landing.json";
 import en from "@/locales/en/blog_landing.json";
 
+import blogImg1 from "@/assets/images/blog image 1.svg";
+import blogImg2 from "@/assets/images/blog image 2.svg";
+import blogImg3 from "@/assets/images/blog image 3.svg";
+
 type Author = {
   name: string;
   role: string;
@@ -36,6 +40,9 @@ export default function BlogLanding() {
   const { locale } = useRouter();
   const t = (locale === "en" ? (en as LocaleBlock) : (ru as LocaleBlock));
 
+  const placeholders = [blogImg1, blogImg2, blogImg3] as const;
+  const badgeBg = ["bg-[#74C2CD]", "bg-[#746FAE]"] as const;
+
   return (
     <section id="blog-landing" className="pt-[112px] pb-[112px]">
       <div className="mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">
@@ -54,7 +61,7 @@ export default function BlogLanding() {
 
         {/* Grid */}
         <div className="mt-[40px] md:mt-[64px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-[64px] gap-x-[32px]">
-          {t.posts.map((p) => (
+          {t.posts.map((p, idx) => (
             <article
               key={p.id}
               className="w-full lg:h-[577px] rounded-xl border border-[rgba(0,13,13,0.12)] bg-white hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)] transition-shadow overflow-hidden flex flex-col"
@@ -62,7 +69,7 @@ export default function BlogLanding() {
               {/* Cover */}
               <div className="relative w-full h-[200px] md:h-[270px]">
                 <Image
-                  src={p.image}
+                  src={placeholders[idx % 3] ?? p.image}
                   alt={p.title}
                   fill
                   className="object-cover"
@@ -76,7 +83,9 @@ export default function BlogLanding() {
               <div className="p-5 flex flex-col flex-1">
                 {/* Badge + Date */}
                 <div className="mt-[24px] flex items-center justify-between gap-3">
-                  <span className="inline-flex h-[29px] min-w-[102px] justify-center items-center rounded-full border border-[rgba(0,13,13,0.15)] bg-[rgba(0,13,13,0.05)] font-['Avenir Next'] font-semibold text-[14px] px-3">
+                  <span
+                    className={`inline-flex h-[29px] min-w-[102px] justify-center items-center rounded-[8px] ${badgeBg[idx % 2]} font-['Avenir Next'] font-semibold text-[14px] px-3`}
+                  >
                     {p.badge}
                   </span>
                   {/* place date approx 220px to right of badge per spec */}

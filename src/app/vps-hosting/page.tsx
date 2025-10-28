@@ -9,14 +9,14 @@ import ru from "@/locales/ru/vps_hosting.json";
 
 import vpsImage from "@/assets/images/vps image map.png";
 
-import ssdIcon from "@/assets/images/SSD.png";
-import uptimeIcon from "@/assets/images/uptime.png";
-import checkIcon from "@/assets/images/check.png"; // if your file is actually .ong, rename to .png or adjust this path
-import lockIcon from "@/assets/images/Lock.png";
-import scaleIcon from "@/assets/images/scale.png";
-import tariffIcon from "@/assets/images/tariff.png";
+import ssdIcon from "@/assets/images/vps/SSD.svg";
+import uptimeIcon from "@/assets/images/vps/uptime.svg";
+import checkIcon from "@/assets/images/vps/check.svg"; 
+import lockIcon from "@/assets/images/vps/Lock.svg";
+import scaleIcon from "@/assets/images/vps/scale.svg";
+import tariffIcon from "@/assets/images/vps/tariff.svg";
 
-import solCrm from "@/assets/images/crm.png";
+import solCrm from "@/assets/images/crm.png"; 
 import solDev from "@/assets/images/development.png";
 import solStorage from "@/assets/images/storage-vps.png";
 import solAI from "@/assets/images/AI.png";
@@ -113,7 +113,7 @@ export default function VPSHostingPage() {
           <div className="mt-[48px] grid grid-cols-1 min-[1280px]:grid-cols-[640px_288px_288px] gap-[32px]">
             {/* Big left card */}
             <article className="rounded-xl bg-[#746FAE] text-white min-[1280px]:h-[392px] pl-[48px] pr-[48px] pt-[87px] pb-[87px] min-[1280px]:pt-[48px] min-[1280px]:pb-[48px]">
-              <Image src={ssdIcon} alt="SSD" width={100} height={70} className="w-[100px] h-[70px] object-contain" />
+              <Image src={ssdIcon} alt="SSD" width={99} height={69} className="w-[99px] h-[69px] object-contain" />
               <h3 className="mt-[24px] text-[24px] md:text-[44px] font-normal font-['Helvetica'] leading-tight">
                 {t.advantages.top.big.title}
               </h3>
@@ -131,7 +131,7 @@ export default function VPSHostingPage() {
 
             {/* Small right card */}
             <article className="rounded-xl border border-[rgba(0,13,13,0.15)] bg-white min-[1280px]:h-[392px] pt-[24px] px-[24px] pb-[72px]">
-              <Image src={checkIcon} alt="Check" width={78} height={82} className="w-[78px] h-[82px] object-contain" />
+              <Image src={checkIcon} alt="Check" width={80} height={60} className="w-[80px] h-[60px] object-contain" />
               <h3 className="mt-[8px] text-[24px] md:text-[28px] font-normal font-['Helvetica'] leading-snug">{t.advantages.top.right.title}</h3>
               <p className="mt-[8px] text-[12px] md:text-[18px] font-normal font-['Avenir Next'] text-black/70">{t.advantages.top.right.text}</p>
             </article>
@@ -141,21 +141,21 @@ export default function VPSHostingPage() {
           <div className="mt-[32px] min-[1280px]:mt-[80px] grid grid-cols-1 min-[1280px]:grid-cols-[288px_288px_640px] gap-[32px]">
             {/* Small left */}
             <article className="rounded-xl border border-[rgba(0,13,13,0.15)] bg-white min-[1280px]:h-[392px] pt-[24px] px-[24px] pb-[72px]">
-              <Image src={lockIcon} alt="Secure" width={50} height={60} className="w-[50px] h-[60px] object-contain" />
+              <Image src={lockIcon} alt="Secure" width={49} height={60} className="w-[49px] h-[60px] object-contain" />
               <h3 className="mt-[8px] text-[24px] md:text-[28px] font-normal font-['Helvetica'] leading-snug">{t.advantages.bottom.left.title}</h3>
               <p className="mt-[8px] text-[12px] md:text-[18px] font-normal font-['Avenir Next'] text-black/70">{t.advantages.bottom.left.text}</p>
             </article>
 
             {/* Small middle */}
             <article className="rounded-xl border border-[rgba(0,13,13,0.15)] bg-white min-[1280px]:h-[392px] pt-[24px] px-[24px] pb-[72px]">
-              <Image src={scaleIcon} alt="Scale" width={78} height={82} className="w-[78px] h-[82px] object-contain" />
+              <Image src={scaleIcon} alt="Scale" width={52} height={52} className="w-[52px] h-[52px] object-contain" />
               <h3 className="mt-[8px] text-[24px] md:text-[28px] font-normal font-['Helvetica'] leading-snug">{t.advantages.bottom.mid.title}</h3>
               <p className="mt-[8px] text-[12px] md:text-[18px] font-normal font-['Avenir Next'] text-black/70">{t.advantages.bottom.mid.text}</p>
             </article>
 
             {/* Big right */}
             <article className="rounded-xl bg-[#74C2CD] min-[1280px]:h-[392px] pl-[23px] pr-[19px] pt-[38px] pb-[58px] min-[1280px]:pl-[48px] min-[1280px]:pr-[48px] min-[1280px]:pt-[48px] min-[1280px]:pb-[48px]">
-              <Image src={tariffIcon} alt="Pricing" width={100} height={70} className="w-[100px] h-[70px] object-contain" />
+              <Image src={tariffIcon} alt="Pricing" width={59} height={59} className="w-[59px] h-[59px] object-contain" />
               <h3 className="mt-[24px] text-[24px] md:text-[44px] font-normal font-['Helvetica'] leading-tight">
                 {t.advantages.bottom.big.title}
               </h3>
