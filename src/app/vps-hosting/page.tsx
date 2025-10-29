@@ -16,13 +16,13 @@ import lockIcon from "@/assets/images/vps/Lock.svg";
 import scaleIcon from "@/assets/images/vps/scale.svg";
 import tariffIcon from "@/assets/images/vps/tariff.svg";
 
-import solCrm from "@/assets/images/crm.png"; 
-import solDev from "@/assets/images/development.png";
-import solStorage from "@/assets/images/storage-vps.png";
-import solAI from "@/assets/images/AI.png";
-import solEcommerce from "@/assets/images/e-commerce-vps.png";
-import solProxy from "@/assets/images/proxy.png";
-import solApi from "@/assets/images/api.png";
+import solCrm from "@/assets/images/vps/crm.svg"; 
+import solDev from "@/assets/images/vps/development.svg";
+import solStorage from "@/assets/images/vps/storage-vps.svg";
+import solAI from "@/assets/images/vps/AI.svg";
+import solEcommerce from "@/assets/images/vps/e-commerce-vps.svg";
+import solProxy from "@/assets/images/vps/proxy.svg";
+import solApi from "@/assets/images/vps/api.svg";
 import HowToTrial from "@/components/HowToTrial";
 import Faqs from "@/components/Faqs";
 
@@ -49,6 +49,31 @@ export default function VPSHostingPage() {
     solProxy,
     solApi,
   ];
+
+  // Precise image sizes for Solutions (desktop)
+  const leftSizes = [
+    { w: 126, h: 120 }, // 1st row
+    { w: 151, h: 125 }, // 2nd row
+    { w: 135, h: 135 }, // 3rd row
+    { w: 115, h: 120 }, // 4th row
+  ] as const;
+  const rightSizes = [
+    { w: 178, h: 150 }, // 1st row (right col)
+    { w: 96,  h: 105 }, // 2nd row
+    { w: 155, h: 132 }, // 3rd row
+  ] as const;
+
+  const leftClasses = [
+    "w-[126px] h-[120px]",
+    "w-[151px] h-[125px]",
+    "w-[135px] h-[135px]",
+    "w-[115px] h-[120px]",
+  ] as const;
+  const rightClasses = [
+    "w-[178px] h-[150px]",
+    "w-[96px] h-[105px]",
+    "w-[155px] h-[132px]",
+  ] as const;
 
   return (
     <main id="vps-hosting">
@@ -189,9 +214,9 @@ export default function VPSHostingPage() {
                   <Image
                     src={solutionImages[idx]}
                     alt={`${s.title} illustration`}
-                    width={130}
-                    height={130}
-                    className="hidden md:block w-[150px] h-[150px] object-contain"
+                    width={leftSizes[idx].w}
+                    height={leftSizes[idx].h}
+                    className={`hidden md:block object-contain ${leftClasses[idx]}`}
                   />
                 </div>
               ))}
@@ -210,9 +235,9 @@ export default function VPSHostingPage() {
                   <Image
                     src={solutionImages[idx + leftSolutions.length]}
                     alt={`${s.title} illustration`}
-                    width={130}
-                    height={130}
-                    className="hidden md:block w-[150px] h-[150px] object-contain"
+                    width={rightSizes[idx].w}
+                    height={rightSizes[idx].h}
+                    className={`hidden md:block object-contain ${rightClasses[idx]}`}
                   />
                 </div>
               ))}
