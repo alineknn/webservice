@@ -138,7 +138,8 @@ export default function Contact() {
           priority
         />
       </div>
-      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-[20px] lg:px-[80px]">
+        <div className="mx-auto w-full max-w-[1280px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left column: static info */}
           <div className="space-y-6">
@@ -275,6 +276,7 @@ export default function Contact() {
               </Button>
             </div>
           </form>
+        </div>
         </div>
       </div>
     </section>

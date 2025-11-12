@@ -17,7 +17,8 @@ export default function Faqs() {
 
   return (
     <section id="faqs" className="pt-[112px] pb-[112px]">
-      <div className="mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">
+      <div className="mx-auto w-full max-w-[1440px] px-[20px] lg:px-[80px]">
+        <div className="mx-auto w-full max-w-[1280px]">
         {/* Title */}
         <h2 className="font-['Helvetica'] font-normal text-[40px] md:text-[52px] leading-tight text-left">
           {t.title}
@@ -78,6 +79,7 @@ export default function Faqs() {
             );
           })}
         </div>
+      </div>
       </div>
     </section>
   );

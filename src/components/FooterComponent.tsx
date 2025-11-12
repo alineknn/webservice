@@ -85,7 +85,8 @@ export default function Footer() {
 
   return (
     <section className="py-[80px] font-['Inter']">
-      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 min-[1440px]:px-[80px]">
+      <div className="mx-auto w-full max-w-[1440px] px-[20px] lg:px-[80px]">
+        <div className="mx-auto w-full max-w-[1280px]">
         {/* Top area: Logo + three columns */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-start gap-10 lg:gap-0">
           {/* Column 1: Logo, Address, Contacts */}
@@ -206,6 +207,7 @@ export default function Footer() {
               ) : null}
             </div>
           ) : null}
+        </div>
         </div>
       </div>
     </section>

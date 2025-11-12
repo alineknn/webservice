@@ -79,7 +79,8 @@ export default function VPSHostingPage() {
     <main id="vps-hosting">
       {/* Hero / Header */}
       <section className="pt-[112px] pb-[112px]">
-        <div className="mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">
+        <div className="mx-auto w-full max-w-[1440px] px-[20px] lg:px-[80px]">
+          <div className="mx-auto w-full max-w-[1280px]">
           {/* Heading */}
           <div className="text-left md:text-center">
             <div className="mx-auto max-w-[1016px]">
@@ -118,18 +119,19 @@ export default function VPSHostingPage() {
                 height={650}
                 className="mx-auto w-full max-w-[1280px] h-auto rounded-xl"
                 priority
-                sizes="(min-width: 1440px) 1280px, calc(100vw - 40px)"
+                sizes="(min-width: 1440px) 1280px, (min-width: 1024px) calc(100vw - 160px), calc(100vw - 40px)"
               />
             </div>
           </div>
-
+        </div>
 
         </div>
       </section>
 
       {/* Advantages */}
       <section id="advantages" className="pt-[112px] pb-[112px]">
-        <div className="mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">
+        <div className="mx-auto w-full max-w-[1440px] px-[20px] lg:px-[80px]">
+          <div className="mx-auto w-full max-w-[1280px]">
           <h2 className="text-left md:text-center text-[40px] md:text-[52px] font-normal font-['Helvetica'] leading-[1.2]">
             {t.advantages.heading}
           </h2>
@@ -190,11 +192,13 @@ export default function VPSHostingPage() {
             </article>
           </div>
         </div>
+      </div>
       </section>
 
       {/* Solutions */}
-      <section id="solutions" className="pt-[112px] pb-[112px]">
-        <div className="mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">
+      <section id="solutions" className="pt-[112px] pb-0">
+        <div className="mx-auto w-full max-w-[1440px] px-[20px] lg:px-[80px]">
+          <div className="mx-auto w-full max-w-[1280px]">
           <h2 className="text-[36px] md:text-[52px] font-normal font-['Helvetica'] leading-tight text-center md:text-left">
             {t.solutions?.title}
           </h2>
@@ -244,11 +248,19 @@ export default function VPSHostingPage() {
             </div>
           </div>
         </div>
+      </div>
       </section>
-      <PricingTable></PricingTable>
-      <HowToTrial></HowToTrial>
-      <Faqs></Faqs>
-      <Contact></Contact>
+      <PricingTable />
+
+      <div className="-mt-[112px]">
+        <HowToTrial />
+      </div>
+      <div className="-mt-[112px]">
+        <Faqs />
+      </div>
+      <div className="-mt-[112px]">
+        <Contact />
+      </div>
     </main>
   );
 }
