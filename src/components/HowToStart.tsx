@@ -99,7 +99,7 @@ export default function HowToStart() {
         {t.cta ? (
           <div className="mt-[80px] flex justify-center">
             <button
-              className="w-[310px] h-[64px] bg-[#74C2CD] text-white text-[20px] font-['Inter'] rounded-md flex items-center justify-center text-center"
+              className="w-[310px] h-[64px] bg-[#74C2CD] text-black text-[18px] font-['Inter'] rounded-md flex items-center justify-center text-center"
             >
               {t.cta}
             </button>
@@ -109,7 +109,7 @@ export default function HowToStart() {
         {/* Subtitle 20px below CTA, desktop only */}
         {t.ctaNote ? (
           <div className="hidden md:flex mt-[20px] justify-center">
-            <p className="w-[366px] h-[44px] text-[20px] font-['Inter'] text-black text-center leading-snug">
+            <p className="w-[366px] h-[44px] text-[18px] font-['Inter'] text-black text-center leading-snug">
               {t.ctaNote}
             </p>
           </div>

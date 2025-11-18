@@ -134,7 +134,7 @@ export default function AdvantagesAndAudience() {
           {images.length > 0 && (
             <div className="mt-16">
               {/* Responsive 16:9 frame that shrinks with the container */}
-              <div className="relative w-full aspect-[16/9] overflow-hidden rounded-lg">
+              <div className="relative w-full max-w-[1280px] mx-auto aspect-[1280/530] overflow-hidden rounded-lg">
                 <div
                   className="flex h-full transition-transform duration-500 ease-in-out will-change-transform"
                   style={{
@@ -153,7 +153,7 @@ export default function AdvantagesAndAudience() {
                         alt={img.name || "carousel"}
                         fill  
                         className="object-contain"
-                        sizes="100vw"
+                        sizes="(min-width: 1440px) 1280px, (min-width: 1024px) calc(100vw - 160px), calc(100vw - 40px)"
                       />
                       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
                     </div>

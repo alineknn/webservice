@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Button from "@/components/Button"; // uses your existing Button variants
 
 import en from "@/locales/en/products.json";
 import ru from "@/locales/ru/products.json";
@@ -46,7 +45,8 @@ export default function Products() {
   return (
     <section id="products" className="pt-[112px] pb-[80px]">
       {/* side margins: 20px on mobile, 80px at ≥1440px */}
-      <div className="mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">  
+      <div className="mx-auto w-full max-w-[1440px] px-[20px] lg:px-[80px]">  
+        <div className="mx-auto w-full max-w-[1280px]">
         {/* Top row: badge/title/subtitle + USP pill */}
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div>
@@ -61,7 +61,7 @@ export default function Products() {
             </h2>
 
             {t.subtitle ? (
-              <p className="mt-3 max-w-2xl text-[18px] font-normal font-['Avenir Next'] text-black">
+              <p className="mt-3 w-full md:max-w-[448px] text-[18px] font-normal font-['Avenir Next'] text-black">
                 {t.subtitle}
               </p>
             ) : null}
@@ -78,16 +78,16 @@ export default function Products() {
 
         {/* Cards */}
         {/* gap-6 = 24px on both mobile and desktop */}
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="mt-[80px] grid grid-cols-1 md:[grid-template-columns:repeat(3,410px)] md:w-[1280px] mx-auto justify-center gap-y-6 md:gap-y-0 md:gap-x-[25px]">
           {t.items.map((p, idx) => {
             const fallbackImg = imageMap[idx];
             return (
               <article
                 key={`${p.title}-${idx}`}
-                className="group rounded-2xl border border-black/10 bg-white overflow-hidden transition-shadow duration-200 hover:shadow-lg flex flex-col"
+                className="group rounded-2xl border border-black/10 bg-white overflow-hidden shadow-sm transition-shadow duration-200 hover:shadow-lg flex flex-col w-full md:w-[410px] md:h-[540px]"
               >
                 {/* Image */}
-                <div className="relative w-full aspect-[410/250]">
+                <div className="relative w-full aspect-[410/249]">
                   <Image
                     src={fallbackImg}
                     alt={p.title}
@@ -98,49 +98,48 @@ export default function Products() {
                   />
                 </div>
 
-                {/* Body (flex-1 so CTA sticks to card bottom) */}
-                <div className="flex-1 px-5 pt-5">{/* 20px side padding */}
+                {/* Body scroll area: title + full description; keeps exact spacing above price */}
+                <div className="flex-1 px-5 pt-3 overflow-y-auto">
                   <h3 className="text-[26px] font-normal font-['Helvetica']">{p.title}</h3>
                   {p.description ? (
-                    <p className="mt-2 text-[16px] font-normal font-['Avenir Next'] text-black/60 leading-relaxed">
+                    <p className="mt-6 text-[16px] font-normal font-['Avenir Next'] text-black/60 leading-relaxed">
                       {p.description}
                     </p>
                   ) : null}
-
-                  {/* Price & meta (same line) */}
-                  <div className="mt-6">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-[32px] font-normal font-['Helvetica']">{p.priceLabel}</span>
-                      <span className="text-[16px] font-semibold font-['Avenir Next'] text-black">{p.perMonth}</span>
-                    </div>
-                  </div>
+                  {/* Spacer to enforce 39px between body and price */}
+                  <div className="h-[39px] shrink-0" />
                 </div>
 
-                {/* CTA – 20px below price, 20px left/right/bottom, height 44; fills card width (370px on 410px card) */}
-                <div className="px-5 pb-5 mt-[20px]">
-                  {p.slug ? (
-                    <Link href={p.slug} className="block">
-                      <Button
-                        variant="teal"
-                        size="sm"
-                        className="bg-[#74C2CD] text-white font-['Avenir Next'] text-[16px] leading-none flex items-center justify-center text-center whitespace-nowrap px-0 w-full h-[44px]"
-                      >
-                        {p.ctaLabel}
-                      </Button>
-                    </Link>
-                  ) : (
-                    <Button
-                      variant="teal"
-                      size="sm"
-                      className="bg-[#74C2CD] text-white font-['Avenir Next'] text-[16px] leading-none flex items-center justify-center text-center whitespace-nowrap px-0 w-full h-[44px]"
-                    >
-                      {p.ctaLabel}
-                    </Button>
-                  )}
+                {/* Footer: price + CTA; maintains 20px gap and 20px bottom padding */}
+                <div className="px-5 pb-5">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-[32px] font-normal font-['Helvetica']">{p.priceLabel}</span>
+                    {idx !== 2 && p.perMonth ? (
+                      <span className="text-[16px] font-semibold font-['Avenir Next'] text-black">{p.perMonth}</span>
+                    ) : null}
+                  </div>
+                  <div className="mt-[20px] flex justify-center">
+                    {p.slug ? (
+                      <Link href={p.slug} className="inline-flex items-center justify-center gap-2 w-full md:w-[370px] h-[44px] bg-[#74C2CD] text-black font-['Avenir Next'] text-[16px] rounded-md">
+                        <span>{p.ctaLabel}</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                          <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </Link>
+                    ) : (
+                      <div className="inline-flex items-center justify-center gap-2 w-full md:w-[370px] h-[44px] bg-[#74C2CD] text-black font-['Avenir Next'] text-[16px] rounded-md">
+                        <span>{p.ctaLabel}</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                          <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </article>
             );
           })}
+        </div>
         </div>
       </div>
     </section>

@@ -65,20 +65,21 @@ export default function Hero() {
             </Button>
           </Link>
         </div>
-        {/* Hero illustration */}
-        <div className="mt-[48px]">
-          <div className="relative mx-auto w-[335px] md:w-full max-w-[1312px] overflow-hidden aspect-square md:aspect-[1312/474]">
-            <Image
-              src={heroImage}
-              alt="Hero illustration"
-              fill
-              className="rounded-xl object-contain"
-              priority
-              sizes="(max-width: 767px) 335px, (min-width: 1440px) 1312px, calc(100vw - 128px)"
-            />
-          </div>
-        </div>
       </div>
+      </div>
+
+      {/* Hero illustration */}
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-[20px] min-[1440px]:pl-[109px] min-[1440px]:pr-[121px] mt-[48px]">
+        <div className="relative w-[335px] md:w-full max-w-[1210px] overflow-hidden aspect-square md:aspect-[1210/474]">
+          <Image
+            src={heroImage}
+            alt="Hero illustration"
+            fill
+            className="rounded-xl object-contain"
+            priority
+            sizes="(max-width: 767px) 335px, (min-width: 1440px) 1210px, calc(100vw - 40px)"
+          />
+        </div>
       </div>
     </section>
   );
