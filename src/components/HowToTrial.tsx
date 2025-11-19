@@ -98,7 +98,7 @@ export default function HowToTrial() {
         <div className="mt-[80px] flex flex-col items-center">
           <a
             href={(t as any).ctaHref || "#"}
-            className="inline-flex items-center justify-center text-center bg-[#74C2CD] text-white font-['Inter'] text-[18px] w-[310px] h-[64px] rounded-lg"
+            className="inline-flex items-center justify-center text-center bg-[#74C2CD] font-['Inter'] text-[18px] w-[310px] h-[64px] rounded-lg"
           >
             {(t as any).ctaLabel || (t as any).cta?.label || "Start"}
           </a>

@@ -11,7 +11,7 @@ import mailIcon from "@/assets/images/footer/mail.svg";
 import callIcon from "@/assets/images/footer/call.svg";
 import mapIcon from "@/assets/images/footer/map.svg";
 import telegramIcon from "@/assets/images/footer/Telegram.svg";
-import whatsappIcon from "@/assets/images/footer/whatsapp.svg";
+import whatsappIcon from "@/assets/images/footer/Whatsapp.svg";
 
 import facebookIcon from "@/assets/images/footer/Facebook.svg";
 import instagramIcon from "@/assets/images/footer/Instagram.svg";
@@ -48,20 +48,21 @@ type FooterLocale = {
 };
 
 const contactIconFor = (type: ContactItem["type"]) => {
-  const common = "w-6 h-6"; // 24x24
+  const common24 = "w-6 h-6 object-contain"; // 24x24
+  const common35 = "w-[35px] h-[35px] object-contain"; // 35x35
   switch (type) {
     case "email":
-      return <Image src={mailIcon} alt="mail" width={24} height={24} className={common} />;
+      return <Image src={mailIcon} alt="mail" width={24} height={24} className={common24} />;
     case "phone":
-      return <Image src={callIcon} alt="call" width={24} height={24} className={common} />;
+      return <Image src={callIcon} alt="call" width={24} height={24} className={common24} />;
     case "address":
-      return <Image src={mapIcon} alt="map" width={24} height={24} className={common} />;
+      return <Image src={mapIcon} alt="map" width={24} height={24} className={common24} />;
     case "telegram":
-      return <Image src={telegramIcon} alt="telegram" width={24} height={24} className={common} />;
+      return <Image src={telegramIcon} alt="telegram" width={35} height={35} className={common35} />;
     case "whatsapp":
-      return <Image src={whatsappIcon} alt="whatsapp" width={24} height={24} className={common} />;
+      return <Image src={whatsappIcon} alt="whatsapp" width={35} height={35} className={common35} />;
     default:
-      return <Image src={mailIcon} alt="mail" width={24} height={24} className={common} />;
+      return <Image src={mailIcon} alt="mail" width={24} height={24} className={common24} />;
   }
 };
 

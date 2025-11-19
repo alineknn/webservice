@@ -47,11 +47,11 @@
   "title": "Build your solutions with WEBSERVICE.KG",
   "items": [
     { "title": "CRM & ERP systems", "text": "Hosting for 1C, Bitrix24, and other corporate apps." },
-    { "title": "E-commerce", "text": "For online shops, marketplaces, and CMS." },
     { "title": "Development & testing", "text": "Dev/staging environments, CI, GitLab." },
-    { "title": "VPN & proxies", "text": "Secure and anonymous internet access." },
-    { "title": "AI & machine learning", "text": "Servers for ML, Python, and GPU workloads." },
     { "title": "Data storage", "text": "Backups, databases, photos, videos, archives." },
+    { "title": "AI & machine learning", "text": "Servers for ML, Python, and GPU workloads." },
+    { "title": "E-commerce", "text": "For online shops, marketplaces, and CMS." },
+    { "title": "VPN & proxies", "text": "Secure and anonymous internet access." },
     { "title": "API & backend", "text": "Hosting for services, mobile APIs, Telegram bots." }
   ]
 }

@@ -11,7 +11,7 @@ import mailIcon from "@/assets/images/footer/mail.svg";
 import callIcon from "@/assets/images/footer/call.svg";
 import mapIcon from "@/assets/images/footer/map.svg";
 import telegramIcon from "@/assets/images/footer/Telegram.svg";
-import whatsappIcon from "@/assets/images/footer/whatsapp.svg";
+import whatsappIcon from "@/assets/images/footer/Whatsapp.svg";
 
 import en from "@/locales/en/contact.json";
 import ru from "@/locales/ru/contact.json";
@@ -189,7 +189,7 @@ export default function Contact() {
                 target="_blank"
                 className="inline-flex items-center gap-4"
               >
-                <Image src={whatsappIcon} alt="WhatsApp" width={24} height={24} className="w-6 h-6 object-contain" />
+                <Image src={whatsappIcon} alt="WhatsApp" width={35} height={35} className="w-[35px] h-[35px] object-contain" />
                 <span className="font-normal font-['Avenir Next'] text-[16px]">{t.links.whatsapp}</span>
               </Link>
 
@@ -198,7 +198,7 @@ export default function Contact() {
                 target="_blank"
                 className="inline-flex items-center gap-4"
               >
-                <Image src={telegramIcon} alt="Telegram" width={24} height={24} className="w-6 h-6 object-contain" />
+                <Image src={telegramIcon} alt="Telegram" width={35} height={35} className="w-[35px] h-[35px] object-contain" />
                 <span className="font-normal font-['Avenir Next'] text-[16px]">{t.links.telegram}</span>
               </Link>
             </div>

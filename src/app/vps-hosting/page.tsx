@@ -7,7 +7,7 @@ import Faq from "@/components/Faqs";
 import en from "@/locales/en/vps_hosting.json";
 import ru from "@/locales/ru/vps_hosting.json";
 
-import vpsImage from "@/assets/images/vps image map.png";
+import vpsImage from "@/assets/images/vps/vps hero image.svg";
 
 import ssdIcon from "@/assets/images/vps/SSD.svg";
 import uptimeIcon from "@/assets/images/vps/uptime.svg";
@@ -52,27 +52,15 @@ export default function VPSHostingPage() {
 
   // Precise image sizes for Solutions (desktop)
   const leftSizes = [
-    { w: 126, h: 120 }, // 1st row
-    { w: 151, h: 125 }, // 2nd row
-    { w: 135, h: 135 }, // 3rd row
-    { w: 115, h: 120 }, // 4th row
+    { w: 140, h: 140 }, // 1st row
+    { w: 140, h: 140 }, // 2nd row
+    { w: 150, h: 150 }, // 3rd row
+    { w: 140, h: 140 }, // 4th row
   ] as const;
   const rightSizes = [
-    { w: 178, h: 150 }, // 1st row (right col)
-    { w: 96,  h: 105 }, // 2nd row
+    { w: 140, h: 140 }, // 1st row (right col)
+    { w: 140,  h: 140 }, // 2nd row
     { w: 155, h: 132 }, // 3rd row
-  ] as const;
-
-  const leftClasses = [
-    "w-[126px] h-[120px]",
-    "w-[151px] h-[125px]",
-    "w-[135px] h-[135px]",
-    "w-[115px] h-[120px]",
-  ] as const;
-  const rightClasses = [
-    "w-[178px] h-[150px]",
-    "w-[96px] h-[105px]",
-    "w-[155px] h-[132px]",
   ] as const;
 
   return (
@@ -98,7 +86,7 @@ export default function VPSHostingPage() {
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
               <Link
                 href="#plans"
-                className="inline-flex items-center justify-center text-center whitespace-nowrap bg-[#74C2CD] text-white font-['Avenir Next'] text-[14px] md:text-[18px] !w-[335px] !h-[47px] md:!w-[310px] md:!h-[64px] rounded-lg font-light"
+                className="inline-flex items-center justify-center text-center whitespace-nowrap bg-[#74C2CD] font-['Avenir Next'] text-[14px] md:text-[18px] !w-[335px] !h-[47px] md:!w-[310px] md:!h-[64px] rounded-lg font-light"
               >
                 {t.hero.ctaPrimary}
               </Link>
@@ -203,24 +191,25 @@ export default function VPSHostingPage() {
             {t.solutions?.title}
           </h2>
 
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 md:gap-x-16">
+          <div className="mt-8 grid grid-cols-1 min-[1280px]:grid-cols-[625px_625px] gap-y-0 min-[1280px]:gap-x-[30px]">
             {/* Left column: 4 items */}
             <div className="flex flex-col">
               {leftSolutions.map((s: any, idx: number) => (
                 <div
                   key={`solution-left-${idx}`}
-                  className="flex items-start justify-between gap-6 md:gap-10 py-6 md:py-8 border-b border-[rgba(0,13,13,0.12)]"
+                  className={`flex items-center justify-between gap-6 md:gap-10 h-[185px] overflow-hidden border-[rgba(0,13,13,0.12)] ${idx === 0 ? 'border-t' : ''} ${idx === leftSolutions.length - 1 ? 'border-b-0' : 'border-b'} py-[16px] px-[10px]`}
                 >
-                  <div className="pr-4">
+                  <div className="pr-4 min-w-0">
                     <h3 className="text-[28px] font-normal font-['Helvetica'] leading-snug">{s.title}</h3>
-                    <p className="mt-2 text-[16px] font-normal font-['Avenir Next'] text-black/70">{s.text}</p>
+                    <p className="mt-2 text-[16px] font-normal font-['Avenir Next'] text-black/70 whitespace-nowrap overflow-hidden text-ellipsis">{s.text}</p>
                   </div>
                   <Image
                     src={solutionImages[idx]}
                     alt={`${s.title} illustration`}
                     width={leftSizes[idx].w}
                     height={leftSizes[idx].h}
-                    className={`hidden md:block object-contain ${leftClasses[idx]}`}
+                    className="hidden md:block object-contain flex-none shrink-0 transform translate-y-1 max-h-[185px]"
+                    style={{ width: leftSizes[idx].w }}
                   />
                 </div>
               ))}
@@ -230,18 +219,19 @@ export default function VPSHostingPage() {
               {rightSolutions.map((s: any, idx: number) => (
                 <div
                   key={`solution-right-${idx}`}
-                  className="flex items-start justify-between gap-6 md:gap-10 py-6 md:py-8 border-b border-[rgba(0,13,13,0.12)]"
+                  className={`flex items-center justify-between gap-6 md:gap-10 h-[185px] overflow-hidden border-[rgba(0,13,13,0.12)] ${idx === 0 ? 'border-t' : ''} border-b py-[16px] px-[10px]`}
                 >
-                  <div className="pr-4">
+                  <div className="pr-4 min-w-0">
                     <h3 className="text-[28px] font-normal font-['Helvetica'] leading-snug">{s.title}</h3>
-                    <p className="mt-2 text-[16px] font-normal font-['Avenir Next'] text-black/70">{s.text}</p>
+                    <p className="mt-2 text-[16px] font-normal font-['Avenir Next'] text-black/70 whitespace-nowrap overflow-hidden text-ellipsis">{s.text}</p>
                   </div>
                   <Image
                     src={solutionImages[idx + leftSolutions.length]}
                     alt={`${s.title} illustration`}
                     width={rightSizes[idx].w}
                     height={rightSizes[idx].h}
-                    className={`hidden md:block object-contain ${rightClasses[idx]}`}
+                    className="hidden md:block object-contain flex-none shrink-0 transform translate-y-1 max-h-[185px]"
+                    style={{ width: rightSizes[idx].w }}
                   />
                 </div>
               ))}
@@ -249,6 +239,7 @@ export default function VPSHostingPage() {
           </div>
         </div>
       </div>
+
       </section>
       <PricingTable />
 
