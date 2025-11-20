@@ -99,10 +99,10 @@ export default function Products() {
                 </div>
 
                 {/* Body scroll area: title + full description; keeps exact spacing above price */}
-                <div className="flex-1 px-5 pt-3 overflow-y-auto">
-                  <h3 className="text-[26px] font-normal font-['Helvetica']">{p.title}</h3>
+                <div className="flex-1 px-5 pt-3 overflow-hidden">
+                  <h3 className="text-[26px] font-normal font-['Helvetica'] truncate" title={p.title}>{p.title}</h3>
                   {p.description ? (
-                    <p className="mt-6 text-[16px] font-normal font-['Avenir Next'] text-black/60 leading-relaxed">
+                    <p className="mt-6 text-[16px] font-normal font-['Avenir Next'] text-black/60 leading-relaxed line-clamp-3">
                       {p.description}
                     </p>
                   ) : null}

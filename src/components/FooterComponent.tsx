@@ -5,7 +5,7 @@ import type { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-import webserviceLogo from '@/assets/images/webservice logo.png';
+import webserviceLogo from '@/assets/images/logo.svg';
 
 import mailIcon from "@/assets/images/footer/mail.svg";
 import callIcon from "@/assets/images/footer/call.svg";

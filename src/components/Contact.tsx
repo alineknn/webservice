@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Button from "@/components/Button";
@@ -12,6 +12,9 @@ import callIcon from "@/assets/images/footer/call.svg";
 import mapIcon from "@/assets/images/footer/map.svg";
 import telegramIcon from "@/assets/images/footer/Telegram.svg";
 import whatsappIcon from "@/assets/images/footer/Whatsapp.svg";
+
+import approveIcon from "@/assets/images/Approve.svg";
+import errorIcon from "@/assets/images/Error.svg";
 
 import en from "@/locales/en/contact.json";
 import ru from "@/locales/ru/contact.json";
@@ -55,6 +58,19 @@ export default function Contact() {
   const t: ContactLocale = (locale === "en" ? (en as any) : (ru as any));
 
   const sectionRef = useRef<HTMLElement | null>(null);
+
+  const [modal, setModal] = useState<{ open: boolean; kind: "success" | "error" }>({ open: false, kind: "success" });
+
+  const successHeading = locale === "en" ? "Thank you!" : "Спасибо!";
+  const successText = locale === "en" ? "We’ll be in touch shortly." : "Мы свяжемся с вами в ближайшее время.";
+  const errorHeading = locale === "en" ? "Error" : "Ошибка";
+  const errorText = locale === "en" ? "Could not submit the form. Please try again." : "Не удалось отправить форму. Попробуйте ещё раз.";
+
+  useEffect(() => {
+    if (!modal.open) return;
+    const t = setTimeout(() => setModal((m) => ({ ...m, open: false })), 5000);
+    return () => clearTimeout(t);
+  }, [modal.open]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -120,11 +136,26 @@ export default function Contact() {
     };
   }, []);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    console.log("CONTACT FORM:", Object.fromEntries(data.entries()));
-    // TODO: POST to /api/contact or external service
+    const email = String(data.get("email") || "").trim();
+    const phone = String(data.get("phone") || "").trim();
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email);
+    const phoneOk = /^\+\d{10,15}$/.test(phone);
+
+    if (!emailOk || !phoneOk) {
+      setModal({ open: true, kind: "error" });
+      return;
+    }
+
+    try {
+      await new Promise((r) => setTimeout(r, 300));
+      setModal({ open: true, kind: "success" });
+    } catch (err) {
+      setModal({ open: true, kind: "error" });
+    }
   }
 
   return (
@@ -227,9 +258,14 @@ export default function Contact() {
                   {t.form.phone}
                 </label>
                 <input
+                  type="tel"
                   name="phone"
+                  required
+                  inputMode="tel"
+                  pattern="^\+\d{10,15}$"
+                  title={locale === "en" ? "Use international format, e.g. +996700997779" : "Введите номер в международном формате, например +996700997779"}
                   className="w-full rounded-none bg-transparent border-0 border-b-2 border-[rgba(0,13,13,0.26)] focus:border-[#74C2CD] px-0 py-2 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40 transition-colors"
-                  placeholder="+996 555 000 000"
+                  placeholder="+996700997779"
                 />
               </div>
 
@@ -241,6 +277,8 @@ export default function Contact() {
                   type="email"
                   name="email"
                   required
+                  pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"
+                  title={locale === "en" ? "Enter a valid email (e.g., name@example.com)" : "Введите корректный email (например, name@example.com)"}
                   className="w-full rounded-none bg-transparent border-0 border-b-2 border-[rgba(0,13,13,0.26)] focus:border-[#74C2CD] px-0 py-2 outline-none focus:ring-0 text-[16px] leading-[24px] font-normal font-['Avenir Next'] placeholder:text-black/40 transition-colors"
                   placeholder="you@example.com"
                 />
@@ -279,6 +317,49 @@ export default function Contact() {
         </div>
         </div>
       </div>
+      {modal.open && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-4"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setModal((m) => ({ ...m, open: false }))}
+        >
+          <div
+            className={`relative w-[458px] h-[213px] bg-white rounded-xl border-2 shadow-xl ${
+              modal.kind === "success" ? "border-[#4EBC00]" : "border-[#E85869]"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Top-left status icon */}
+            <Image
+              src={modal.kind === "success" ? approveIcon : errorIcon}
+              alt={modal.kind === "success" ? "Success" : "Error"}
+              width={85}
+              height={85}
+              className="absolute top-0 left-0 w-[85px] h-[85px] -translate-x-1/2 -translate-y-1/2 object-contain"
+              priority
+            />
+
+            {/* Content */}
+            <button
+              onClick={() => setModal((m) => ({ ...m, open: false }))}
+              className="absolute top-2 right-2 px-2 py-1 text-sm text-black/60 hover:text-black"
+              aria-label={locale === "en" ? "Close" : "Закрыть"}
+            >
+              ×
+            </button>
+
+            <div className="h-full flex flex-col items-center justify-center px-8 text-center">
+              <h3 className="font-['Helvetica'] font-bold text-[32px] leading-tight">
+                {modal.kind === "success" ? successHeading : errorHeading}
+              </h3>
+              <p className="mt-2 font-['Helvetica'] text-[24px]">
+                {modal.kind === "success" ? successText : errorText}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

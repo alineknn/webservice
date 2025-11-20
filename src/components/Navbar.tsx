@@ -11,7 +11,7 @@ import { PhoneIcon } from '@heroicons/react/24/outline';
 import callIcon from '@/assets/images/call.png';
 import ru from '@/locales/ru/nav.json';
 import en from '@/locales/en/nav.json';
-import logoImage from '@/assets/images/webservice logo.png';
+import logoImage from '@/assets/images/logo.svg';
 
 export default function Navbar() {
   const { locale } = useRouter();
