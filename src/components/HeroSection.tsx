@@ -2,17 +2,15 @@
 import React from "react";
 import Link from "next/link";
 import Button from "./Button";
-import { useRouter } from "next/navigation";
-import ru from "@/locales/ru/hero.json";
-import en from "@/locales/en/hero.json";
 import Image from 'next/image';
 import heroImage from '@/assets/images/map of kg.png';
 import heroBackground from '@/assets/images/hero background.png';
+import { useT } from "@/hooks/useT";
+import ru from "@/locales/ru/hero.json";
+import en from "@/locales/en/hero.json";
 
 export default function Hero() {
-  const router = useRouter();
-  const locale = router.locale ?? "ru";
-  const t = locale === "en" ? en : ru;
+  const { locale, t } = useT({ en, ru });
 
   return (
     <section
@@ -29,43 +27,44 @@ export default function Hero() {
       />
       <div className="relative z-10 mx-auto w-full max-w-[1312px] min-[1440px]:max-w-[calc(100vw-128px)] min-[1920px]:max-w-[1748px] px-[8px] sm:px-6 min-[1440px]:px-[64px] min-[1920px]:px-[86px]">
         <div className="mx-auto text-center">
-        {/* Main headline */}
-        <h1 className="text-[32px] md:text-[52px] font-bold leading-tight font-['Helvetica']">
-          {Array.isArray(t.headlineParts)
-            ? t.headlineParts.map((part, idx) => (
-                <span key={idx} className={
-                  idx === 0 ? "text-[#74C2CD]" : idx === 2 ? "text-[#746FAE]" : ""
-                }>
-                  {part}
-                </span>
-              ))
-            : t.headline}
-        </h1>
+          {/* Main headline */}
+          <h1 className="text-[32px] md:text-[52px] font-bold leading-tight font-['Helvetica']">
+            {Array.isArray(t.headlineParts)
+              ? (t.headlineParts as string[]).map((part: string, idx: number) => (
+                  <span
+                    key={idx}
+                    className={idx === 0 ? "text-[#74C2CD]" : idx === 2 ? "text-[#746FAE]" : ""}
+                  >
+                    {part}
+                  </span>
+                ))
+              : t.headline}
+          </h1>
 
-        {/* Subtitle */}
-        <p className="mt-4 text-[12px] md:text-[22px] text-blue/50 font-medium max-w-[694px] mx-auto text-center">
-          {t.subtitle}
-        </p>
+          {/* Subtitle */}
+          <p className="mt-4 text-[12px] md:text-[22px] text-blue/50 font-medium max-w-[694px] mx-auto text-center">
+            {t.subtitle}
+          </p>
 
-        {/* CTAs */}
-        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
-          <Link href="/vps-hosting">
-            <Button variant="teal" size="md" className="!w-[335px] !h-[47px] md:!w-[310px] md:!h-[64px] text-[14px] md:text-[18px] px-8">
-              {t.cta.vps}
-            </Button>
-          </Link>
-          <Link href="/web-hosting">
-            <Button variant="purple" size="md" className="!w-[335px] !h-[47px] md:!w-[310px] md:!h-[64px] text-[14px] md:text-[18px] px-8">
-              {t.cta.web}
-            </Button>
-          </Link>
-          <Link href="/ssl-certificates">
-            <Button variant="black" size="md" className="!w-[335px] !h-[47px] md:!w-[310px] md:!h-[64px] text-[14px] md:text-[18px] px-8">
-              {t.cta.ssl}
-            </Button>
-          </Link>
+          {/* CTAs */}
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+            <Link href="/vps-hosting">
+              <Button variant="teal" size="md" className="!w-[335px] !h-[47px] md:!w-[310px] md:!h-[64px] text-[14px] md:text-[18px] px-8">
+                {t.cta.vps}
+              </Button>
+            </Link>
+            <Link href="/web-hosting">
+              <Button variant="purple" size="md" className="!w-[335px] !h-[47px] md:!w-[310px] md:!h-[64px] text-[14px] md:text-[18px] px-8">
+                {t.cta.web}
+              </Button>
+            </Link>
+            <Link href="/ssl-certificates">
+              <Button variant="black" size="md" className="!w-[335px] !h-[47px] md:!w-[310px] md:!h-[64px] text-[14px] md:text-[18px] px-8">
+                {t.cta.ssl}
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div>
       </div>
 
       {/* Hero illustration */}
