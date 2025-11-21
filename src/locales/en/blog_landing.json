@@ -6,14 +6,14 @@
   "posts": [
     {
       "id": "p1",
-      "slug": "how-to-choose-hosting",
+      "slug": "vybrat-hosting",
       "image": "/assets/images/blog/post-1.jpg",
       "badge": "Technology",
       "date": "Jul 11, 2025",
       "author": {
         "name": "Artyom Kozyrev",
         "role": "CTO",
-        "avatar": "/assets/images/blog/authors/koz.jpg"
+        "avatar": "/authors/nurlan.svg"
       },
       "title": "How to choose hosting for your business",
       "excerpt": "Tips for picking reliable hosting for startups and companies."
@@ -27,7 +27,7 @@
       "author": {
         "name": "Anna Tursunbaeva",
         "role": "Service Lead",
-        "avatar": "/assets/images/blog/authors/anna.jpg"
+        "avatar": "/authors/nurlan.svg"
       },
       "title": "Top-5 data security tips",
       "excerpt": "Protect your data online and avoid breaches."
@@ -41,7 +41,7 @@
       "author": {
         "name": "Timur Isenakov",
         "role": "DevOps Engineer",
-        "avatar": "/assets/images/blog/authors/timur.jpg"
+        "avatar": "/authors/nurlan.svg"
       },
       "title": "Cloud hosting benefits for business",
       "excerpt": "Flexibility and scalability for your workloads."
@@ -55,7 +55,7 @@
       "author": {
         "name": "Artyk Kanimov",
         "role": "Content Manager",
-        "avatar": "/assets/images/blog/authors/artyk.jpg"
+        "avatar": "/authors/nurlan.svg"
       },
       "title": "How to choose hosting for your business",
       "excerpt": "Everything your project needs—without the headache."
@@ -69,7 +69,7 @@
       "author": {
         "name": "Alexey Romanov",
         "role": "Lead Infrastructure Engineer",
-        "avatar": "/assets/images/blog/authors/alex.jpg"
+        "avatar": "/authors/nurlan.svg"
       },
       "title": "Top-5 security tips",
       "excerpt": "Practical steps to improve security and resilience."
@@ -83,7 +83,7 @@
       "author": {
         "name": "Nurlan Asanov",
         "role": "Lead Engineer",
-        "avatar": "/assets/images/blog/authors/nurlan.jpg"
+        "avatar": "/authors/nurlan.svg"
       },
       "title": "Benefits of cloud hosting",
       "excerpt": "Scale without the complexity."

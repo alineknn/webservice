@@ -6,14 +6,14 @@
   "posts": [
     {
       "id": "p1",
-      "slug": "vybor-hostinga-dlya-biznesa",
+      "slug": "vybrat-hosting",
       "image": "/assets/images/blog/post-1.jpg",
       "badge": "Технологии",
       "date": "11 июл 2025",
       "author": {
         "name": "Артём Козырев",
         "role": "Технический директор",
-        "avatar": "/assets/images/blog/authors/koz.jpg"
+        "avatar": "/authors/nurlan.svg"
       },
       "title": "Как выбрать хостинг для вашего бизнеса",
       "excerpt": "Советы по выбору надежного хостинга для стартапов и бизнеса."
@@ -27,7 +27,7 @@
       "author": {
         "name": "Анна Турсунбаева",
         "role": "Руководитель сервиса",
-        "avatar": "/assets/images/blog/authors/anna.jpg"
+        "avatar": "/authors/nurlan.svg"
       },
       "title": "Топ-5 советов по безопасности данных",
       "excerpt": "Как защитить ваши данные в интернете и избежать утечек."
@@ -41,7 +41,7 @@
       "author": {
         "name": "Тимур Исенаков",
         "role": "DevOps-инженер",
-        "avatar": "/assets/images/blog/authors/timur.jpg"
+        "avatar": "/authors/nurlan.svg"
       },
       "title": "Преимущества облачного хостинга для бизнеса",
       "excerpt": "Гибкость и масштабируемость для вашего бизнеса."
@@ -55,7 +55,7 @@
       "author": {
         "name": "Артык Канимов",
         "role": "Контент-менеджер",
-        "avatar": "/assets/images/blog/authors/artyk.jpg"
+        "avatar": "/authors/nurlan.svg"
       },
       "title": "Как выбрать хостинг для вашего бизнеса",
       "excerpt": "У нас есть всё, что нужно вашему проекту."
@@ -69,7 +69,7 @@
       "author": {
         "name": "Алексей Романов",
         "role": "Ведущий специалист по инфраструктуре",
-        "avatar": "/assets/images/blog/authors/alex.jpg"
+        "avatar": "/authors/nurlan.svg"
       },
       "title": "Топ-5 советов по безопасности",
       "excerpt": "Практики для повышения безопасности и устойчивости."
@@ -83,7 +83,7 @@
       "author": {
         "name": "Нурлан Асанов",
         "role": "Ведущий специалист",
-        "avatar": "/assets/images/blog/authors/nurlan.jpg"
+        "avatar": "/authors/nurlan.svg"
       },
       "title": "Преимущества облачного хостинга",
       "excerpt": "Масштабируемость без лишних сложностей."
