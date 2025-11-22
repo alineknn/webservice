@@ -10,8 +10,8 @@ import webserviceLogo from '@/assets/images/logo.svg';
 import mailIcon from "@/assets/images/footer/mail.svg";
 import callIcon from "@/assets/images/footer/call.svg";
 import mapIcon from "@/assets/images/footer/map.svg";
-import telegramIcon from "@/assets/images/footer/Telegram.svg";
-import whatsappIcon from "@/assets/images/footer/Whatsapp.svg";
+import telegramIcon from "@/assets/images/footer/telegram.svg";
+import whatsappIcon from "@/assets/images/footer/whatsapp.svg";
 
 import facebookIcon from "@/assets/images/footer/Facebook.svg";
 import instagramIcon from "@/assets/images/footer/Instagram.svg";

@@ -10,8 +10,8 @@ import contactBg from "@/assets/images/contact background.jpg";
 import mailIcon from "@/assets/images/footer/mail.svg";
 import callIcon from "@/assets/images/footer/call.svg";
 import mapIcon from "@/assets/images/footer/map.svg";
-import telegramIcon from "@/assets/images/footer/Telegram.svg";
-import whatsappIcon from "@/assets/images/footer/Whatsapp.svg";
+import telegramIcon from "@/assets/images/footer/telegram.svg";
+import whatsappIcon from "@/assets/images/footer/whatsapp.svg";
 
 import approveIcon from "@/assets/images/Approve.svg";
 import errorIcon from "@/assets/images/Error.svg";
