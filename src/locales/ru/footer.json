@@ -54,7 +54,8 @@
     "copyrightPrefix": "©",
     "items": [
       { "label": "Политика конфиденциальности", "href": "/privacy" },
-      { "label": "Условия обслуживания", "href": "/terms" }
+      { "label": "Условия обслуживания", "href": "/terms" },
+      { "label": "Настройки cookies", "href": "/cookies" }
     ]
   }
 }

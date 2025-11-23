@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CMS</title>
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Ensure relative requests resolve under /admin/ -->
+    <base href="/admin/">
+    <!-- Manual init avoids timing issues -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+      window.CMS_DEBUG = true;
+    </script>
+  </head>
+  <body>
+    <!-- Explicit mount point fixes "appendChild of null" -->
+    <div id="nc-root"></div>
+
+    <!-- Load Decap CMS after the DOM exists -->
+    <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js" defer></script>
+
+    <script>
+      window.addEventListener('load', function () {
+        if (!window.CMS) {
+          console.error('Decap CMS failed to load');
+          return;
+        }
+        // Use the YAML at /admin/config.yml (no inline config to avoid duplicates)
+        window.CMS.init({ config: { load_config_file: true } });
+      });
+    </script>
+  </body>
+</html>

@@ -82,7 +82,7 @@ const socialIconFor = (label: string): StaticImageData => {
 export default function Footer() {
   const { locale } = useRouter();
   const t: FooterLocale = (locale === "en" ? (en as any) : (ru as any));
-  const year = new Date().getFullYear();
+  const year = 2024;
 
   return (
     <section className="py-[80px] font-['Inter']">
@@ -182,6 +182,17 @@ export default function Footer() {
                     </div>
                   </div>
                 ) : null}
+
+                {t.partner ? (
+                  <div className="mt-4 text-sm text-black/60">
+                    {t.partner}{" "}
+                    {t.partnerLinkHref ? (
+                      <a href={t.partnerLinkHref} target="_blank" rel="noopener noreferrer" className="underline">
+                        {t.partnerLinkLabel || t.partnerLinkHref}
+                      </a>
+                    ) : null}
+                  </div>
+                ) : null}
               </>
             ) : null}
           </div>
@@ -190,7 +201,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 border-t border-black/10 pt-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between font-['Avenir Next']">
           <div className="text-sm text-black/60">
-            {t.legal.copyrightPrefix} {year} WEBSERVICE
+            {t.legal.copyrightPrefix} {year} WEBSERVICE.KG. {locale === "en" ? "All rights reserved." : "Все права защищены."}
           </div>
           <div className="flex items-center gap-4">
             {t.legal.items.map((link) => (
@@ -199,15 +210,6 @@ export default function Footer() {
               </Link>
             ))}
           </div>
-          {/* Partner (social icons moved under column 3) */}
-          {t.partner ? (
-            <div className="text-sm text-black/60">
-              {t.partner}{" "}
-              {t.partnerLinkHref ? (
-                <a href={t.partnerLinkHref} target="_blank" className="underline">{t.partnerLinkLabel || t.partnerLinkHref}</a>
-              ) : null}
-            </div>
-          ) : null}
         </div>
         </div>
       </div>

@@ -60,99 +60,102 @@ export default function BlogLanding() {
         </p>
 
         {/* Grid */}
-        <div className="mt-[40px] md:mt-[64px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-[64px] gap-x-[32px]">
-          {t.posts.map((p, idx) => (
-            <article
-              key={p.id}
-              className="w-full lg:h-[577px] rounded-xl border border-[rgba(0,13,13,0.12)] bg-white hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)] transition-shadow overflow-hidden flex flex-col"
-            >
-              {/* Cover */}
-              <div className="relative w-full h-[200px] md:h-[270px]">
-                <Image
+        <div className="mt-[40px] md:mt-[64px] grid grid-cols-1 md:[grid-template-columns:repeat(2,405px)] lg:[grid-template-columns:repeat(3,405px)] justify-center gap-y-[64px] gap-x-[32px]">
+          {t.posts.map((p, idx) => {
+            const isPurple = (idx % 2) === 1;
+            return (
+              <article
+                key={p.id}
+                className="w-full md:w-[405px] lg:w-[405px] md:h-[577px] lg:h-[577px] rounded-xl border border-[rgba(0,13,13,0.12)] bg-white hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)] transition-shadow overflow-hidden flex flex-col"
+              >
+                {/* Cover */}
+                <div className="relative w-full aspect-[405/270]">                  <Image
                   src={placeholders[idx % 3] ?? p.image}
                   alt={p.title}
                   fill
                   className="object-cover"
-                  sizes="(min-width: 1024px) 405px, 100vw"
-                  // remove unoptimized if you host images locally in /public
-                  unoptimized
+                  style={{ objectPosition: '50% 50%' }}
+                  sizes="(min-width:1024px) 405px, 100vw"
                 />
-              </div>
-
-              {/* Body */}
-              <div className="p-5 flex flex-col flex-1">
-                {/* Badge + Date */}
-                <div className="mt-[24px] flex items-center justify-between gap-3">
-                  <span
-                    className={`inline-flex h-[29px] min-w-[102px] justify-center items-center rounded-[8px] ${badgeBg[idx % 2]} font-['Avenir Next'] font-semibold text-[14px] px-3`}
-                  >
-                    {p.badge}
-                  </span>
-                  {/* place date approx 220px to right of badge per spec */}
-                  <span className="font-['Avenir Next'] text-[14px] text-black/60">
-                    {p.date}
-                  </span>
                 </div>
 
-                {/* Author */}
-                <div className="mt-[16px] flex items-center gap-3">
-                  <Image
-                    src={p.author.avatar}
-                    alt={p.author.name}
-                    width={48}
-                    height={48}
-                    className="rounded-full object-cover"
-                    unoptimized
-                  />
-                  <div>
-                    <div className="font-['Avenir Next'] font-semibold text-[14px]">
-                      {p.author.name}
-                    </div>
-                    <div className="font-['Avenir Next'] text-[14px] text-black/60">
-                      {p.author.role}
+                {/* Body */}
+                <div className="p-4 flex flex-col flex-1">
+                  {/* Badge + Date */}
+                  <div className="mt-[16px] flex items-center justify-between gap-3">
+                    <span
+                      className={`inline-flex h-[29px] min-w-[102px] justify-center items-center rounded-[8px] ${badgeBg[idx % 2]} ${((idx % 2) === 1) ? 'text-white' : 'text-black'} font-['Avenir Next'] font-semibold text-[14px] px-3`}
+                    >
+                      {p.badge}
+                    </span>
+                    {/* place date approx 220px to right of badge per spec */}
+                    <span className="font-['Avenir Next'] text-[14px] text-black/60">
+                      {p.date}
+                    </span>
+                  </div>
+
+                  {/* Author */}
+                  <div className="mt-[16px] flex items-center gap-3">
+                    <Image
+                      src={p.author.avatar}
+                      alt={p.author.name}
+                      width={48}
+                      height={48}
+                      className="rounded-full object-cover"
+                      unoptimized
+                    />
+                    <div>
+                      <div className="font-['Avenir Next'] font-semibold text-[14px]">
+                        {p.author.name}
+                      </div>
+                      <div className="font-['Avenir Next'] text-[14px] text-black/60">
+                        {p.author.role}
+                      </div>
                     </div>
                   </div>
+
+                  {/* Title */}
+                  <div className="mt-[8px] min-h-[56px] md:min-h-[72px]">
+                    <h3 className="font-['Helvetica'] font-normal text-[22px] md:text-[28px] leading-snug line-clamp-2" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                      {p.title}
+                    </h3>
+                  </div>
+
+                  {/* Excerpt */}
+                  <p className="mt-[6px] font-['Avenir Next'] text-[16px] text-black/70 line-clamp-2 min-h-[48px] md:min-h-[48px]" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                    {p.excerpt}
+                  </p>
+
+                  {/* Read more */}
+                  <div className="mt-auto pt-[8px] flex items-center gap-2">
+                    <Link
+                      href={`/blog/${p.slug}`}
+                      className="inline-flex items-center justify-center w-[98px] h-[24px] font-['Avenir Next'] text-[16px] text-black"
+                    >
+                      {t.readMore}
+                    </Link>
+                    {/* Arrow 24x24 */}
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M13 5l7 7-7 7"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
                 </div>
-
-                {/* Title */}
-                <h3 className="mt-[8px] font-['Helvetica'] font-normal text-[22px] md:text-[28px] leading-snug line-clamp-2" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                  {p.title}
-                </h3>
-
-                {/* Excerpt */}
-                <p className="mt-[8px] font-['Avenir Next'] text-[16px] text-black/70 line-clamp-3" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                  {p.excerpt}
-                </p>
-
-                {/* Read more */}
-                <div className="mt-auto pt-[16px] flex items-center gap-2">
-                  <Link
-                    href={`/blog/${p.slug}`}
-                    className="inline-flex items-center justify-center w-[98px] h-[24px] rounded-full border border-[rgba(0,13,13,0.15)] font-['Avenir Next'] text-[14px]"
-                  >
-                    {t.readMore}
-                  </Link>
-                  {/* Arrow 24x24 */}
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M13 5l7 7-7 7M20 12H4"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

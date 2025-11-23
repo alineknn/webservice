@@ -101,10 +101,11 @@ export default async function BlogPostPage({
     // treat '/assets/...' as non-public (those live in src/)
     !fmImage.startsWith("/assets/");
 
-  if (isPublicPath) {
-    // encode spaces etc. so Next can serve it correctly
-    cover = encodeURI(fmImage!);
-  } else if (COVER_BY_SLUG[slug]) {
+if (isPublicPath) {
+  // Use as-is if already percent-encoded; otherwise only replace plain spaces.
+  const alreadyEncoded = /%[0-9A-Fa-f]{2}/.test(fmImage!);
+  cover = alreadyEncoded ? fmImage! : fmImage!.replace(/ /g, "%20");
+} else if (COVER_BY_SLUG[slug]) {
     cover = COVER_BY_SLUG[slug];
   } else {
     // final fallback to any bundled placeholder (use one of the blog covers)
@@ -117,7 +118,7 @@ export default async function BlogPostPage({
     <section className="pt-[112px] pb-[80px]">
       <div className="mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">
         {/* Two-column layout on desktop: text left, image right with 80px gap */}
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_640px] items-start lg:gap-x-[64px]">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_780px] items-start lg:gap-x-[80px]">
           {/* Left: breadcrumb + title + meta + author */}
           <div>
             {/* Breadcrumb: 32px above heading */}
@@ -156,7 +157,7 @@ export default async function BlogPostPage({
 
           {/* Right: top image (780x450 on desktop) */}
           <div className="justify-self-end mt-6 lg:mt-0">
-            <div className="relative lg:w-[640px] lg:h-[370px] w-full h-[300px] rounded-xl overflow-hidden shadow-sm">
+            <div className="relative lg:w-[780px] lg:h-[450px] w-full h-[300px] rounded-xl overflow-hidden shadow-sm">
               <Image
                 src={cover}
                 alt={fm.title}

@@ -1,0 +1,105 @@
+backend:
+  name: github
+  repo: your-org/your-repo
+  branch: main
+
+# Local mode: no GitHub OAuth needed; requires `npx decap-server`
+local_backend: true
+
+publish_mode: editorial_workflow
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog_ru"
+    label: "Блог (RU)"
+    folder: "content/ru/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    editor: { preview: false }
+    fields:
+      - { name: "locale", widget: "hidden", default: "ru" }
+      - { name: "slug", label: "Slug", widget: "string" }
+      - { name: "title", label: "Заголовок", widget: "string" }
+      - { name: "date", label: "Дата", widget: "datetime", format: "YYYY-MM-DD" }
+      - { name: "category", label: "Категория", widget: "string", required: false }
+      - { name: "readingMinutes", label: "Минут чтения", widget: "number", min: 1, required: false }
+      - name: "author"
+        label: "Автор"
+        widget: "object"
+        fields:
+          - { name: "name", label: "Имя", widget: "string" }
+          - { name: "role", label: "Роль", widget: "string", required: false }
+          - name: "avatar"
+            label: "Аватар"
+            widget: "image"
+            allow_multiple: false
+            media_folder: "public/authors"
+            public_folder: "/authors"
+      - name: "image"
+        label: "Обложка"
+        widget: "image"
+        allow_multiple: false
+        media_folder: "public/blog"
+        public_folder: "/blog"
+      - { name: "body", label: "Контент", widget: "markdown" }
+
+  - name: "blog_en"
+    label: "Blog (EN)"
+    folder: "content/en/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    editor: { preview: false }
+    fields:
+      - { name: "locale", widget: "hidden", default: "en" }
+      - { name: "slug", label: "Slug", widget: "string" }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { name: "category", label: "Category", widget: "string", required: false }
+      - { name: "readingMinutes", label: "Reading minutes", widget: "number", min: 1, required: false }
+      - name: "author"
+        label: "Author"
+        widget: "object"
+        fields:
+          - { name: "name", label: "Name", widget: "string" }
+          - { name: "role", label: "Role", widget: "string", required: false }
+          - name: "avatar"
+            label: "Avatar"
+            widget: "image"
+            allow_multiple: false
+            media_folder: "public/authors"
+            public_folder: "/authors"
+      - name: "image"
+        label: "Cover"
+        widget: "image"
+        allow_multiple: false
+        media_folder: "public/blog"
+        public_folder: "/blog"
+      - { name: "body", label: "Content", widget: "markdown" }
+
+  - name: "site_copy"
+    label: "Site Copy"
+    files:
+      - label: "Blog Landing (RU)"
+        name: "blog_landing_ru"
+        file: "src/locales/ru/blog_landing.json"
+        format: "json"
+        fields:
+          - { name: "kicker", widget: "string" }
+          - { name: "title", widget: "string" }
+          - { name: "subtitle", widget: "text" }
+          - { name: "readMore", widget: "string" }
+      - label: "Blog Landing (EN)"
+        name: "blog_landing_en"
+        file: "src/locales/en/blog_landing.json"
+        format: "json"
+        fields:
+          - { name: "kicker", widget: "string" }
+          - { name: "title", widget: "string" }
+          - { name: "subtitle", widget: "text" }
+          - { name: "readMore", widget: "string" }

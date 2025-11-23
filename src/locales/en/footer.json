@@ -54,7 +54,8 @@
     "copyrightPrefix": "©",
     "items": [
       { "label": "Privacy Policy", "href": "/privacy" },
-      { "label": "Terms of Service", "href": "/terms" }
+      { "label": "Terms of Service", "href": "/terms" },
+      { "label": "Cookie Settings", "href": "/cookies" }
     ]
   }
 }
