@@ -1,0 +1,24 @@
+{
+  "title": "Web Hosting Plans & Pricing",
+  "columns": ["Plan", "Domains", "SSD", "Traffic", "Price / month"],
+  "rows": [
+    { "name": "BASIC", "domains": "1", "ssd": "2 GB",  "traffic": "Unlimited", "price": "250 KGS", "href": "#" },
+    { "name": "STANDARD", "domains": "15", "ssd": "5 GB", "traffic": "Unlimited", "price": "400 KGS", "href": "#" },
+    { "name": "AIGYR", "domains": "25", "ssd": "15 GiB", "traffic": "Unlimited", "price": "600 KGS", "href": "#" },
+    { "name": "AKKULA", "domains": "unlimited", "ssd": "25 GiB", "traffic": "Unlimited", "price": "900 KGS", "href": "#" }
+  ],
+  "rowCtaAria": "View plan",
+  "includedTitle": "Each plan includes:",
+  "featuresLeft": [
+    "PHP 5.6–8+ versions",
+    "Ruby & Rails",
+    "Python 3.0"
+  ],
+  "featuresRight": [
+    "Free SSL certificate",
+    "MySQL",
+    "Backups and more"
+  ],
+  "buildCta": "Build your configuration",
+  "buildHref": "#"
+}

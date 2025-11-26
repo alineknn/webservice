@@ -1,0 +1,27 @@
+    {
+  "whoHosting": {
+    "title": "Who is WEB hosting for?",
+    "small": [
+      {
+        "title": "Entrepreneurs & Companies",
+        "body": "Hosting for business cards, corporate sites and landing pages."
+      },
+      {
+        "title": "Blogs & Info Sites",
+        "body": "WordPress, Tilda and other CMS — for blogs and media projects."
+      },
+      {
+        "title": "Online Stores on CMS",
+        "body": "Bitrix, Opencart, PrestaShop — perfect for small shops."
+      },
+      {
+        "title": "Studios & Agencies",
+        "body": "Space for client projects + email and SSL."
+      }
+    ],
+    "big": {
+      "title": "Freelancers & Self-employed",
+      "body": "Showcase yourself online without server maintenance costs."
+    }
+  }
+}

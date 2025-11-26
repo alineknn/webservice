@@ -1,0 +1,24 @@
+{
+  "title": "Тарифы и стоимость WEB-хостинга",
+  "columns": ["Тарифы", "Количество доменных имен", "SSD", "Трафик", "Цена в месяц"],
+  "rows": [
+    { "name": "БАЗОВЫЙ", "domains": "1", "ssd": "2 GB",  "traffic": "Безлимит", "price": "250 KGS", "href": "#" },
+    { "name": "СТАНДАРТНЫЙ", "domains": "15", "ssd": "5 GB", "traffic": "Безлимит", "price": "400 KGS", "href": "#" },
+    { "name": "АЙГЫР", "domains": "25", "ssd": "15 GiB", "traffic": "Безлимит", "price": "600 KGS", "href": "#" },
+    { "name": "АККУЛА", "domains": "безлимит", "ssd": "25 GiB", "traffic": "Безлимит", "price": "900 KGS", "href": "#" }
+  ],
+  "rowCtaAria": "Подробнее о тарифе",
+  "includedTitle": "В каждый тариф включено:",
+  "featuresLeft": [
+    "Версии PHP 5.6-8+",
+    "Ruby & Rails",
+    "Python 3.0"
+  ],
+  "featuresRight": [
+    "Бесплатный SSL-сертификат",
+    "MySQL",
+    "Резервное копирование и другое"
+  ],
+  "buildCta": "Собрать свою конфигурацию",
+  "buildHref": "#"
+}

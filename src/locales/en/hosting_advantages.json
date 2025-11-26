@@ -1,0 +1,39 @@
+{
+  "advantagesHosting": {
+    "title": "Why host your websites with WEBSERVICE.KG",
+    "top": [
+      {
+        "title": "Local data storage",
+        "body": "Modern data center with dry cooling and backup generators for power outages."
+      },
+      {
+        "title": "Ready to launch right away",
+        "body": "Automatic setup — you can go live the same day."
+      }
+    ],
+    "middle": {
+      "left": {
+        "title": "CMS support: WordPress, Bitrix, and more",
+        "body": "Simple installation with 24/7 support."
+      },
+      "mid": {
+        "title": "SSL certificate & data protection",
+        "body": "Secure connection and better trust from search engines and customers."
+      },
+      "right": {
+        "title": "Email on your own domain",
+        "body": "email@yourdomain.kg — professional and convenient."
+      }
+    },
+    "bottom": [
+      {
+        "title": "Automatic backups",
+        "body": "Regular backups of the website and databases."
+      },
+      {
+        "title": "Convenient ISPmanager control panel",
+        "body": "All you need to manage domains, FTP, and databases."
+      }
+    ]
+  }
+}

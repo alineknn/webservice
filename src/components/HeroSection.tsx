@@ -68,15 +68,15 @@ export default function Hero() {
       </div>
 
       {/* Hero illustration */}
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-[20px] min-[1440px]:pl-[109px] min-[1440px]:pr-[121px] mt-[48px]">
-        <div className="relative w-[335px] md:w-full max-w-[1210px] overflow-hidden aspect-square md:aspect-[1210/474]">
+      <div className="relative z-10 mx-auto w-full max-w-[1312px] min-[1440px]:max-w-[calc(100vw-128px)] min-[1920px]:max-w-[1748px] px-[8px] sm:px-6 min-[1440px]:px-[64px] min-[1920px]:px-[86px] mt-[48px]">
+        <div className="relative mx-auto w-[335px] md:w-full md:max-w-[1210px] overflow-hidden aspect-square md:aspect-[1210/474]">
           <Image
             src={heroImage}
             alt="Hero illustration"
             fill
-            className="rounded-xl object-contain"
+            className="rounded-xl object-contain object-center"
             priority
-            sizes="(max-width: 767px) 335px, (min-width: 1440px) 1210px, calc(100vw - 40px)"
+            sizes="(max-width: 767px) 335px, (min-width: 1440px) 1210px, 100vw"
           />
         </div>
       </div>
