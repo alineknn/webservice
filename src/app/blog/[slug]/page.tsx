@@ -51,9 +51,9 @@ export const dynamic = "force-static";
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const locale: "ru" | "en" = "ru";
 
   let post: { frontmatter: any; content: string } | undefined;
@@ -112,10 +112,10 @@ if (isPublicPath) {
   const category = (fm.category as string) || (locale === "ru" ? "Категория" : "Category");
 
   return (
-    <section className="pt-[112px] pb-[80px]">
-      <div className="mx-auto w-full max-w-[1280px] px-[20px] min-[1440px]:px-[80px]">
+    <section className="pt-[112px] pb-[112px]">
+      <div className="mx-auto w-full max-w-[1280px] min-[1440px]:max-w-[calc(100vw-160px)] px-[20px] min-[1440px]:px-[10px]">
         {/* Two-column layout on desktop: text left, image right with 80px gap */}
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_780px] items-start lg:gap-x-[80px]">
+        <div className="mt-[40px] grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_720px] items-start lg:gap-x-[64px]">
           {/* Left: breadcrumb + title + meta + author */}
           <div>
             {/* Breadcrumb: 32px above heading */}
