@@ -9,15 +9,14 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
 
-  // Enable built‑in i18n so router.locale works; default Russian
-  i18n: {
-    locales: ["ru", "en"],
-    defaultLocale: "ru",
-    localeDetection: false,
-  },
 
-  // Allow local SVGs to be used with next/image safely
+  // Static export for PHP hosting
+  output: "export",
+  trailingSlash: true,
+
+  // Allow local SVGs and use unoptimized images so we don't need the Next.js image optimizer on the server
   images: {
+    unoptimized: true,
     dangerouslyAllowSVG: true,
     // Applied to SVG responses only
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",

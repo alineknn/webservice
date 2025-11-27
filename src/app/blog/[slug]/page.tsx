@@ -1,3 +1,4 @@
+// src/app/blog/[slug]/page.tsx
 import Image, { StaticImageData } from "next/image";
 import { notFound } from "next/navigation";
 import path from "node:path";
@@ -45,19 +46,15 @@ function fmtDate(dateStr: string, locale: "ru" | "en") {
   }
 }
 
+export const dynamic = "force-static";
+
 export default async function BlogPostPage({
   params,
-  searchParams,
 }: {
-  params: Promise<{ slug: string }>;
-  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+  params: { slug: string };
 }) {
-  const { slug } = await params;
-  const sp = searchParams ? await searchParams : undefined;
-
-  // Default to RU; allow explicit override via ?lang=en
-  const langParam = typeof sp?.lang === "string" ? sp.lang : undefined;
-  const locale: "ru" | "en" = langParam === "en" ? "en" : "ru";
+  const { slug } = params;
+  const locale: "ru" | "en" = "ru";
 
   let post: { frontmatter: any; content: string } | undefined;
   try {
