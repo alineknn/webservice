@@ -11,10 +11,10 @@
     "title": "Contacts",
     "items": [
       { "type": "email", "label": "hello@webservice.kg", "href": "mailto:hello@webservice.kg" },
-      { "type": "phone", "label": "+996 700 997 779", "href": "tel:+996700997779" },
-      { "type": "address", "label": "123 Example St, Bishkek, Kyrgyzstan" },
+      { "type": "phone", "label": "+996 501 000 254", "href": "tel:+996501000254" },
+      { "type": "address", "label": "Lenina 262, Lebedinovka village, Chui, Kyrgyz Republic" },
       { "type": "telegram", "label": "Telegram", "href": "https://t.me/webservicekg" },
-      { "type": "whatsapp", "label": "WhatsApp", "href": "https://api.whatsapp.com/send/?phone=996700997779" }
+      { "type": "whatsapp", "label": "WhatsApp", "href": "https://api.whatsapp.com/send/?phone=996501000254" }
     ]
   },
   "linksGroups": [
