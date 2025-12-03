@@ -27,7 +27,7 @@ export default function AdvantagesHosting() {
         {/* ───────────────────────────────── Top row: 2 grey cards ───────────────────────────────── */}
         <div className="mt-[32px] grid grid-cols-1 md:grid-cols-2 min-[1440px]:grid-cols-[592px_592px] gap-x-[32px] gap-y-[32px] justify-center">
           {/* Card 1 – 592 x 280 */}
-          <article className="relative bg-[#F2F2F2] rounded-xl shadow-sm w-full h-auto lg:h-[280px] overflow-hidden">
+          <article className="relative bg-[#F2F2F2] rounded-xl shadow-sm w-full h-[331px] lg:h-[280px] overflow-hidden">
             <div className="p-6 lg:p-[24px] pr-[160px] lg:pr-[210px]">
               <h3 className="font-['Helvetica'] text-[24px] md:text-[26px] lg:text-[28px] leading-snug lg:max-w-[544px]">
                 {a.top[0].title}
@@ -48,7 +48,7 @@ export default function AdvantagesHosting() {
           </article>
 
           {/* Card 2 – 592 x 280 */}
-          <article className="relative bg-[#F2F2F2] rounded-xl shadow-sm w-full h-auto lg:h-[280px] overflow-hidden">
+          <article className="relative bg-[#F2F2F2] rounded-xl shadow-sm w-full h-[379px] lg:h-[280px] overflow-hidden">
             <div className="p-6 lg:p-[24px] pr-[160px] lg:pr-[210px]">
               <h3 className="font-['Helvetica'] text-[24px] md:text-[26px] lg:text-[28px] leading-snug lg:max-w-[544px]">
                 {a.top[1].title}
@@ -70,9 +70,9 @@ export default function AdvantagesHosting() {
         </div>
 
         {/* ───────────────────────────── Middle row: 640x365 + 256x365 + 256x365 ───────────────────────────── */}
-        <div className="mt-[32px] grid grid-cols-1 md:grid-cols-2 min-[1440px]:grid-cols-[640px_256px_256px] gap-x-[32px] gap-y-[32px] justify-center">
+        <div className="mt-[32px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[640px_256px_256px] gap-x-[32px] gap-y-[32px] justify-center">
           {/* 640 x 365 grey card with big image bottom-left */}
-          <article className="relative bg-[#F2F2F2] rounded-xl shadow-sm w-full h-auto lg:h-[365px] overflow-hidden">
+          <article className="relative bg-[#F2F2F2] rounded-xl shadow-sm w-full h-[349px] lg:h-[365px] overflow-hidden">
             <div className="p-6 lg:p-[24px] pr-[24px] lg:pr-[320px]">
               <h3 className="font-['Helvetica'] text-[24px] md:text-[26px] lg:text-[28px] leading-snug lg:max-w-[544px]">
                 {a.middle.left.title}
@@ -87,7 +87,7 @@ export default function AdvantagesHosting() {
               alt=""
               width={406}
               height={271}
-              className="pointer-events-none select-none absolute right-[3px] bottom-[3px] lg:right-[7px] lg:bottom-[7px] translate-x-[15px] translate-y-[15px] object-contain"
+              className="pointer-events-none select-none absolute right-[3px] bottom-[3px] lg:right-[7px] lg:bottom-[7px] translate-x-[15px] translate-y-[15px] object-contain w-[290px] h-[193px] lg:w-[406px] lg:h-[271px]"
               priority={false}
             />
           </article>
@@ -120,7 +120,7 @@ export default function AdvantagesHosting() {
         {/* ───────────────────────────────── Bottom row: 2 grey cards ───────────────────────────────── */}
         <div className="mt-[32px] grid grid-cols-1 md:grid-cols-2 min-[1440px]:grid-cols-[592px_592px] gap-x-[32px] gap-y-[32px] justify-center">
           {/* 592 x 280 */}
-          <article className="relative bg-[#F2F2F2] rounded-xl shadow-sm w-full h-auto lg:h-[280px] overflow-hidden">
+          <article className="relative bg-[#F2F2F2] rounded-xl shadow-sm w-full h-[339px] lg:h-[280px] overflow-hidden">
             <div className="p-6 lg:p-[24px] pr-[24px] lg:pr-[240px]">
               <h3 className="font-['Helvetica'] text-[24px] md:text-[26px] lg:text-[28px] leading-snug lg:max-w-[420px]">
                 {a.bottom[0].title}
@@ -129,19 +129,19 @@ export default function AdvantagesHosting() {
                 {a.bottom[0].body}
               </p>
             </div>
-            {/* image bottom-right 226x226 */}
+            {/* image bottom, centered on mobile; bottom-right on desktop */}
             <Image
               src={imgAuto}
               alt=""
               width={226}
               height={226}
-              className="pointer-events-none select-none absolute right-[8px] bottom-[8px] lg:right-[12px] lg:bottom-[12px] translate-x-[15px] translate-y-[15px] object-contain"
+              className="pointer-events-none select-none absolute left-1/2 bottom-[8px] -translate-x-1/2 translate-y-[15px] lg:left-auto lg:right-[12px] lg:bottom-[12px] lg:translate-x-[15px] lg:translate-y-[15px] object-contain w-[198px] h-[171px] lg:w-[226px] lg:h-[226px]"
               priority={false}
             />
           </article>
 
           {/* 592 x 280 */}
-          <article className="relative bg-[#F2F2F2] rounded-xl shadow-sm w-full h-auto lg:h-[280px] overflow-hidden">
+          <article className="relative bg-[#F2F2F2] rounded-xl shadow-sm w-full h-[413px] lg:h-[280px] overflow-hidden">
             <div className="p-6 lg:p-[24px] pr-[24px] lg:pr-[240px]">
               <h3 className="font-['Helvetica'] text-[24px] md:text-[26px] lg:text-[28px] leading-snug lg:max-w-[420px]">
                 {a.bottom[1].title}
@@ -150,13 +150,13 @@ export default function AdvantagesHosting() {
                 {a.bottom[1].body}
               </p>
             </div>
-            {/* image bottom-right 184x184 */}
+            {/* image bottom, centered on mobile; bottom-right on desktop */}
             <Image
               src={imgISP}
               alt=""
               width={184}
               height={184}
-              className="pointer-events-none select-none absolute right-[18px] bottom-[18px] lg:right-[22px] lg:bottom-[22px] translate-x-[15px] translate-y-[15px] object-contain"
+              className="pointer-events-none select-none absolute left-1/2 bottom-[18px] -translate-x-1/2 translate-y-[15px] lg:left-auto lg:right-[22px] lg:bottom-[22px] lg:translate-x-[15px] lg:translate-y-[15px] object-contain"
               priority={false}
             />
           </article>

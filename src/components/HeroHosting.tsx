@@ -51,16 +51,16 @@ export default function HeroHosting() {
         </div>
 
         {/* CTAs – 32px below subheading */}
-        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-[12px]">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-[12px]">
           <Link
             href={h.primaryHref || "#"}
-            className="inline-flex items-center justify-center w-[260px] h-[56px] sm:w-[310px] sm:h-[64px] rounded-md bg-[#74C2CD] text-black font-['Inter'] text-[16px] sm:text-[18px]"
+            className="inline-flex items-center justify-center w-[260px] h-[56px] sm:w-[310px] sm:h-[64px] rounded-md bg-[#74C2CD] text-black font-['Inter'] text-[16px] sm:text-[18px] mx-auto sm:mx-0"
           >
             {h.primaryCta}
           </Link>
           <Link
             href={h.secondaryHref || "#"}
-            className="inline-flex items-center justify-center w-[260px] h-[56px] sm:w-[310px] sm:h-[64px] rounded-md bg-[#746FAE] text-white font-['Inter'] text-[16px] sm:text-[18px]"
+            className="inline-flex items-center justify-center w-[260px] h-[56px] sm:w-[310px] sm:h-[64px] rounded-md bg-[#746FAE] text-white font-['Inter'] text-[16px] sm:text-[18px] mx-auto sm:mx-0"
           >
             {h.secondaryCta}
           </Link>
